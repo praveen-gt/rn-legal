@@ -5,8 +5,6 @@ import PartnersHighlight from '@/components/home/PartnersHighlight'
 import Testimonials from '@/components/home/Testimonials'
 // import ContactSection from '@/components/home/ContactSection'
 import ScrollReveal from '@/components/ui/animations/ScrollReveal'
-import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
-import { testimonials } from '@/lib/data/testimonials'
 
 export const metadata: Metadata = {
   title: 'Expert Legal Services in High Court Chandigarh | Vidhi Mantra Legal Consultants',

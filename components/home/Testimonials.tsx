@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+// import { motion, AnimatePresence } from "framer-motion";
 import { testimonials } from "@/lib/data/testimonials";
-import { Testimonial } from "@/types/Testimonial";
+// import { Testimonial } from "@/types/Testimonial";
 import ScrollReveal from "../ui/animations/ScrollReveal";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
@@ -62,7 +62,7 @@ const Testimonials = () => {
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it - hear from some of our satisfied clients
+              Don&apos;t just take our word for it - hear from some of our satisfied clients
               about their experiences working with Vidhi Mantra Legal Consultants.
             </p>
           </div>

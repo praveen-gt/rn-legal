@@ -11,7 +11,7 @@ type SlideInProps = {
   className?: string;
   distance?: number;
   once?: boolean;
-  threshold?: number;
+  // threshold?: number;
 };
 
 const SlideIn: React.FC<SlideInProps> = ({
@@ -22,10 +22,10 @@ const SlideIn: React.FC<SlideInProps> = ({
   className = "",
   distance = 50,
   once = true,
-  threshold = 0.2,
+  // threshold = 0.2,
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, threshold });
+  const isInView = useInView(ref, { once });
 
   // Define the direction-specific initial and animate properties
   const initialProps = {

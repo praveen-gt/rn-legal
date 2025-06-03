@@ -38,7 +38,7 @@ export default function FeaturedServices() {
             Our Practice Areas
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto">
-            We offer comprehensive legal services across multiple practice areas to serve our clients' diverse needs.
+            We offer comprehensive legal services across multiple practice areas to serve our clients&apos; diverse needs.
           </p>
         </div>
         

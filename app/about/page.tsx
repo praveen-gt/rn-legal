@@ -66,7 +66,7 @@ const AboutPage = () => {
                     Founded by experienced legal professionals with a vision to provide accessible, effective legal services, Vidhi Mantra Legal Consultants has grown into a respected name in the legal community of Punjab and Haryana.
                   </p>
                   <p>
-                    Our mission is to deliver high-quality legal solutions that address our clients' specific needs while maintaining the highest standards of professional ethics and integrity. We believe in building long-term relationships with our clients based on trust, transparency, and reliable service.
+                    Our mission is to deliver high-quality legal solutions that address our clients&apos; specific needs while maintaining the highest standards of professional ethics and integrity. We believe in building long-term relationships with our clients based on trust, transparency, and reliable service.
                   </p>
                   <p>
                     Through our extensive network of legal professionals across Punjab and Haryana, we ensure that our clients receive localized, efficient, and reliable legal services regardless of their location within these states.
