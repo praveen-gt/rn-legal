@@ -96,7 +96,7 @@ const Testimonials = () => {
             </div>
           )} */}
 
-           <InfiniteMovingCards items={testimonials} speed="normal" />
+           <InfiniteMovingCards items={testimonials} speed="slow" />
           
           <div className="text-center mt-12">
             <a
