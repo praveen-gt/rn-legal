@@ -3,6 +3,7 @@ import { Inter, Merriweather } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import './globals.css'
+import ClientLayout from '@/components/layout/ClientLayout'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -77,9 +78,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="flex flex-col min-h-screen">
-        <Header />
+         <ClientLayout>{children}</ClientLayout>
+        {/* <Header />
         <main className="flex-grow">{children}</main>
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   )
