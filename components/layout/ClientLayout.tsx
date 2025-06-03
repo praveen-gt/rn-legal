@@ -15,8 +15,8 @@ const DisclaimerPopup = dynamic(() => import("@/components/ui/DisclaimerPopup"),
 });
 
 const ClientLayout: React.FC<Props> = ({ children }) => {
-  const [open, setOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(0);
+  // const [open, setOpen] = useState(false);
+  // const [activeItem, setActiveItem] = useState(0);
   const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
