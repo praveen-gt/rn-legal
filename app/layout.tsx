@@ -44,7 +44,7 @@
 
 
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Serif_Display, DM_Sans } from 'next/font/google'
+import { Playfair_Display, Jost } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -71,39 +71,34 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-display',
   display: 'swap',
 })
 
-const dmSerif = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  variable: '--font-dm-serif',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
+const jost = Jost({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
-  variable: '--font-dm-sans',
+  variable: '--font-body',
   display: 'swap',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-<html lang="en-AU" className={`scroll-smooth ${cormorant.variable} ${dmSerif.variable} ${dmSans.variable}`}>
+ <html
+      lang="en-AU"
+      className={`scroll-smooth ${playfair.variable} ${jost.variable}`}
+    >
       <body className="font-body flex flex-col min-h-screen antialiased">
         {/* Custom cursor elements */}
-        <div id="cursor-dot" className="no-print" aria-hidden="true" />
-        <div id="cursor-ring" className="no-print" aria-hidden="true" />
+        {/* <div id="cursor-dot" className="no-print" aria-hidden="true" />
+        <div id="cursor-ring" className="no-print" aria-hidden="true" /> */}
 
         <PremiumEffects />
-        <DisclaimerPopup />
+        {/* <DisclaimerPopup /> */}
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -56,10 +56,10 @@ export function Header() {
       {/* ── Header ── */}
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-700 ease-out ${
-          scrolled
-            ? 'bg-navy-950/95 backdrop-blur-xl shadow-[0_1px_0_rgba(219,168,40,0.12),0_4px_40px_rgba(6,13,26,0.5)]'
-            : 'bg-transparent'
-        }`}
+  scrolled
+    ? 'bg-navy-950/98 backdrop-blur-xl shadow-[0_1px_0_rgba(219,168,40,0.12),0_4px_40px_rgba(6,13,26,0.5)]'
+    : 'bg-navy-950/90 backdrop-blur-md'
+}`}
       >
         {/* Top strip — desktop only */}
         <div className={`hidden lg:block border-b transition-all duration-500 ${scrolled ? 'border-white/5' : 'border-white/10'}`}>
@@ -113,6 +113,7 @@ export function Header() {
               {[
                 { label: 'Home', href: '/' },
                 { label: 'About', href: '/about' },
+                { label: 'Disclaimer', href: '/disclaimer' },
               ].map(item => (
                 <Link
                   key={item.href}

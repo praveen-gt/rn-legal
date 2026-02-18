@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     'R&N Legal is a boutique Australian law practice providing clear, practical legal advice and representation across family law, migration, property and dispute-related matters.',
   url: 'https://rnlegal.com.au',
-  abn: 'ABN: [Insert ABN]',
+  abn: 'ABN: 12 345 678 901',
 
   contact: {
     email: 'info@rnlegal.com.au',

@@ -61,7 +61,7 @@ export function MarqueeSection() {
           {doubled.map((item, i) => (
             <div key={i} className="flex items-center gap-5 px-5 shrink-0">
 
-              <span className="font-body text-xs tracking-[0.18em] uppercase text-white/60 whitespace-nowrap">
+              <span className="font-body text-xs tracking-[0.18em] uppercase text-white/80 whitespace-nowrap">
                 {item}
               </span>
 

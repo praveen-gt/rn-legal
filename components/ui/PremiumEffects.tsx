@@ -120,48 +120,40 @@ export function PremiumEffects() {
        CUSTOM CURSOR
     ============================================================ */
 
-    const dot = document.getElementById('cursor-dot')
-    const ring = document.getElementById('cursor-ring')
+    // const dot = document.getElementById('cursor-dot')
+    // const ring = document.getElementById('cursor-ring')
 
-    let mouseX = -100
-    let mouseY = -100
-    let ringX = -100
-    let ringY = -100
+    // let mouseX = -100
+    // let mouseY = -100
+    // let ringX = -100
+    // let ringY = -100
 
-    let rafId = 0
+    // let rafId = 0
 
-    const moveCursor = (e: MouseEvent) => {
-      mouseX = e.clientX
-      mouseY = e.clientY
-    }
+    // const moveCursor = (e: MouseEvent) => {
+    //   mouseX = e.clientX
+    //   mouseY = e.clientY
+    // }
 
-    const animateCursor = () => {
+    // const animateCursor = () => {
 
-      if (dot && ring) {
+    //   if (dot && ring) {
 
-        // ringX += (mouseX - ringX) * 0.12
-        // ringY += (mouseY - ringY) * 0.12
+    //             ringX += (mouseX - ringX) * 0.12
+    //     ringY += (mouseY - ringY) * 0.12
+    //     dot.style.left = `${mouseX}px`
+    //     dot.style.top = `${mouseY}px`
+    //     ring.style.left = `${ringX}px`
+    //     ring.style.top = `${ringY}px`
 
-                ringX += (mouseX - ringX) * 0.12
-        ringY += (mouseY - ringY) * 0.12
-        dot.style.left = `${mouseX}px`
-        dot.style.top = `${mouseY}px`
-        ring.style.left = `${ringX}px`
-        ring.style.top = `${ringY}px`
+    //   }
 
-        // dot.style.transform =
-        //   `translate3d(${mouseX}px, ${mouseY}px, 0)`
+    //   rafId = requestAnimationFrame(animateCursor)
+    // }
 
-        // ring.style.transform =
-        //   `translate3d(${ringX}px, ${ringY}px, 0)`
-      }
+    // document.addEventListener('mousemove', moveCursor)
 
-      rafId = requestAnimationFrame(animateCursor)
-    }
-
-    document.addEventListener('mousemove', moveCursor)
-
-    rafId = requestAnimationFrame(animateCursor)
+    // rafId = requestAnimationFrame(animateCursor)
 
 
 
@@ -255,17 +247,17 @@ export function PremiumEffects() {
 
     return () => {
 
-      document.removeEventListener(
-        'mousemove',
-        moveCursor
-      )
+      // document.removeEventListener(
+      //   'mousemove',
+      //   moveCursor
+      // )
 
       window.removeEventListener(
         'scroll',
         handleScroll
       )
 
-      cancelAnimationFrame(rafId)
+      // cancelAnimationFrame(rafId)
 
       clearTimeout(timeoutId)
 
