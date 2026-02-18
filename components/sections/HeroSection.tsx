@@ -114,11 +114,11 @@ export function HeroSection() {
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="font-display font-light text-gold-300 text-3xl leading-none">{stat.num}</p>
-                <p className="font-body text-white/30 text-xs tracking-wide mt-1">{stat.label}</p>
+                <p className="font-body text-white/60 text-xs tracking-wide mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-2 text-white/30 font-body text-xs">
+          <div className="flex items-center gap-2 text-white/60 font-body text-xs">
             <MapPin size={12} className="text-gold-500/50" />
             {siteConfig.contact.address}, Melbourne VIC 3000
           </div>

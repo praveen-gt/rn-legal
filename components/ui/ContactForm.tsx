@@ -86,7 +86,7 @@ export function ContactForm() {
             <option value="" disabled>Select a practice area…</option>
             {siteConfig.practiceAreas.map(a => <option key={a} value={a} className="bg-navy-900">{a}</option>)}
           </select>
-          <ChevronDown size={14} className="absolute right-0 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
+          <ChevronDown size={14} className="absolute right-0 top-1/2 -translate-y-1/2 text-white/60 pointer-events-none" />
         </div>
         {errors.practiceArea && <p className="mt-2 text-red-400 text-xs font-body flex items-center gap-1"><AlertCircle size={11} />{errors.practiceArea.message}</p>}
       </div>
@@ -95,7 +95,7 @@ export function ContactForm() {
       <div>
         <label className={labelClass}>
           Brief Description *
-          <span className="normal-case text-white/20 font-normal ml-2 tracking-normal">
+          <span className="normal-case text-white/50 font-normal ml-2 tracking-normal">
             (What happened + any urgent dates)
           </span>
         </label>

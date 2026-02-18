@@ -92,7 +92,7 @@ export function DisclaimerPopup() {
               </button>
             </div>
 
-            <p className="text-white/20 font-body text-[10px] text-center mt-4 leading-relaxed">
+            <p className="text-white/50 font-body text-[10px] text-center mt-4 leading-relaxed">
               By accepting, you acknowledge this disclaimer. R&N Legal · {siteConfig.abn}
             </p>
           </div>

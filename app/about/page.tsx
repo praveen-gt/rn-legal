@@ -83,7 +83,7 @@ export default function AboutPage() {
               {approach.map((item, i) => (
                 <div key={item.label} className="border-t border-white/8 py-5 first:border-t-0 group hover:border-gold-400/20 transition-colors duration-300" data-animate data-delay={String(i + 1)}>
                   <div className="flex items-start gap-5">
-                    <span className="text-white/15 font-display font-light text-3xl leading-none group-hover:text-gold-400/20 transition-colors duration-300 shrink-0">
+                    <span className="text-white/40 font-display font-light text-3xl leading-none group-hover:text-gold-400/20 transition-colors duration-300 shrink-0">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                     { l: 'Languages', v: 'English · Bengali' },
                   ].map(({ l, v }) => (
                     <div key={l} className="flex justify-between text-xs font-body">
-                      <span className="text-white/30">{l}</span>
+                      <span className="text-white/60">{l}</span>
                       <span className="text-white/60 font-medium">{v}</span>
                     </div>
                   ))}

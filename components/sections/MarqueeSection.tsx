@@ -24,7 +24,7 @@ const items = [
 //       <div className="flex animate-marquee">
 //         {doubled.map((item, i) => (
 //           <div key={i} className="flex items-center gap-5 px-5 shrink-0">
-//             <span className="font-body text-xs tracking-[0.18em] uppercase text-white/30 whitespace-nowrap">
+//             <span className="font-body text-xs tracking-[0.18em] uppercase text-white/60 whitespace-nowrap">
 //               {item}
 //             </span>
 //             <span className="w-1.5 h-1.5 rounded-full bg-gold-400/30 shrink-0" />
@@ -61,7 +61,7 @@ export function MarqueeSection() {
           {doubled.map((item, i) => (
             <div key={i} className="flex items-center gap-5 px-5 shrink-0">
 
-              <span className="font-body text-xs tracking-[0.18em] uppercase text-white/30 whitespace-nowrap">
+              <span className="font-body text-xs tracking-[0.18em] uppercase text-white/60 whitespace-nowrap">
                 {item}
               </span>
 

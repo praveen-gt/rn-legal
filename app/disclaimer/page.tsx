@@ -59,14 +59,14 @@ export default function DisclaimerPage() {
       {/* Meta bar */}
       <div className="bg-navy-900 border-b border-white/8 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-6 text-xs font-body text-white/30">
+          <div className="flex flex-wrap gap-6 text-xs font-body text-white/60">
             {[
               { l: 'Applies to', v: 'rnlegal.com.au' },
               { l: 'Jurisdiction', v: 'Victoria, Australia' },
               { l: 'Governing Law', v: 'LPUL (Victoria) 2015' },
               { l: 'Privacy Act', v: 'Privacy Act 1988 (Cth)' },
             ].map(({ l, v }) => (
-              <span key={l}><span className="text-white/20">{l}: </span><strong className="text-white/50">{v}</strong></span>
+              <span key={l}><span className="text-white/50">{l}: </span><strong className="text-white/50">{v}</strong></span>
             ))}
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function DisclaimerPage() {
               <p className="text-white/40 font-body text-sm leading-relaxed">
                 If you have a complaint about our services, you may contact the Legal Services Commissioner (Victoria) at <strong className="text-white/60">lsc.vic.gov.au</strong>. We are committed to resolving concerns promptly and professionally.
               </p>
-              <div className="mt-7 pt-6 border-t border-white/8 text-white/20 text-xs font-body">
+              <div className="mt-7 pt-6 border-t border-white/8 text-white/50 text-xs font-body">
                 {siteConfig.abn} · {siteConfig.contact.fullAddress}
               </div>
             </div>

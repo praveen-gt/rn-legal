@@ -65,7 +65,7 @@ export function Header() {
         <div className={`hidden lg:block border-b transition-all duration-500 ${scrolled ? 'border-white/5' : 'border-white/10'}`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex items-center justify-between py-2.5">
-              <p className="text-white/30 font-body text-2xs tracking-[0.2em] uppercase">
+              <p className="text-white/60 font-body text-xs tracking-[0.2em] uppercase">
                 Boutique Law Practice · Melbourne VIC
               </p>
               <div className="flex items-center gap-5">
@@ -81,7 +81,7 @@ export function Header() {
                 <span className="w-px h-3 bg-white/15" />
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="flex items-center gap-2 text-white/30 hover:text-gold-300/70 transition-colors font-body text-xs tracking-wide"
+                  className="flex items-center gap-2 text-white/60 hover:text-gold-300/70 transition-colors font-body text-xs tracking-wide"
                 >
                   <Mail size={11} />
                   {siteConfig.contact.email}
@@ -174,7 +174,7 @@ export function Header() {
                                 <p className="text-white/80 group-hover/item:text-white font-body text-sm font-medium transition-colors">
                                   {svc.shortTitle}
                                 </p>
-                                <p className="text-white/30 font-body text-xs leading-relaxed mt-0.5 line-clamp-1">
+                                <p className="text-white/60 font-body text-xs leading-relaxed mt-0.5 line-clamp-1">
                                   {svc.points[0]}
                                 </p>
                               </div>
@@ -182,7 +182,7 @@ export function Header() {
                           ))}
                         </div>
                         <div className="mt-4 pt-4 border-t border-white/8 flex items-center justify-between">
-                          <p className="text-white/30 font-body text-xs">Mon–Fri · 10am–5pm</p>
+                          <p className="text-white/60 font-body text-xs">Mon–Fri · 10am–5pm</p>
                           <a href={`tel:${siteConfig.contact.phone1}`} className="flex items-center gap-2 text-gold-400/80 hover:text-gold-300 font-body text-xs transition-colors">
                             <Phone size={11} /> {siteConfig.contact.phone1}
                           </a>
@@ -282,7 +282,7 @@ export function Header() {
           <div className="px-5 pt-8 pb-4">
 
             {/* Section label */}
-            {/* <p className="text-white/20 font-body text-[9px] tracking-[0.35em] uppercase mb-5 px-1">
+            {/* <p className="text-white/50 font-body text-[9px] tracking-[0.35em] uppercase mb-5 px-1">
               Menu
             </p> */}
 
@@ -367,7 +367,7 @@ export function Header() {
 
             {/* Contact section */}
             <div>
-              <p className="text-white/20 font-body text-[9px] tracking-[0.35em] uppercase mb-5 px-1">
+              <p className="text-white/50 font-body text-[9px] tracking-[0.35em] uppercase mb-5 px-1">
                 Get in Touch
               </p>
 
@@ -404,7 +404,7 @@ export function Header() {
 
                 <div className="flex items-center gap-4 px-4 py-[14px]">
                   <div className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-white/30">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-white/60">
                       <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.1" />
                       <path d="M7 4V7L9 9" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
                     </svg>
@@ -429,7 +429,7 @@ export function Header() {
             Book a Free Consultation
             <ArrowRight size={16} />
           </Link>
-          <p className="text-white/15 font-body text-[9px] tracking-[0.25em] uppercase text-center mt-3">
+          <p className="text-white/40 font-body text-[9px] tracking-[0.25em] uppercase text-center mt-3">
             Boutique Law Practice · Melbourne VIC
           </p>
         </div>

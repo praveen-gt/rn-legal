@@ -66,7 +66,7 @@ export default function ContactPage() {
                       content: (
                         <div>
                           <p className="text-white/65 font-body text-sm">{siteConfig.contact.hours}</p>
-                          <p className="text-white/30 font-body text-xs mt-0.5">{siteConfig.contact.responseTime}</p>
+                          <p className="text-white/60 font-body text-xs mt-0.5">{siteConfig.contact.responseTime}</p>
                         </div>
                       ),
                     },

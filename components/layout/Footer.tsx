@@ -35,10 +35,10 @@ export function Footer() {
                 <div className="text-gold-500/50 text-[9px] tracking-[0.25em] uppercase mt-0.5">Solicitors · Melbourne</div>
               </div>
             </div>
-            <p className="text-white/30 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               {siteConfig.footer.tagline}
             </p>
-            <p className="text-white/15 text-xs mt-4">{siteConfig.abn}</p>
+            <p className="text-white/40 text-xs mt-4">{siteConfig.abn}</p>
           </div>
 
           {/* Practice areas */}
@@ -48,7 +48,7 @@ export function Footer() {
               {siteConfig.services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services#${s.slug}`}
-                    className="flex items-center gap-2 text-white/30 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
+                    className="flex items-center gap-2 text-white/60 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
                     <span className="w-1 h-px bg-current opacity-40 group-hover:w-3 transition-all duration-300" />
                     {s.shortTitle}
                   </Link>
@@ -64,17 +64,17 @@ export function Footer() {
               {siteConfig.services.slice(5).map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services#${s.slug}`}
-                    className="flex items-center gap-2 text-white/30 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
+                    className="flex items-center gap-2 text-white/60 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
                     <span className="w-1 h-px bg-current opacity-40 group-hover:w-3 transition-all duration-300" />
                     {s.shortTitle}
                   </Link>
                 </li>
               ))}
               <li className="pt-3 border-t border-white/8">
-                <Link href="/about" className="text-white/30 hover:text-gold-300/80 text-sm transition-colors">About Us</Link>
+                <Link href="/about" className="text-white/60 hover:text-gold-300/80 text-sm transition-colors">About Us</Link>
               </li>
               <li>
-                <Link href="/disclaimer" className="text-white/30 hover:text-gold-300/80 text-sm transition-colors">Disclaimer</Link>
+                <Link href="/disclaimer" className="text-white/60 hover:text-gold-300/80 text-sm transition-colors">Disclaimer</Link>
               </li>
             </ul>
           </div>
@@ -87,7 +87,7 @@ export function Footer() {
                 { icon: Phone, content: (
                   <div>
                     <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white/50 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</a>
-                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/30 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/60 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
                   </div>
                 )},
                 { icon: Mail, content: (
@@ -118,11 +118,11 @@ export function Footer() {
 
         {/* Disclaimer */}
         <div className="border-t border-white/8 py-6">
-          <p className="text-white/20 text-xs leading-relaxed mb-4 max-w-4xl">
-            <strong className="text-white/30">Disclaimer:</strong>{' '}
+          <p className="text-white/50 text-xs leading-relaxed mb-4 max-w-4xl">
+            <strong className="text-white/60">Disclaimer:</strong>{' '}
             {siteConfig.disclaimer.shortText} R&N Legal operates in accordance with the Legal Profession Uniform Law (Victoria). Legal services are subject to applicable Victorian and Commonwealth laws.
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/50">
             <p>© {year} R&N Legal. All rights reserved.</p>
             <div className="flex items-center gap-5">
               {siteConfig.footer.links.map((l) => (
