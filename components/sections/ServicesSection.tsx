@@ -74,7 +74,7 @@ export function ServicesSection() {
                     </span>
                   </div>
 
-                  <h3 className="font-body font-semibold text-navy-900 group-hover:text-white text-xl lg:text-2xl leading-snug mb-3 transition-colors duration-500">
+                  <h3 className="font-display font-semibold text-navy-900 group-hover:text-white text-xl lg:text-2xl leading-snug mb-3 transition-colors duration-500">
                     {service.shortTitle}
                   </h3>
                   <p className="font-body text-navy-600/60 group-hover:text-white/50 text-md leading-relaxed line-clamp-2 transition-colors duration-500">
