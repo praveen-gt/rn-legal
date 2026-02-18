@@ -1,132 +1,357 @@
-import React from "react";
-import { Metadata } from "next";
-import Image from "next/image";
-import AnimatedSection from "@/components/shared/AnimatedSection";
-import SlideIn from "@/components/ui/animations/SlideIn";
-import ScrollReveal from "@/components/ui/animations/ScrollReveal";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
+import PageHero from "@/components/ui/PageHero";
+import ContactCTA from "@/components/ui/ContactCTA";
 
 export const metadata: Metadata = {
-  title: "About Us | Vidhi Mantra Legal Consultants",
-  description: "Learn about Vidhi Mantra Legal Consultants, a premier law partnership firm providing expert legal services across various sectors in Punjab and Haryana.",
+  title: "About",
+  description:
+    "About R&N Legal — Director Rajat Kanti Roy has practised law in Victoria since 2013. Learn about our approach, values and commitment to accessible professional legal services.",
+  alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: {
-    title: "About Vidhi Mantra Legal Consultants",
-    description: "A premier law partnership firm with expertise in litigation, corporate advisory, and dispute resolution.",
-    type: "website",
-    url: "https://vidhimantralegal.com/about",
-    images: [
-      {
-        url: "/images/og-about.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Vidhi Mantra Legal Consultants",
-      },
-    ],
+    url: `${siteConfig.url}/about`,
+    title: `About — R&N Legal`,
+    description: "Boutique Melbourne legal practice led by Rajat Kanti Roy. Over a decade of experience in litigation, family law, immigration and property.",
   },
 };
 
-const AboutPage = () => {
-  return (
-    <main>
-      {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/about-hero.jpg"
-            alt="Vidhi Mantra office building"
-            fill
-            className="object-cover opacity-20"
-            priority
-            sizes="100vw"
-          />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <SlideIn direction="up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About Our Firm</h1>
-          </SlideIn>
-          <SlideIn direction="up" delay={0.1}>
-            <p className="text-xl md:text-2xl max-w-3xl">
-              Vidhi Mantra Legal Consultants is a premier law partnership firm providing expert legal services across various sectors in Punjab and Haryana.
-            </p>
-          </SlideIn>
-        </div>
-      </section>
+const values = [
+  { title: "Integrity & Confidentiality", desc: "Every matter handled with complete professional discretion from day one to resolution." },
+  { title: "Practical, Outcome-Focused Advice", desc: "We focus on what's achievable and the most effective pathway to get there — not billing hours." },
+  { title: "Respectful, Culturally Aware Service", desc: "We assist individuals from diverse cultural backgrounds with genuine sensitivity and care." },
+  { title: "Professional Standards & Compliance", desc: "Maintaining the highest professional standards required of Victorian legal practitioners." },
+];
 
-      {/* Overview Section */}
-      <ScrollReveal>
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                  Our Story & Mission
-                </h2>
-                <div className="w-20 h-1 bg-primary mb-8"></div>
-                <div className="space-y-4 text-lg text-gray-600">
-                  <p>
-                    Founded by experienced legal professionals with a vision to provide accessible, effective legal services, Vidhi Mantra Legal Consultants has grown into a respected name in the legal community of Punjab and Haryana.
-                  </p>
-                  <p>
-                    Our mission is to deliver high-quality legal solutions that address our clients&apos; specific needs while maintaining the highest standards of professional ethics and integrity. We believe in building long-term relationships with our clients based on trust, transparency, and reliable service.
-                  </p>
-                  <p>
-                    Through our extensive network of legal professionals across Punjab and Haryana, we ensure that our clients receive localized, efficient, and reliable legal services regardless of their location within these states.
-                  </p>
+export default function AboutPage() {
+  return (
+    <>
+      <PageHero
+        label="About"
+        title="Accessible."
+        titleItalic="Professional. Precise."
+        subtitle="R&N Legal is committed to professional legal services delivered with clarity, careful preparation, and standards expected of the best practitioners."
+      />
+
+      {/* Director section */}
+      <section
+        style={{
+          background: "var(--ivory)",
+          paddingTop: "clamp(72px, 10vw, 120px)",
+          paddingBottom: "clamp(72px, 10vw, 120px)",
+        }}
+      >
+        <div className="container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1.1fr",
+              gap: "clamp(48px, 8vw, 96px)",
+              alignItems: "start",
+            }}
+            className="bio-grid"
+          >
+            {/* Portrait placeholder / monogram */}
+            <div>
+              <div
+                style={{
+                  aspectRatio: "4/5",
+                  background: "linear-gradient(150deg, var(--navy-mid) 0%, var(--navy) 50%, var(--ink) 100%)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  overflow: "hidden",
+                  marginBottom: "0",
+                }}
+              >
+                {/* Background pattern */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  backgroundImage: "radial-gradient(circle at 30% 70%, rgba(201,168,76,0.1) 0%, transparent 50%)",
+                }} />
+                <span
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(80px, 15vw, 140px)",
+                    fontWeight: 300,
+                    color: "rgba(255,255,255,0.08)",
+                    lineHeight: 1,
+                    fontStyle: "italic",
+                    userSelect: "none",
+                    position: "absolute",
+                  }}
+                >
+                  RKR
+                </span>
+                <div style={{ position: "relative", textAlign: "center", padding: "40px" }}>
+                  <div
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      borderRadius: "50%",
+                      border: "1px solid rgba(201,168,76,0.4)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 20px",
+                    }}
+                  >
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "var(--gold)", fontWeight: 300 }}>⚖</span>
+                  </div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 500, color: "var(--white)", marginBottom: "6px" }}>
+                    {siteConfig.director}
+                  </div>
+                  <div style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)", opacity: 0.8 }}>
+                    {siteConfig.directorTitle}
+                  </div>
                 </div>
+                {/* Bottom rule */}
+                <div style={{
+                  position: "absolute", bottom: 0, left: 0, right: 0,
+                  height: "2px",
+                  background: "linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent)",
+                }} />
               </div>
-              <div className="relative h-96 lg:h-auto">
-                <Image
-                  src="/images/about-story.jpg"
-                  alt="Vidhi Mantra team meeting"
-                  fill
-                  className="object-cover rounded-lg shadow-xl"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+
+              {/* Credentials */}
+              <div style={{ marginTop: "0", padding: "24px 28px", background: "var(--navy)", display: "flex", gap: "24px" }}>
+                {[
+                  { label: "Practising", val: "Since 2013" },
+                  { label: "Jurisdiction", val: "Victoria" },
+                ].map((c) => (
+                  <div key={c.label}>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(201,168,76,0.7)", marginBottom: "4px" }}>
+                      {c.label}
+                    </div>
+                    <div style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 500, color: "var(--white)" }}>
+                      {c.val}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bio text */}
+            <div>
+              <span className="label" style={{ marginBottom: "14px" }}>Director & Principal</span>
+              <div className="rule" />
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 400,
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                  marginBottom: "28px",
+                  lineHeight: 1.1,
+                }}
+              >
+                {siteConfig.director}
+              </h2>
+
+              {[
+                `Rajat Kanti Roy is the Director of R&N Legal and has practised law in Victoria since 2013. He brings more than a decade of experience advising and representing clients across a broad range of legal matters, with a particular emphasis on litigation and dispute resolution.`,
+                `Rajat has extensive experience in civil litigation including contractual disputes, property disputes, consumer law matters, traffic and regulatory offences, and proceedings before Victorian courts and tribunals. He is regularly involved in the preparation of pleadings, affidavits, evidentiary material and submissions, and adopts a disciplined, detail-driven approach to litigation strategy.`,
+                `In addition to litigation, Rajat advises clients in family law matters including family violence intervention orders, divorce and parenting proceedings, as well as conveyancing, property law and immigration-related matters involving tribunal and court pathways.`,
+                `Rajat maintains strong engagement within the local Victorian community and regularly assists individuals and families from diverse cultural backgrounds. This community-focused perspective informs the values and service standards of R&N Legal.`,
+              ].map((para, i) => (
+                <p
+                  key={i}
+                  style={{
+                    fontSize: i === 0 ? "1.05rem" : "0.95rem",
+                    fontWeight: i === 0 ? 400 : 300,
+                    color: i === 0 ? "var(--ink-soft)" : "var(--muted)",
+                    lineHeight: 1.85,
+                    marginBottom: "18px",
+                  }}
+                >
+                  {para}
+                </p>
+              ))}
+
+              <div style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <a href="/contact" className="btn btn--gold">Book a Consultation</a>
+                <a href="/services" className="btn btn--outline-dark">View Services</a>
               </div>
             </div>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
 
-      {/* Values Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Our Core Values
+        <style>{`@media (max-width: 800px) { .bio-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* Approach section */}
+      <section
+        style={{
+          background: "var(--cream)",
+          borderTop: "1px solid var(--border)",
+          paddingTop: "clamp(72px, 10vw, 120px)",
+          paddingBottom: "clamp(72px, 10vw, 120px)",
+        }}
+      >
+        <div className="container">
+          <div style={{ maxWidth: "640px", marginBottom: "clamp(48px, 7vw, 72px)" }}>
+            <span className="label" style={{ marginBottom: "14px" }}>Our Approach</span>
+            <div className="rule" />
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
+              How we approach
+              <br />
+              <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 300 }}>every matter</em>
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These principles guide our practice and define our approach to legal services.
-            </p>
-          </AnimatedSection>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <AnimatedSection animation="slideUp" delay={0.1} className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-primary mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(24px, 4vw, 48px)" }} className="approach-grid">
+            {[
+              {
+                num: "01",
+                title: "Straight Talk",
+                desc: "We explain what the law allows, the realistic risks, and the practical next steps — without jargon or false reassurance. Our clients make informed decisions."
+              },
+              {
+                num: "02",
+                title: "Preparation Matters",
+                desc: "We prioritise evidence, chronology, and strategic positioning. Getting the groundwork right is fundamental to achieving the best available outcome."
+              },
+              {
+                num: "03",
+                title: "Client-First Communication",
+                desc: "Prompt updates and clear expectations. You'll always know where your matter stands and what comes next — no chasing, no surprises."
+              },
+              {
+                num: "04",
+                title: "Cross-Practice Support",
+                desc: "Family, migration, property and disputes all under one roof. When matters intersect, we can address each dimension without a referral merry-go-round."
+              },
+            ].map((item) => (
+              <div
+                key={item.num}
+                style={{
+                  padding: "clamp(28px, 3vw, 40px)",
+                  background: "var(--white)",
+                  border: "1px solid var(--border)",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "3px",
+                    height: "100%",
+                    background: "linear-gradient(180deg, var(--gold) 0%, transparent 100%)",
+                    opacity: 0.6,
+                  }}
+                />
+                <span style={{
+                  fontFamily: "var(--font-accent)",
+                  fontStyle: "italic",
+                  fontSize: "0.72rem",
+                  color: "var(--gold)",
+                  display: "block",
+                  marginBottom: "16px",
+                  opacity: 0.8,
+                }}>
+                  {item.num}
+                </span>
+                <h3 style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.2rem",
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                  marginBottom: "12px",
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  fontSize: "0.88rem",
+                  fontWeight: 300,
+                  color: "var(--muted)",
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}>
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Integrity</h3>
-              <p className="text-gray-600">
-                We adhere to the highest ethical standards in our practice, providing honest advice and transparent communication at all times.
-              </p>
-            </AnimatedSection>
+            ))}
+          </div>
+        </div>
+        <style>{`@media (max-width: 640px) { .approach-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
 
-            <AnimatedSection animation="slideUp" delay={0.2} className="bg-white p-8 rounded-lg shadow-md">
-              <div className="text-primary mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Excellence</h3>
-              </AnimatedSection>
+      {/* Values section */}
+      <section
+        style={{
+          background: "var(--navy)",
+          paddingTop: "clamp(72px, 10vw, 120px)",
+          paddingBottom: "clamp(72px, 10vw, 120px)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 60% 50% at 90% 50%, rgba(201,168,76,0.05) 0%, transparent 60%)",
+        }} />
+        <div className="container" style={{ position: "relative" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(48px, 7vw, 72px)" }}>
+            <span className="label label--light" style={{ marginBottom: "14px" }}>What We Stand For</span>
+            <div className="rule rule--center rule--light" />
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--white)" }}>
+              Our <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 300 }}>values</em>
+            </h2>
+          </div>
 
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "rgba(255,255,255,0.06)" }} className="values-grid">
+            {values.map((v, i) => (
+              <div
+                key={v.title}
+                style={{
+                  background: "var(--navy)",
+                  padding: "clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 32px)",
+                  borderTop: "2px solid transparent",
+                  transition: "border-color 0.3s",
+                  position: "relative",
+                }}
+                className="value-card"
+              >
+                <div style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "2.5rem",
+                  color: "rgba(201,168,76,0.15)",
+                  lineHeight: 1,
+                  marginBottom: "20px",
+                }}>
+                  {["⊹", "◎", "✦", "◈"][i]}
+                </div>
+                <h4 style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  color: "var(--white)",
+                  marginBottom: "10px",
+                  lineHeight: 1.3,
+                }}>
+                  {v.title}
+                </h4>
+                <p style={{
+                  fontSize: "0.84rem",
+                  fontWeight: 300,
+                  color: "rgba(255,255,255,0.45)",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}>
+                  {v.desc}
+                </p>
+                <style>{`.value-card:hover { border-top-color: var(--gold) !important; }`}</style>
               </div>
-              </div>
-              </section>
-              </main>
-  )
+            ))}
+          </div>
+        </div>
+        <style>{`@media (max-width: 860px) { .values-grid { grid-template-columns: repeat(2,1fr) !important; } } @media (max-width: 480px) { .values-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      <ContactCTA />
+    </>
+  );
 }
-
-export default AboutPage

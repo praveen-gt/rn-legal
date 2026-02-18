@@ -1,88 +1,95 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter, Merriweather } from 'next/font/google'
-// import Header from '@/components/layout/Header'
-// import Footer from '@/components/layout/Footer'
-import './globals.css'
-import ClientLayout from '@/components/layout/ClientLayout'
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
-
-const merriweather = Merriweather({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-merriweather',
-})
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/lib/config";
+import { Cormorant_Garamond, Cormorant, Jost } from "next/font/google";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Vidhi Mantra Legal Consultants | High Court Chandigarh',
-    template: '%s | Vidhi Mantra Legal Consultants',
+    default: "R&N Legal | Boutique Legal Practice Melbourne",
+    template: "%s — R&N Legal",
   },
-  description: 'Premier law partnership firm specializing in litigation, corporate advisory, and dispute resolution in Punjab and Haryana High Court.',
-  keywords: ['law firm', 'legal consultants', 'high court', 'chandigarh', 'punjab', 'haryana', 'litigation', 'corporate law', 'banking law'],
-  authors: [{ name: 'Vidhi Mantra Legal Consultants' }],
-  creator: 'Vidhi Mantra Legal Consultants',
-  publisher: 'Vidhi Mantra Legal Consultants',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://vidhimantra.com'),
-  alternates: {
-    canonical: '/',
-  },
+  description: siteConfig.description,
+  keywords: [
+    "Melbourne lawyer", "boutique law firm Melbourne", "family law Melbourne",
+    "intervention order lawyer Victoria", "FVIO lawyer", "immigration lawyer Melbourne",
+    "conveyancing Melbourne", "civil litigation Melbourne", "R&N Legal", "Rajat Kanti Roy",
+    "wills estates Melbourne", "traffic offence lawyer Victoria",
+  ],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   openGraph: {
-    title: 'Vidhi Mantra Legal Consultants | High Court Chandigarh',
-    description: 'Premier law partnership firm specializing in litigation, corporate advisory, and dispute resolution.',
-    url: 'https://vidhimantra.com',
-    siteName: 'Vidhi Mantra Legal Consultants',
-    locale: 'en_US',
-    type: 'website',
+    type: "website",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: "R&N Legal | Boutique Legal Practice Melbourne",
+    description: siteConfig.description,
+    locale: "en_AU",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Vidhi Mantra Legal Consultants | High Court Chandigarh',
-    description: 'Premier law partnership firm specializing in litigation, corporate advisory, and dispute resolution.',
+    card: "summary_large_image",
+    title: "R&N Legal | Boutique Legal Practice Melbourne",
+    description: siteConfig.description,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  alternates: { canonical: siteConfig.url },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": siteConfig.name,
+  "description": siteConfig.description,
+  "url": siteConfig.url,
+  "telephone": siteConfig.phone1,
+  "email": siteConfig.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteConfig.address,
+    "addressLocality": "Melbourne",
+    "addressRegion": "VIC",
+    "addressCountry": "AU",
   },
-}
+  "openingHours": "Mo-Fr 10:00-17:00",
+  "areaServed": "Victoria, Australia",
+  "priceRange": "$$",
+};
 
-export const viewport: Viewport = {
-  themeColor: '#112F41',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-}
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const cormorant = Cormorant({
+  subsets: ["latin"],
+  variable: "--font-accent",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
-      <body className="flex flex-col min-h-screen">
-         <ClientLayout>{children}</ClientLayout>
-        {/* <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer /> */}
+    <html
+      lang="en-AU"
+      className={`${cormorantGaramond.variable} ${cormorant.variable} ${jost.variable}`}
+    >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
