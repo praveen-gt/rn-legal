@@ -1,95 +1,113 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { siteConfig } from "@/lib/config";
-import { Cormorant_Garamond, Cormorant, Jost } from "next/font/google";
+// import type { Metadata } from 'next'
+// import './globals.css'
+// import { Header } from '@/components/layout/Header'
+// import { Footer } from '@/components/layout/Footer'
+// import { DisclaimerPopup } from '@/components/ui/DisclaimerPopup'
+// import { PremiumEffects } from '@/components/ui/PremiumEffects'
+// import { siteConfig } from '@/lib/config'
+
+// export const metadata: Metadata = {
+//   title: {
+//     default: `${siteConfig.name} — ${siteConfig.tagline}`,
+//     template: `%s | ${siteConfig.name}`,
+//   },
+//   description: siteConfig.description,
+//   keywords: ['lawyer Melbourne', 'family law Victoria', 'migration law', 'conveyancing Melbourne', 'FVIO lawyer', 'litigation Melbourne', 'R&N Legal', 'boutique law firm Melbourne'],
+//   openGraph: {
+//     title: siteConfig.name,
+//     description: siteConfig.description,
+//     url: siteConfig.url,
+//     siteName: siteConfig.name,
+//     locale: 'en_AU',
+//     type: 'website',
+//   },
+//   robots: { index: true, follow: true },
+// }
+
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en-AU" className="scroll-smooth">
+//       <body className="flex flex-col min-h-screen antialiased">
+//         {/* Custom cursor elements */}
+//         <div id="cursor-dot" className="no-print" aria-hidden="true" />
+//         <div id="cursor-ring" className="no-print" aria-hidden="true" />
+        
+//         <PremiumEffects />
+//         <DisclaimerPopup />
+//         <Header />
+//         <main className="flex-1">{children}</main>
+//         <Footer />
+//       </body>
+//     </html>
+//   )
+// }
+
+
+import type { Metadata } from 'next'
+import { Cormorant_Garamond, DM_Serif_Display, DM_Sans } from 'next/font/google'
+import './globals.css'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { DisclaimerPopup } from '@/components/ui/DisclaimerPopup'
+import { PremiumEffects } from '@/components/ui/PremiumEffects'
+import { siteConfig } from '@/lib/config'
+
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "R&N Legal | Boutique Legal Practice Melbourne",
-    template: "%s — R&N Legal",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "Melbourne lawyer", "boutique law firm Melbourne", "family law Melbourne",
-    "intervention order lawyer Victoria", "FVIO lawyer", "immigration lawyer Melbourne",
-    "conveyancing Melbourne", "civil litigation Melbourne", "R&N Legal", "Rajat Kanti Roy",
-    "wills estates Melbourne", "traffic offence lawyer Victoria",
-  ],
-  authors: [{ name: siteConfig.name, url: siteConfig.url }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
+  keywords: ['lawyer Melbourne', 'family law Victoria', 'migration law', 'conveyancing Melbourne', 'FVIO lawyer', 'litigation Melbourne', 'R&N Legal', 'boutique law firm Melbourne'],
   openGraph: {
-    type: "website",
+    title: siteConfig.name,
+    description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "R&N Legal | Boutique Legal Practice Melbourne",
-    description: siteConfig.description,
-    locale: "en_AU",
+    locale: 'en_AU',
+    type: 'website',
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "R&N Legal | Boutique Legal Practice Melbourne",
-    description: siteConfig.description,
-  },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
-  alternates: { canonical: siteConfig.url },
-};
+  robots: { index: true, follow: true },
+}
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": siteConfig.name,
-  "description": siteConfig.description,
-  "url": siteConfig.url,
-  "telephone": siteConfig.phone1,
-  "email": siteConfig.email,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": siteConfig.address,
-    "addressLocality": "Melbourne",
-    "addressRegion": "VIC",
-    "addressCountry": "AU",
-  },
-  "openingHours": "Mo-Fr 10:00-17:00",
-  "areaServed": "Victoria, Australia",
-  "priceRange": "$$",
-};
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
 
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-dm-serif',
+  display: 'swap',
+})
 
-const cormorant = Cormorant({
-  subsets: ["latin"],
-  variable: "--font-accent",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-body",
-});
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en-AU"
-      className={`${cormorantGaramond.variable} ${cormorant.variable} ${jost.variable}`}
-    >
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </head>
-      <body>
+<html lang="en-AU" className={`scroll-smooth ${cormorant.variable} ${dmSerif.variable} ${dmSans.variable}`}>
+      <body className="font-body flex flex-col min-h-screen antialiased">
+        {/* Custom cursor elements */}
+        <div id="cursor-dot" className="no-print" aria-hidden="true" />
+        <div id="cursor-ring" className="no-print" aria-hidden="true" />
+
+        <PremiumEffects />
+        <DisclaimerPopup />
         <Header />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
-  );
+  )
 }

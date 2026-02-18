@@ -1,357 +1,219 @@
-import type { Metadata } from "next";
-import { siteConfig } from "@/lib/config";
-import PageHero from "@/components/ui/PageHero";
-import ContactCTA from "@/components/ui/ContactCTA";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { PageHero } from '@/components/ui/PageHero'
+import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "About R&N Legal — Director Rajat Kanti Roy has practised law in Victoria since 2013. Learn about our approach, values and commitment to accessible professional legal services.",
-  alternates: { canonical: `${siteConfig.url}/about` },
-  openGraph: {
-    url: `${siteConfig.url}/about`,
-    title: `About — R&N Legal`,
-    description: "Boutique Melbourne legal practice led by Rajat Kanti Roy. Over a decade of experience in litigation, family law, immigration and property.",
-  },
-};
+  title: 'About Us',
+  description: 'R&N Legal — committed to accessible, professional legal services in Victoria. Learn about our director Rajat Kanti Roy and our approach.',
+}
 
 const values = [
-  { title: "Integrity & Confidentiality", desc: "Every matter handled with complete professional discretion from day one to resolution." },
-  { title: "Practical, Outcome-Focused Advice", desc: "We focus on what's achievable and the most effective pathway to get there — not billing hours." },
-  { title: "Respectful, Culturally Aware Service", desc: "We assist individuals from diverse cultural backgrounds with genuine sensitivity and care." },
-  { title: "Professional Standards & Compliance", desc: "Maintaining the highest professional standards required of Victorian legal practitioners." },
-];
+  { num: '01', title: 'Integrity & Confidentiality', body: 'Every matter is handled with discretion and to the highest ethical standards under the Legal Profession Uniform Law (Victoria).' },
+  { num: '02', title: 'Practical, Outcome-Focused', body: 'We give realistic assessments — not what you want to hear, but what you need to know to make well-informed decisions.' },
+  { num: '03', title: 'Respectful & Culturally Aware', body: 'We work with clients from diverse backgrounds and understand that context and culture matter in every matter we handle.' },
+  { num: '04', title: 'Professional Standards', body: 'All services delivered in compliance with applicable professional conduct rules and the obligations of our practising certificates.' },
+]
+
+const approach = [
+  { label: 'Straight Talk', body: 'We explain what the law allows, the realistic risks, and the practical next steps — in plain English, no jargon.' },
+  { label: 'Preparation Matters', body: 'We prioritise evidence, chronology and strategic positioning. A well-prepared matter is a better-positioned matter.' },
+  { label: 'Client-First Communication', body: 'Prompt updates and clear expectations at every stage. You should always know where your matter stands.' },
+]
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="About"
-        title="Accessible."
-        titleItalic="Professional. Precise."
-        subtitle="R&N Legal is committed to professional legal services delivered with clarity, careful preparation, and standards expected of the best practitioners."
+        label="About R&N Legal"
+        title="A Practice Built on"
+        italic="Clarity & Care"
+        description="Professional, accessible legal services — helping individuals, families and businesses navigate complex matters with confidence."
+        imageUrl="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=85&auto=format&fit=crop"
       />
 
-      {/* Director section */}
-      <section
-        style={{
-          background: "var(--ivory)",
-          paddingTop: "clamp(72px, 10vw, 120px)",
-          paddingBottom: "clamp(72px, 10vw, 120px)",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1.1fr",
-              gap: "clamp(48px, 8vw, 96px)",
-              alignItems: "start",
-            }}
-            className="bio-grid"
-          >
-            {/* Portrait placeholder / monogram */}
-            <div>
-              <div
-                style={{
-                  aspectRatio: "4/5",
-                  background: "linear-gradient(150deg, var(--navy-mid) 0%, var(--navy) 50%, var(--ink) 100%)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  position: "relative",
-                  overflow: "hidden",
-                  marginBottom: "0",
-                }}
-              >
-                {/* Background pattern */}
-                <div style={{
-                  position: "absolute", inset: 0,
-                  backgroundImage: "radial-gradient(circle at 30% 70%, rgba(201,168,76,0.1) 0%, transparent 50%)",
-                }} />
-                <span
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(80px, 15vw, 140px)",
-                    fontWeight: 300,
-                    color: "rgba(255,255,255,0.08)",
-                    lineHeight: 1,
-                    fontStyle: "italic",
-                    userSelect: "none",
-                    position: "absolute",
-                  }}
-                >
-                  RKR
-                </span>
-                <div style={{ position: "relative", textAlign: "center", padding: "40px" }}>
-                  <div
-                    style={{
-                      width: "80px",
-                      height: "80px",
-                      borderRadius: "50%",
-                      border: "1px solid rgba(201,168,76,0.4)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto 20px",
-                    }}
-                  >
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "var(--gold)", fontWeight: 300 }}>⚖</span>
-                  </div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 500, color: "var(--white)", marginBottom: "6px" }}>
-                    {siteConfig.director}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)", opacity: 0.8 }}>
-                    {siteConfig.directorTitle}
+      {/* Mission */}
+      <section className="py-24 lg:py-36 bg-cream-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            {/* Label column */}
+            <div className="lg:col-span-3" data-animate>
+              <div className="section-label mb-4">Our Mission</div>
+              <div className="w-12 h-px mt-3" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+            </div>
+            {/* Content */}
+            <div className="lg:col-span-9">
+              <h2 className="font-display font-light text-navy-950 leading-[1.06] mb-8"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }} data-animate data-delay="1">
+                Making Complex Legal Processes
+                <em className="font-light" style={{ background: 'linear-gradient(105deg, #a37214, #dba828)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontStyle: 'italic' }}>
+                  {' '}Easier to Navigate
+                </em>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-animate data-delay="2">
+                <p className="text-navy-600/65 font-body leading-relaxed">
+                  R&N Legal is committed to providing professional, accessible and carefully structured legal services. We assist individuals, families and businesses with matters that require precision, discretion and strategic thinking.
+                </p>
+                <p className="text-navy-600/65 font-body leading-relaxed">
+                  We aim to make complex legal processes easier to understand while maintaining the standards and care that each matter demands. Every client deserves to know where they stand — and how to get to where they need to be.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-24 lg:py-32 bg-navy-950 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(196,145,26,0.06), transparent 65%)' }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left text */}
+            <div data-animate>
+              <div className="section-label text-gold-400/70 mb-6">Our Approach</div>
+              <h2 className="font-display font-light text-white leading-tight mb-3"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+                Three Principles
+                <br />
+                That Guide Every Matter
+              </h2>
+              <div className="w-12 h-px mt-6 mb-8" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+              {approach.map((item, i) => (
+                <div key={item.label} className="border-t border-white/8 py-5 first:border-t-0 group hover:border-gold-400/20 transition-colors duration-300" data-animate data-delay={String(i + 1)}>
+                  <div className="flex items-start gap-5">
+                    <span className="text-white/15 font-display font-light text-3xl leading-none group-hover:text-gold-400/20 transition-colors duration-300 shrink-0">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 className="font-display font-semibold text-white text-xl mb-2">{item.label}</h3>
+                      <p className="text-white/40 font-body text-sm leading-relaxed">{item.body}</p>
+                    </div>
                   </div>
                 </div>
-                {/* Bottom rule */}
-                <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0,
-                  height: "2px",
-                  background: "linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent)",
-                }} />
+              ))}
+            </div>
+            {/* Right image */}
+            <div className="relative" data-animate="right" data-delay="2">
+              <div className="aspect-[4/5] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=85&auto=format&fit=crop"
+                  alt="Professional solicitor"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0"
+                  style={{ background: 'linear-gradient(to bottom right, transparent 50%, rgba(6,13,26,0.5))' }} />
               </div>
+              {/* Quote overlay */}
+              <div className="absolute bottom-8 left-0 right-0 px-6">
+                <div className="bg-navy-950/90 backdrop-blur-sm border border-gold-400/20 p-6">
+                  <p className="font-display font-light text-white/80 text-lg italic leading-snug mb-3">
+                    "Clear advice, careful preparation and honest communication make the biggest difference."
+                  </p>
+                  <p className="text-gold-400/60 font-body text-xs tracking-widest uppercase">
+                    — Rajat Kanti Roy, Director
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Credentials */}
-              <div style={{ marginTop: "0", padding: "24px 28px", background: "var(--navy)", display: "flex", gap: "24px" }}>
-                {[
-                  { label: "Practising", val: "Since 2013" },
-                  { label: "Jurisdiction", val: "Victoria" },
-                ].map((c) => (
-                  <div key={c.label}>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(201,168,76,0.7)", marginBottom: "4px" }}>
-                      {c.label}
+      {/* Director profile */}
+      <section className="py-24 lg:py-36 bg-cream-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            {/* Left heading */}
+            <div className="lg:col-span-4" data-animate>
+              <div className="section-label mb-5">Leadership</div>
+              <h2 className="font-display font-light text-navy-950 leading-tight mb-6"
+                style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}>
+                Director &amp;
+                <br />
+                <em style={{ background: 'linear-gradient(105deg, #a37214, #dba828)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontStyle: 'italic' }}>
+                  Principal Solicitor
+                </em>
+              </h2>
+
+              {/* Profile card */}
+              <div className="bg-navy-950 p-6 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px]"
+                  style={{ background: 'linear-gradient(90deg, #a37214, #dba828, #f1da93, #a37214)' }} />
+                <div className="w-14 h-14 flex items-center justify-center mb-5"
+                  style={{ background: 'linear-gradient(135deg, #a37214, #dba828)' }}>
+                  <span className="font-display font-semibold text-navy-950 text-lg">RKR</span>
+                </div>
+                <h3 className="font-display font-semibold text-white text-2xl mb-1">Rajat Kanti Roy</h3>
+                <p className="text-gold-400/60 font-body text-xs tracking-widest uppercase mb-5">Director</p>
+                <div className="space-y-2 border-t border-white/8 pt-4">
+                  {[
+                    { l: 'Admitted', v: '2013 · Victoria' },
+                    { l: 'Experience', v: '10+ Years' },
+                    { l: 'Jurisdiction', v: 'Victorian Courts & Tribunals' },
+                    { l: 'Languages', v: 'English · Bengali' },
+                  ].map(({ l, v }) => (
+                    <div key={l} className="flex justify-between text-xs font-body">
+                      <span className="text-white/30">{l}</span>
+                      <span className="text-white/60 font-medium">{v}</span>
                     </div>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 500, color: "var(--white)" }}>
-                      {c.val}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Bio text */}
-            <div>
-              <span className="label" style={{ marginBottom: "14px" }}>Director & Principal</span>
-              <div className="rule" />
-              <h2
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 400,
-                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                  marginBottom: "28px",
-                  lineHeight: 1.1,
-                }}
-              >
-                {siteConfig.director}
-              </h2>
-
+            {/* Right bio */}
+            <div className="lg:col-span-8 space-y-5" data-animate data-delay="2">
               {[
-                `Rajat Kanti Roy is the Director of R&N Legal and has practised law in Victoria since 2013. He brings more than a decade of experience advising and representing clients across a broad range of legal matters, with a particular emphasis on litigation and dispute resolution.`,
-                `Rajat has extensive experience in civil litigation including contractual disputes, property disputes, consumer law matters, traffic and regulatory offences, and proceedings before Victorian courts and tribunals. He is regularly involved in the preparation of pleadings, affidavits, evidentiary material and submissions, and adopts a disciplined, detail-driven approach to litigation strategy.`,
-                `In addition to litigation, Rajat advises clients in family law matters including family violence intervention orders, divorce and parenting proceedings, as well as conveyancing, property law and immigration-related matters involving tribunal and court pathways.`,
-                `Rajat maintains strong engagement within the local Victorian community and regularly assists individuals and families from diverse cultural backgrounds. This community-focused perspective informs the values and service standards of R&N Legal.`,
+                "Rajat Kanti Roy is the Director of R&N Legal and has practised law in Victoria since 2013. He brings more than a decade of experience advising and representing clients across a broad range of legal matters including civil litigation, family law, migration, and property.",
+                "Rajat has extensive experience in civil litigation including contractual disputes, property disputes, consumer law matters, traffic and regulatory offences, and proceedings before Victorian courts and tribunals including the Magistrates Court, County Court and VCAT.",
+                "In addition to litigation, Rajat advises clients in family law matters including family violence intervention orders, divorce and parenting proceedings, as well as conveyancing, property law and immigration matters including visa strategy and merits review before the Administrative Review Tribunal (ART) and the Federal Circuit and Family Court of Australia.",
+                "Rajat maintains strong engagement within the local Victorian community and regularly assists individuals and families from diverse cultural backgrounds. This community-focused perspective informs the accessible and respectful approach that R&N Legal brings to every client interaction.",
               ].map((para, i) => (
-                <p
-                  key={i}
-                  style={{
-                    fontSize: i === 0 ? "1.05rem" : "0.95rem",
-                    fontWeight: i === 0 ? 400 : 300,
-                    color: i === 0 ? "var(--ink-soft)" : "var(--muted)",
-                    lineHeight: 1.85,
-                    marginBottom: "18px",
-                  }}
-                >
+                <p key={i} className="text-navy-600/65 font-body leading-relaxed text-lg border-l-2 border-transparent hover:border-gold-400/30 pl-5 hover:pl-6 transition-all duration-300">
                   {para}
                 </p>
               ))}
-
-              <div style={{ marginTop: "32px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                <a href="/contact" className="btn btn--gold">Book a Consultation</a>
-                <a href="/services" className="btn btn--outline-dark">View Services</a>
+              <div className="pt-4">
+                <Link href="/contact" className="btn-gold">
+                  Book a Consultation
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             </div>
           </div>
         </div>
-
-        <style>{`@media (max-width: 800px) { .bio-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
-      {/* Approach section */}
-      <section
-        style={{
-          background: "var(--cream)",
-          borderTop: "1px solid var(--border)",
-          paddingTop: "clamp(72px, 10vw, 120px)",
-          paddingBottom: "clamp(72px, 10vw, 120px)",
-        }}
-      >
-        <div className="container">
-          <div style={{ maxWidth: "640px", marginBottom: "clamp(48px, 7vw, 72px)" }}>
-            <span className="label" style={{ marginBottom: "14px" }}>Our Approach</span>
-            <div className="rule" />
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
-              How we approach
-              <br />
-              <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 300 }}>every matter</em>
+      {/* Values */}
+      <section className="py-24 lg:py-32 bg-cream-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16" data-animate>
+            <div className="section-label justify-center mb-5">Our Values</div>
+            <h2 className="font-display font-light text-navy-950"
+              style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)' }}>
+              What We Stand For
             </h2>
           </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(24px, 4vw, 48px)" }} className="approach-grid">
-            {[
-              {
-                num: "01",
-                title: "Straight Talk",
-                desc: "We explain what the law allows, the realistic risks, and the practical next steps — without jargon or false reassurance. Our clients make informed decisions."
-              },
-              {
-                num: "02",
-                title: "Preparation Matters",
-                desc: "We prioritise evidence, chronology, and strategic positioning. Getting the groundwork right is fundamental to achieving the best available outcome."
-              },
-              {
-                num: "03",
-                title: "Client-First Communication",
-                desc: "Prompt updates and clear expectations. You'll always know where your matter stands and what comes next — no chasing, no surprises."
-              },
-              {
-                num: "04",
-                title: "Cross-Practice Support",
-                desc: "Family, migration, property and disputes all under one roof. When matters intersect, we can address each dimension without a referral merry-go-round."
-              },
-            ].map((item) => (
-              <div
-                key={item.num}
-                style={{
-                  padding: "clamp(28px, 3vw, 40px)",
-                  background: "var(--white)",
-                  border: "1px solid var(--border)",
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "3px",
-                    height: "100%",
-                    background: "linear-gradient(180deg, var(--gold) 0%, transparent 100%)",
-                    opacity: 0.6,
-                  }}
-                />
-                <span style={{
-                  fontFamily: "var(--font-accent)",
-                  fontStyle: "italic",
-                  fontSize: "0.72rem",
-                  color: "var(--gold)",
-                  display: "block",
-                  marginBottom: "16px",
-                  opacity: 0.8,
-                }}>
-                  {item.num}
-                </span>
-                <h3 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.2rem",
-                  fontWeight: 500,
-                  color: "var(--ink)",
-                  marginBottom: "12px",
-                }}>
-                  {item.title}
-                </h3>
-                <p style={{
-                  fontSize: "0.88rem",
-                  fontWeight: 300,
-                  color: "var(--muted)",
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <style>{`@media (max-width: 640px) { .approach-grid { grid-template-columns: 1fr !important; } }`}</style>
-      </section>
-
-      {/* Values section */}
-      <section
-        style={{
-          background: "var(--navy)",
-          paddingTop: "clamp(72px, 10vw, 120px)",
-          paddingBottom: "clamp(72px, 10vw, 120px)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 50% at 90% 50%, rgba(201,168,76,0.05) 0%, transparent 60%)",
-        }} />
-        <div className="container" style={{ position: "relative" }}>
-          <div style={{ textAlign: "center", marginBottom: "clamp(48px, 7vw, 72px)" }}>
-            <span className="label label--light" style={{ marginBottom: "14px" }}>What We Stand For</span>
-            <div className="rule rule--center rule--light" />
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--white)" }}>
-              Our <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 300 }}>values</em>
-            </h2>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "rgba(255,255,255,0.06)" }} className="values-grid">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-navy-200/40">
             {values.map((v, i) => (
-              <div
-                key={v.title}
-                style={{
-                  background: "var(--navy)",
-                  padding: "clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 32px)",
-                  borderTop: "2px solid transparent",
-                  transition: "border-color 0.3s",
-                  position: "relative",
-                }}
-                className="value-card"
-              >
-                <div style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "2.5rem",
-                  color: "rgba(201,168,76,0.15)",
-                  lineHeight: 1,
-                  marginBottom: "20px",
-                }}>
-                  {["⊹", "◎", "✦", "◈"][i]}
+              <div key={v.num} className="bg-cream-100 p-10 group hover:bg-navy-950 transition-colors duration-500 relative overflow-hidden"
+                data-animate data-delay={String((i % 2) + 1)}>
+                <div className="absolute -bottom-4 -right-2 font-display font-light select-none pointer-events-none text-navy-900/[0.04] group-hover:text-white/[0.03] transition-colors duration-500"
+                  style={{ fontSize: '9rem', lineHeight: 1 }}>
+                  {v.num}
                 </div>
-                <h4 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.1rem",
-                  fontWeight: 500,
-                  color: "var(--white)",
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                }}>
-                  {v.title}
-                </h4>
-                <p style={{
-                  fontSize: "0.84rem",
-                  fontWeight: 300,
-                  color: "rgba(255,255,255,0.45)",
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}>
-                  {v.desc}
-                </p>
-                <style>{`.value-card:hover { border-top-color: var(--gold) !important; }`}</style>
+                <div className="relative z-10">
+                  <div className="w-8 h-px mb-6" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+                  <h3 className="font-display font-semibold text-navy-900 group-hover:text-white text-2xl leading-tight mb-3 transition-colors duration-500">{v.title}</h3>
+                  <p className="text-navy-600/55 group-hover:text-white/45 font-body text-sm leading-relaxed transition-colors duration-500">{v.body}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <style>{`@media (max-width: 860px) { .values-grid { grid-template-columns: repeat(2,1fr) !important; } } @media (max-width: 480px) { .values-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
-      <ContactCTA />
+      <CTASection />
     </>
-  );
+  )
 }

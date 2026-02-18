@@ -1,98 +1,54 @@
-import type { ReactNode } from "react";
-
 interface PageHeroProps {
-  label?: string;
-  title: string;
-  titleItalic?: string;
-  subtitle?: string;
-  children?: ReactNode;
-  slim?: boolean;
+  label?: string
+  title: string
+  italic?: string
+  description?: string
+  imageUrl?: string
+  imageAlt?: string
+  accent?: string
 }
 
-export default function PageHero({ label, title, titleItalic, subtitle, children, slim }: PageHeroProps) {
+export function PageHero({ label, title, italic, description, imageUrl, imageAlt, accent }: PageHeroProps) {
+  const img = imageUrl || 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80&auto=format&fit=crop'
   return (
-    <section
-      style={{
-        background: "var(--ink)",
-        paddingTop: slim ? "clamp(100px, 14vw, 152px)" : "clamp(110px, 16vw, 172px)",
-        paddingBottom: slim ? "clamp(48px, 6vw, 72px)" : "clamp(64px, 9vw, 108px)",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background details */}
-      <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-        <div style={{
-          position: "absolute", inset: 0,
-          background: "radial-gradient(ellipse 70% 50% at 80% 50%, #142150 0%, transparent 60%)",
-        }} />
-        <div style={{
-          position: "absolute",
-          bottom: 0, left: 0, right: 0,
-          height: "1px",
-          background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 20%, rgba(201,168,76,0.3) 80%, transparent)",
-        }} />
-        {/* Decorative large letter */}
-        <div style={{
-          position: "absolute",
-          top: "50%",
-          right: "-2%",
-          transform: "translateY(-50%)",
-          fontFamily: "var(--font-display)",
-          fontSize: "clamp(140px, 22vw, 300px)",
-          fontWeight: 700,
-          color: "transparent",
-          WebkitTextStroke: "1px rgba(201,168,76,0.05)",
-          lineHeight: 1,
-          userSelect: "none",
-          letterSpacing: "-0.04em",
-        }}>
-          {label?.split(" ")[0] || "RN"}
-        </div>
+    <section className="relative min-h-[55vh] sm:min-h-[62vh] flex items-end overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={img} alt={imageAlt || title}
+          className="w-full h-full object-cover object-center"
+          data-parallax="0.2"
+        />
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(6,13,26,0.45) 0%, rgba(6,13,26,0.75) 60%, rgba(6,13,26,0.96) 100%)' }} />
       </div>
 
-      <div className="container" style={{ position: "relative" }}>
+      {/* Gold line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(219,168,40,0.3), transparent)' }} />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-40">
         {label && (
-          <span className="label label--light" style={{ marginBottom: "14px" }}>{label}</span>
+          <div className="section-label text-gold-400/80 mb-5" data-animate data-delay="1">
+            {label}
+          </div>
         )}
-        <div className="rule rule--light" />
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            color: "var(--white)",
-            fontSize: "clamp(2.8rem, 7vw, 5rem)",
-            lineHeight: 1.05,
-            maxWidth: "700px",
-            marginBottom: subtitle ? "20px" : 0,
-          }}
-        >
-          {title}
-          {titleItalic && (
-            <>
-              <br />
-              <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 300 }}>
-                {titleItalic}
-              </em>
-            </>
-          )}
+        <h1 className="font-display font-light text-white leading-[1.05]" data-animate data-delay="2"
+          style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}>
+          {title}{' '}
+          {italic && <em className="italic not-italic font-light text-gold-gradient bg-clip-text"
+            style={{ background: 'linear-gradient(105deg, #dba828, #f1da93, #dba828)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            {italic}
+          </em>}
         </h1>
-        {subtitle && (
-          <p
-            style={{
-              fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
-              fontWeight: 300,
-              color: "rgba(255,255,255,0.55)",
-              maxWidth: "580px",
-              lineHeight: 1.75,
-              marginTop: "16px",
-            }}
-          >
-            {subtitle}
+        {description && (
+          <p className="mt-5 text-white/55 font-body text-lg max-w-2xl leading-relaxed" data-animate data-delay="3">
+            {description}
           </p>
         )}
-        {children}
+        {/* Bottom accent line */}
+        <div className="mt-8 w-16 h-px bg-gold-gradient" data-animate="scale" data-delay="4" />
       </div>
     </section>
-  );
+  )
 }

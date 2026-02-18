@@ -1,33 +1,26 @@
-import type { Metadata } from "next";
-import { siteConfig } from "@/lib/config";
-import HeroSection from "@/components/sections/HeroSection";
-import TrustStrip from "@/components/sections/TrustStrip";
-import ServicesSnapshot from "@/components/sections/ServicesSnapshot";
-import AboutPreview from "@/components/sections/AboutPreview";
-import ProcessSection from "@/components/sections/ProcessSection";
-import ContactCTA from "@/components/ui/ContactCTA";
+import type { Metadata } from 'next'
+import { HeroSection } from '@/components/sections/HeroSection'
+import { MarqueeSection } from '@/components/sections/MarqueeSection'
+import { ServicesSection } from '@/components/sections/ServicesSection'
+import { AboutSection } from '@/components/sections/AboutSection'
+import { ProcessSection } from '@/components/sections/ProcessSection'
+import { CTASection } from '@/components/sections/CTASection'
+import { siteConfig } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: "R&N Legal | Boutique Legal Practice Melbourne",
-  description:
-    "R&N Legal is a Melbourne boutique practice providing clear, practical legal advice across family law, FVIO, migration, conveyancing, litigation and more. Book a consultation today.",
-  alternates: { canonical: siteConfig.url },
-  openGraph: {
-    url: siteConfig.url,
-    title: "R&N Legal | Boutique Legal Practice Melbourne",
-    description: siteConfig.description,
-  },
-};
+  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  description: siteConfig.description,
+}
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <TrustStrip />
-      <ServicesSnapshot />
-      <AboutPreview />
+      <MarqueeSection />
+      <ServicesSection />
+      <AboutSection />
       <ProcessSection />
-      <ContactCTA dark />
+      <CTASection />
     </>
-  );
+  )
 }

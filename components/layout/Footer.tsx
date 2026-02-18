@@ -1,208 +1,137 @@
-// import Link from "next/link";
-// import { siteConfig, navLinks, practiceAreas } from "@/lib/config";
+import Link from 'next/link'
+import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react'
+import { siteConfig } from '@/lib/config'
 
-// export default function Footer() {
-//   const year = new Date().getFullYear();
-//   return (
-//     <footer
-//       style={{
-//         background: "var(--ink)",
-//         color: "rgba(255,255,255,0.5)",
-//         position: "relative",
-//         overflow: "hidden",
-//       }}
-//     >
-//       <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent)" }} />
-
-//       <div className="container" style={{ paddingTop: "clamp(56px,8vw,96px)", paddingBottom: "clamp(48px,6vw,72px)" }}>
-//         <div className="footer-grid" style={{ display: "grid", gap: "clamp(32px,5vw,72px)" }}>
-
-//           {/* Brand */}
-//           <div>
-//             <div style={{ marginBottom: "28px" }}>
-//               <span style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 400, color: "var(--white)", display: "block", lineHeight: 1, marginBottom: "8px" }}>
-//                 R<span style={{ color: "var(--gold)" }}>&</span>N{" "}
-//                 <em style={{ fontStyle: "italic", fontWeight: 300 }}>Legal</em>
-//               </span>
-//               <span style={{ fontFamily: "var(--font-body)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)" }}>
-//                 Boutique Practice · Melbourne
-//               </span>
-//             </div>
-//             <p style={{ fontSize: "0.88rem", lineHeight: 1.8, color: "rgba(255,255,255,0.4)", maxWidth: "280px", marginBottom: "28px" }}>
-//               Clear advice. Strong preparation. Focused outcomes. Practising in Victoria since {siteConfig.practicingSince}.
-//             </p>
-//             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-//               <span style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.38)" }}>{siteConfig.address}, {siteConfig.suburb}</span>
-//               <a href={`tel:${siteConfig.phone1.replace(/\s/g, "")}`} className="footer-link">{siteConfig.phone1}</a>
-//               <a href={`mailto:${siteConfig.email}`} className="footer-link footer-link--gold">{siteConfig.email}</a>
-//             </div>
-//           </div>
-
-//           {/* Navigation */}
-//           <div>
-//             <p className="label label--light" style={{ marginBottom: "20px" }}>Navigation</p>
-//             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-//               {[...navLinks, { label: "Disclaimer & Privacy", href: "/disclaimer" }].map((link) => (
-//                 <Link key={link.href} href={link.href} className="footer-nav-link">
-//                   <span className="footer-nav-rule" />
-//                   {link.label}
-//                 </Link>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Practice areas */}
-//           <div>
-//             <p className="label label--light" style={{ marginBottom: "20px" }}>Practice Areas</p>
-//             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-//               {practiceAreas.slice(0, 6).map((area) => (
-//                 <Link key={area.id} href={`/services#${area.id}`} className="footer-area-link">
-//                   <span style={{ fontFamily: "var(--font-accent)", fontStyle: "italic", fontSize: "0.65rem", color: "var(--gold)", opacity: 0.7, minWidth: "14px" }}>{area.numeral}</span>
-//                   {area.short}
-//                 </Link>
-//               ))}
-//               <Link href="/services" className="footer-all-link">All Services →</Link>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div style={{ marginTop: "clamp(40px,6vw,72px)", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.07)", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-start", gap: "16px" }}>
-//           <p style={{ fontSize: "0.73rem", color: "rgba(255,255,255,0.22)", maxWidth: "600px", lineHeight: 1.7, margin: 0 }}>
-//             © {year} R&amp;N Legal. All rights reserved. The information on this website is general in nature and does not constitute legal advice. A lawyer–client relationship is only formed when confirmed in writing.
-//           </p>
-//           <Link href="/disclaimer" className="footer-disclaimer-link">Disclaimer &amp; Privacy</Link>
-//         </div>
-//       </div>
-
-//       <style>{`
-//         .footer-grid { grid-template-columns: 1.6fr 1fr 1.2fr; }
-//         @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-//         @media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
-//         .footer-link { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; display: block; }
-//         .footer-link:hover { color: var(--white); }
-//         .footer-link--gold { color: rgba(201,168,76,0.75) !important; }
-//         .footer-link--gold:hover { color: var(--gold-bright) !important; }
-//         .footer-nav-link { font-family: var(--font-body); font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 8px; }
-//         .footer-nav-link:hover { color: var(--white); }
-//         .footer-nav-rule { width: 12px; height: 1px; background: var(--gold); display: inline-block; flex-shrink: 0; opacity: 0.6; }
-//         .footer-area-link { font-family: var(--font-body); font-size: 0.82rem; font-weight: 300; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 8px; }
-//         .footer-area-link:hover { color: var(--gold); }
-//         .footer-all-link { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; opacity: 0.8; transition: opacity 0.2s; display: block; }
-//         .footer-all-link:hover { opacity: 1; }
-//         .footer-disclaimer-link { font-size: 0.73rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-//         .footer-disclaimer-link:hover { color: rgba(255,255,255,0.6); }
-//       `}</style>
-//     </footer>
-//   );
-// }
-
-
-import Link from "next/link";
-import { siteConfig, navLinks, practiceAreas } from "@/lib/config";
-import s from "./Footer.module.css";
-
-export default function Footer() {
-  const year = new Date().getFullYear();
+export function Footer() {
+  const year = new Date().getFullYear()
 
   return (
-    <footer className={s.footer}>
-      {/* Gold gradient rule along the top */}
-      <div className={s.topRule} />
+    <footer className="bg-navy-950 text-white/40 font-body relative overflow-hidden">
+      {/* Top gold line */}
+      <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, transparent, rgba(219,168,40,0.4), transparent)' }} />
 
-      <div className={s.inner}>
-        <div className={s.grid}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2"
+          style={{ background: 'radial-gradient(ellipse at bottom right, rgba(196,145,26,0.04), transparent 70%)' }} />
+        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 font-display font-light text-white/[0.015]"
+          style={{ fontSize: '18rem', lineHeight: 1 }}>
+          R&N
+        </div>
+      </div>
 
-          {/* ── Brand column ───────────────────────────────────── */}
-          <div className={s.brand}>
-            <div>
-              <span className={s.brandName}>
-                R<span className={s.brandNameAmpersand}>&</span>N{" "}
-                <em style={{ fontStyle: "italic", fontWeight: 300 }}>Legal</em>
-              </span>
-              <span className={s.brandTagline}>
-                Boutique Practice · Melbourne
-              </span>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main footer grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16">
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, #a37214, #dba828, #f1da93, #c4911a)' }}>
+                <span className="font-display font-semibold text-navy-950 text-sm">R&N</span>
+              </div>
+              <div>
+                <div className="font-display font-semibold text-white text-xl leading-none">R&N Legal</div>
+                <div className="text-gold-500/50 text-[9px] tracking-[0.25em] uppercase mt-0.5">Solicitors · Melbourne</div>
+              </div>
             </div>
-
-            <p className={s.brandDesc}>
-              Clear advice. Strong preparation. Focused outcomes.
-              Practising in Victoria since {siteConfig.practicingSince}.
+            <p className="text-white/30 text-sm leading-relaxed max-w-xs">
+              {siteConfig.footer.tagline}
             </p>
-
-            <div className={s.contactBlock}>
-              <span className={s.address}>
-                {siteConfig.address}, {siteConfig.suburb}
-              </span>
-              <a
-                href={`tel:${siteConfig.phone1.replace(/\s/g, "")}`}
-                className={s.contactLink}
-              >
-                {siteConfig.phone1}
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className={`${s.contactLink} ${s.contactLinkGold}`}
-              >
-                {siteConfig.email}
-              </a>
-            </div>
+            <p className="text-white/15 text-xs mt-4">{siteConfig.abn}</p>
           </div>
 
-          {/* ── Navigation column ──────────────────────────────── */}
+          {/* Practice areas */}
           <div>
-            {/* .label .label--light from globals.css */}
-            <p className={`label label--light ${s.colTitle}`}>Navigation</p>
-
-            <nav aria-label="Footer navigation" className={s.navList}>
-              {[...navLinks, { label: "Disclaimer & Privacy", href: "/disclaimer" }].map(
-                (link) => (
-                  <Link key={link.href} href={link.href} className={s.navLink}>
-                    <span className={s.navRule} aria-hidden="true" />
-                    {link.label}
+            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Practice Areas</h4>
+            <ul className="space-y-2.5">
+              {siteConfig.services.slice(0, 5).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/services#${s.slug}`}
+                    className="flex items-center gap-2 text-white/30 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
+                    <span className="w-1 h-px bg-current opacity-40 group-hover:w-3 transition-all duration-300" />
+                    {s.shortTitle}
                   </Link>
-                )
-              )}
-            </nav>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* ── Practice areas column ──────────────────────────── */}
+          {/* More areas + site links */}
           <div>
-            <p className={`label label--light ${s.colTitle}`}>Practice Areas</p>
-
-            <div className={s.areaList}>
-              {practiceAreas.slice(0, 6).map((area) => (
-                <Link
-                  key={area.id}
-                  href={`/services#${area.id}`}
-                  className={s.areaLink}
-                >
-                  <span className={s.areaNumeral} aria-hidden="true">
-                    {area.numeral}
-                  </span>
-                  {area.short}
-                </Link>
+            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">More Services</h4>
+            <ul className="space-y-2.5">
+              {siteConfig.services.slice(5).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/services#${s.slug}`}
+                    className="flex items-center gap-2 text-white/30 hover:text-gold-300/80 text-sm transition-colors duration-300 group">
+                    <span className="w-1 h-px bg-current opacity-40 group-hover:w-3 transition-all duration-300" />
+                    {s.shortTitle}
+                  </Link>
+                </li>
               ))}
+              <li className="pt-3 border-t border-white/8">
+                <Link href="/about" className="text-white/30 hover:text-gold-300/80 text-sm transition-colors">About Us</Link>
+              </li>
+              <li>
+                <Link href="/disclaimer" className="text-white/30 hover:text-gold-300/80 text-sm transition-colors">Disclaimer</Link>
+              </li>
+            </ul>
+          </div>
 
-              <Link href="/services" className={s.allServicesLink}>
-                All Services →
+          {/* Contact */}
+          <div>
+            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Contact</h4>
+            <div className="space-y-4">
+              {[
+                { icon: Phone, content: (
+                  <div>
+                    <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white/50 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</a>
+                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/30 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                  </div>
+                )},
+                { icon: Mail, content: (
+                  <a href={`mailto:${siteConfig.contact.email}`} className="text-white/50 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.email}</a>
+                )},
+                { icon: MapPin, content: (
+                  <p className="text-white/35 text-xs leading-relaxed">{siteConfig.contact.fullAddress}</p>
+                )},
+                { icon: Clock, content: (
+                  <p className="text-white/35 text-xs leading-relaxed">{siteConfig.contact.hours}</p>
+                )},
+              ].map(({ icon: Icon, content }, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <Icon size={13} className="text-gold-400/40 mt-0.5 shrink-0" />
+                  {content}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6">
+              <Link href="/contact" className="btn-gold !py-3 !px-5 !text-xs">
+                Book Consultation
+                <ArrowRight size={13} />
               </Link>
             </div>
           </div>
         </div>
 
-        {/* ── Bottom bar ───────────────────────────────────────── */}
-        <div className={s.bottomBar}>
-          <p className={s.copyright}>
-            © {year} R&amp;N Legal. All rights reserved. The information on
-            this website is general in nature and does not constitute legal
-            advice. A lawyer–client relationship is only formed when confirmed
-            in writing.
+        {/* Disclaimer */}
+        <div className="border-t border-white/8 py-6">
+          <p className="text-white/20 text-xs leading-relaxed mb-4 max-w-4xl">
+            <strong className="text-white/30">Disclaimer:</strong>{' '}
+            {siteConfig.disclaimer.shortText} R&N Legal operates in accordance with the Legal Profession Uniform Law (Victoria). Legal services are subject to applicable Victorian and Commonwealth laws.
           </p>
-          <Link href="/disclaimer" className={s.disclaimerLink}>
-            Disclaimer &amp; Privacy
-          </Link>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/20">
+            <p>© {year} R&N Legal. All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              {siteConfig.footer.links.map((l) => (
+                <Link key={l.href} href={l.href} className="hover:text-gold-400/60 transition-colors">{l.label}</Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
