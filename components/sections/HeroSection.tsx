@@ -104,7 +104,7 @@ export function HeroSection() {
         </div>
 
         {/* Bottom bar — stats + address */}
-        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+        {/* <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
           style={{ animation: 'reveal-up 0.9s 0.7s cubic-bezier(0.16,1,0.3,1) both' }}>
           <div className="flex items-center gap-8">
             {[
@@ -114,25 +114,25 @@ export function HeroSection() {
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="font-display font-light text-gold-300 text-3xl leading-none">{stat.num}</p>
-                <p className="font-body text-white/60 text-xs tracking-wide mt-1">{stat.label}</p>
+                <p className="font-body text-white/30 text-xs tracking-wide mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-2 text-white/60 font-body text-xs">
+          <div className="flex items-center gap-2 text-white/30 font-body text-xs">
             <MapPin size={12} className="text-gold-500/50" />
             {siteConfig.contact.address}, Melbourne VIC 3000
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
         style={{ animation: 'fade-in 1s 1.2s both' }}>
         <span className="font-body text-2xs tracking-[0.25em] text-white/25 uppercase">Scroll</span>
         <div className="w-px h-10 relative overflow-hidden bg-white/10">
           <div className="absolute inset-x-0 top-0 h-6 bg-gold-400/60 animate-[slide-down_1.5s_ease-in-out_infinite]" />
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

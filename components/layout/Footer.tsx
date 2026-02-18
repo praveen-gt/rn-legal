@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/config'
+import Image from 'next/image'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -26,14 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #a37214, #dba828, #f1da93, #c4911a)' }}>
-                <span className="font-display font-semibold text-navy-950 text-sm">R&N</span>
-              </div>
-              <div>
-                <div className="font-display font-semibold text-white text-xl leading-none">R&N Legal</div>
-                <div className="text-gold-500/50 text-[9px] tracking-[0.25em] uppercase mt-0.5">Solicitors · Melbourne</div>
-              </div>
+                <Image src="/images/rn-legal-logo-transparent.png" alt="R&N Legal Logo" width={180} height={40} className="object-contain" />
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               {siteConfig.footer.tagline}
