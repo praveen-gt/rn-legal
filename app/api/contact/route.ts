@@ -43,8 +43,8 @@ export async function POST(request: NextRequest) {
     // Send notification email to the firm
     const { error: sendError } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      // to: ['info@rnlegal.com.au'],
-      to: ['tewatiapraveen94@gmail.com'],
+      to: ['info@rnlegal.com.au'],
+      // to: ['tewatiapraveen94@gmail.com'],
       replyTo: data.email,
       subject: `New Enquiry – ${data.practiceArea} – ${data.fullName}`,
       react: ContactEmailTemplate({ data }),
