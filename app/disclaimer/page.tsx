@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
       />
 
       {/* Quick nav */}
-      <nav className="sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
+      <nav className="hidden lg:block sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto scrollbar-none">
             {sections.map((s) => (

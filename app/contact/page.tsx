@@ -25,11 +25,10 @@ export default function ContactPage() {
       {/* Urgent alert */}
       <div className="bg-amber-950/60 border-b border-amber-600/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-start gap-3">
+          <div className="flex items-center justify-center gap-3">
             <AlertTriangle size={16} className="text-amber-400 mt-0.5 shrink-0" />
-            <p className="text-amber-300/90 font-body text-sm leading-relaxed">
-              <strong className="text-amber-300">Urgent matters:</strong> If you or someone else is in immediate danger, call{' '}
-              <strong>000</strong>. We are not an emergency service. For urgent FVIO matters, contact the Magistrates Court or police family violence unit.
+            <p className="text-amber-300/90 font-body text-sm leading-relaxed text-center block">
+              <strong className="text-amber-300">Urgent matters:</strong> If you or someone else is in immediate danger, contact police or emergency services
             </p>
           </div>
         </div>
