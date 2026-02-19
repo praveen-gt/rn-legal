@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { PageHero } from '@/components/ui/PageHero'
 import { CTASection } from '@/components/sections/CTASection'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -175,11 +176,13 @@ export default function AboutPage() {
             </div>
             <div className="relative" data-animate="right" data-delay="2">
               <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src="/images/director-placeholder.jpg"
-                  alt="Professional solicitor"
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
-                />
+              <Image 
+                src="/images/director-placeholder.jpg"
+                alt="Professional solicitor"
+                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                width={400}
+                height={500}
+              />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, transparent 50%, rgba(6,13,26,0.5))' }} />
               </div>
               <div className="absolute bottom-8 left-0 right-0 px-6">

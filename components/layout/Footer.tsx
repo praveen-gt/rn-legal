@@ -80,12 +80,12 @@ export function Footer() {
               {[
                 { icon: Phone, content: (
                   <div>
-                    <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</a>
-                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                    <Link href={`tel:${siteConfig.contact.phone1}`} className="block text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</Link>
+                    <Link href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</Link>
                   </div>
                 )},
                 { icon: Mail, content: (
-                  <a href={`mailto:${siteConfig.contact.email}`} className="text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.email}</a>
+                  <Link href={`mailto:${siteConfig.contact.email}`} className="text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.email}</Link>
                 )},
                 { icon: MapPin, content: (
                   <p className="text-white/60 text-xs leading-relaxed">{siteConfig.contact.fullAddress}</p>

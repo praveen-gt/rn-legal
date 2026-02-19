@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 interface PageHeroProps {
   label?: string
   title: string
@@ -14,7 +16,11 @@ export function PageHero({ label, title, italic, description, imageUrl, imageAlt
     <section className="relative min-h-[55vh] sm:min-h-[62vh] flex items-end overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img src={img} alt={imageAlt || title}
+        <Image 
+          src={img}
+          alt={imageAlt || title}
+          width={1200}
+          height={800}
           className="w-full h-full object-cover object-center"
           data-parallax="0.2"
         />

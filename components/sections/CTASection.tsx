@@ -1,15 +1,18 @@
 import Link from 'next/link'
 import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react'
 import { siteConfig } from '@/lib/config'
+import Image from 'next/image'
 
 export function CTASection() {
   return (
     <section className="relative overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
+        <Image 
           src="/images/building-image.jpg"
           alt="Melbourne CBD"
+          width={1200}
+          height={800}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0"
@@ -42,10 +45,10 @@ export function CTASection() {
                 Book a Consultation
                 <ArrowRight size={14} />
               </Link>
-              <a href={`tel:${siteConfig.contact.phone1}`} className="btn-outline">
+              <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-outline">
                 <Phone size={14} />
                 Call Now
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -65,14 +68,14 @@ export function CTASection() {
                     label: 'Phone',
                     content: (
                       <div className="space-y-0.5">
-                        <a href={`tel:${siteConfig.contact.phone1}`}
+                        <Link href={`tel:${siteConfig.contact.phone1}`}
                           className="block text-white font-body font-medium hover:text-gold-300 transition-colors">
                           {siteConfig.contact.phone1}
-                        </a>
-                        <a href={`tel:${siteConfig.contact.phone2}`}
+                        </Link>
+                        <Link href={`tel:${siteConfig.contact.phone2}`}
                           className="block text-white/40 font-body text-sm hover:text-gold-300/70 transition-colors">
                           {siteConfig.contact.phone2}
-                        </a>
+                        </Link>
                       </div>
                     ),
                   },
@@ -80,10 +83,10 @@ export function CTASection() {
                     icon: Mail,
                     label: 'Email',
                     content: (
-                      <a href={`mailto:${siteConfig.contact.email}`}
+                      <Link href={`mailto:${siteConfig.contact.email}`}
                         className="text-white font-body font-medium hover:text-gold-300 transition-colors">
                         {siteConfig.contact.email}
-                      </a>
+                      </Link>
                     ),
                   },
                   {

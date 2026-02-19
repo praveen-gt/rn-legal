@@ -3,6 +3,8 @@ import { Phone, Mail, MapPin, Clock, AlertTriangle } from 'lucide-react'
 import { PageHero } from '@/components/ui/PageHero'
 import { ContactForm } from '@/components/ui/ContactForm'
 import { siteConfig } from '@/lib/config'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -48,14 +50,14 @@ export default function ContactPage() {
                       icon: Phone, label: 'Phone',
                       content: (
                         <div>
-                          <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white font-body font-medium hover:text-gold-300 transition-colors">{siteConfig.contact.phone1}</a>
-                          <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 font-body text-sm hover:text-gold-300/70 transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                          <Link href={`tel:${siteConfig.contact.phone1}`} className="block text-white font-body font-medium hover:text-gold-300 transition-colors">{siteConfig.contact.phone1}</Link>
+                          <Link href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 font-body text-sm hover:text-gold-300/70 transition-colors mt-0.5">{siteConfig.contact.phone2}</Link>
                         </div>
                       ),
                     },
                     {
                       icon: Mail, label: 'Email',
-                      content: <a href={`mailto:${siteConfig.contact.email}`} className="text-white font-body font-medium hover:text-gold-300 transition-colors">{siteConfig.contact.email}</a>,
+                      content: <Link href={`mailto:${siteConfig.contact.email}`} className="text-white font-body font-medium hover:text-gold-300 transition-colors">{siteConfig.contact.email}</Link>,
                     },
                     {
                       icon: MapPin, label: 'Office',
@@ -87,22 +89,24 @@ export default function ContactPage() {
 
               {/* Map image */}
               <div className="relative overflow-hidden aspect-video border border-white/10" data-animate data-delay="2">
-                <img
-                  src="/images/map-placeholder.jpg"
-                  alt="Melbourne CBD"
-                  className="w-full h-full object-cover opacity-40 hover:opacity-55 transition-opacity duration-500"
-                />
+              <Image 
+                src="/images/map-placeholder.jpg"
+                alt="Melbourne CBD"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover opacity-40 hover:opacity-55 transition-opacity duration-500"
+              />
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <div className="w-8 h-8 bg-gold-gradient flex items-center justify-center mb-2 animate-[float_3s_ease-in-out_infinite]">
                     <MapPin size={16} className="text-navy-950" />
                   </div>
                   <p className="text-white font-display font-semibold text-sm">R&N Legal</p>
                   <p className="text-white/65 font-body text-xs mt-1">Suite 401–402, 2 Queen Street</p>
-                  <a href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
+                  <Link href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                     target="_blank" rel="noopener noreferrer"
                     className="mt-2 text-gold-400/70 hover:text-gold-300 font-body text-xs underline transition-colors">
                     Open in Maps →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

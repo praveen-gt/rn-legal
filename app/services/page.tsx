@@ -114,15 +114,15 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto scrollbar-none">
             {mainServices.map((svc) => (
-              <a key={svc.slug} href={`#${svc.slug}`}
+              <Link key={svc.slug} href={`#${svc.slug}`}
                 className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
                 {svc.shortTitle}
-              </a>
+              </Link>
             ))}
-            <a href="#other-areas"
+            <Link href="#other-areas"
               className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
               Other Areas
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -194,9 +194,9 @@ export default function ServicesPage() {
                     <Link href="/contact" className="btn-gold">
                       Enquire Now <ArrowRight size={14} />
                     </Link>
-                    <a href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+                    <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
                       <Phone size={13} /> {siteConfig.contact.phone1}
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

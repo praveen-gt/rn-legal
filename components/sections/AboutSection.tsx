@@ -65,12 +65,7 @@ export function AboutSection() {
           <div className="relative lg:pl-16 flex flex-col justify-center" data-animate="right" data-delay="2">
             {/* Main image */}
             <div className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4] lg:aspect-auto lg:h-[580px]">
-            <Image src={'/images/law-practice-image.jpg'} width={800} height={600} alt="Law office" className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
-              {/* <img
-                src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=800&q=85&auto=format&fit=crop"
-                alt="Law office"
-                className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700"
-              /> */}
+              <Image src={'/images/law-practice-image.jpg'} width={800} height={600} alt="Law office" className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, rgba(6,13,26,0.25), transparent)' }} />
 
               {/* Floating stat card - bottom left */}

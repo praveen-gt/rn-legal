@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Send, CheckCircle2, AlertCircle, ChevronDown } from 'lucide-react'
 import { contactFormSchema, type ContactFormData } from '@/lib/schemas'
 import { siteConfig } from '@/lib/config'
+import Link from 'next/link'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -116,7 +117,7 @@ export function ContactForm() {
           </div>
           <span className="text-white/60 font-body text-xs leading-relaxed hover:text-white/75 transition-colors cursor-pointer">
             I acknowledge this website provides general information only, that contacting R&N Legal does not create a lawyer–client relationship, and that I have read the{' '}
-            <a href="/disclaimer" className="text-gold-400/80 hover:text-gold-300 underline underline-offset-2">disclaimer</a>.
+            <Link href="/disclaimer" className="text-gold-400/80 hover:text-gold-300 underline underline-offset-2">disclaimer</Link>.
           </span>
         </label>
         {errors.agreeToTerms && <p className="mt-2 text-red-400 text-xs font-body flex items-center gap-1 ml-8"><AlertCircle size={11} />{errors.agreeToTerms.message}</p>}

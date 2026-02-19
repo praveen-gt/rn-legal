@@ -184,9 +184,9 @@ export function Header() {
                         </div>
                         <div className="mt-4 pt-4 border-t border-white/8 flex items-center justify-between">
                           <p className="text-white/60 font-body text-xs">Mon–Fri · 10am–5pm</p>
-                          <a href={`tel:${siteConfig.contact.phone1}`} className="flex items-center gap-2 text-gold-400/80 hover:text-gold-300 font-body text-xs transition-colors">
+                          <Link href={`tel:${siteConfig.contact.phone1}`} className="flex items-center gap-2 text-gold-400/80 hover:text-gold-300 font-body text-xs transition-colors">
                             <Phone size={11} /> {siteConfig.contact.phone1}
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
