@@ -22,9 +22,9 @@ export const contactFormSchema = z.object({
     .string()
     .min(10, 'Please provide a brief description of your matter (minimum 10 characters)')
     .max(2000, 'Description is too long (maximum 2000 characters)'),
-  agreeToTerms: z
-    .boolean()
-    .refine((val) => val === true, 'You must acknowledge the disclaimer to proceed'),
+  // agreeToTerms: z
+  //   .boolean()
+  //   .refine((val) => val === true, 'You must acknowledge the disclaimer to proceed'),
 })
 
 export type ContactFormData = z.infer<typeof contactFormSchema>
