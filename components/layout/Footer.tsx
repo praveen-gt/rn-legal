@@ -27,17 +27,17 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-                <Image src="/images/rn-legal-logo-transparent.png" alt="R&N Legal Logo" width={180} height={40} className="object-contain" />
+              <Image src="/images/rn-legal-logo-transparent.png" alt="R&N Legal Logo" width={180} height={40} className="object-contain" />
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/65 text-sm leading-relaxed max-w-xs">
               {siteConfig.footer.tagline}
             </p>
-            <p className="text-white/40 text-xs mt-4">{siteConfig.abn}</p>
+            <p className="text-white/45 text-xs mt-4">{siteConfig.abn}</p>
           </div>
 
           {/* Practice areas */}
           <div>
-            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Practice Areas</h4>
+            <h4 className="text-white/65 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Practice Areas</h4>
             <ul className="space-y-2.5">
               {siteConfig.services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
@@ -53,7 +53,7 @@ export function Footer() {
 
           {/* More areas + site links */}
           <div>
-            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">More Services</h4>
+            <h4 className="text-white/65 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">More Services</h4>
             <ul className="space-y-2.5">
               {siteConfig.services.slice(5).map((s) => (
                 <li key={s.slug}>
@@ -75,27 +75,27 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white/60 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Contact</h4>
+            <h4 className="text-white/65 font-body font-semibold text-xs tracking-[0.18em] uppercase mb-5">Contact</h4>
             <div className="space-y-4">
               {[
                 { icon: Phone, content: (
                   <div>
-                    <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white/50 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</a>
-                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/60 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                    <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.phone1}</a>
+                    <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 hover:text-gold-300/60 text-xs transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
                   </div>
                 )},
                 { icon: Mail, content: (
-                  <a href={`mailto:${siteConfig.contact.email}`} className="text-white/50 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.email}</a>
+                  <a href={`mailto:${siteConfig.contact.email}`} className="text-white/80 hover:text-gold-300/80 text-sm transition-colors">{siteConfig.contact.email}</a>
                 )},
                 { icon: MapPin, content: (
-                  <p className="text-white/35 text-xs leading-relaxed">{siteConfig.contact.fullAddress}</p>
+                  <p className="text-white/60 text-xs leading-relaxed">{siteConfig.contact.fullAddress}</p>
                 )},
                 { icon: Clock, content: (
-                  <p className="text-white/35 text-xs leading-relaxed">{siteConfig.contact.hours}</p>
+                  <p className="text-white/60 text-xs leading-relaxed">{siteConfig.contact.hours}</p>
                 )},
               ].map(({ icon: Icon, content }, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <Icon size={13} className="text-gold-400/40 mt-0.5 shrink-0" />
+                  <Icon size={13} className="text-gold-400/50 mt-0.5 shrink-0" />
                   {content}
                 </div>
               ))}
@@ -112,11 +112,11 @@ export function Footer() {
 
         {/* Disclaimer */}
         <div className="border-t border-white/8 py-6">
-          <p className="text-white/50 text-xs leading-relaxed mb-4 max-w-4xl">
-            <strong className="text-white/60">Disclaimer:</strong>{' '}
+          <p className="text-white/55 text-xs leading-relaxed mb-4 max-w-4xl">
+            <strong className="text-white/70">Disclaimer:</strong>{' '}
             {siteConfig.disclaimer.shortText} R&N Legal operates in accordance with the Legal Profession Uniform Law (Victoria). Legal services are subject to applicable Victorian and Commonwealth laws.
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/50">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/55">
             <p>© {year} R&N Legal. All rights reserved.</p>
             <div className="flex items-center gap-5">
               {siteConfig.footer.links.map((l) => (
