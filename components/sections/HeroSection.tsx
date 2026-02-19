@@ -44,16 +44,16 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32 w-full">
         <div className="max-w-4xl">
           {/* Label */}
-          <div className="section-label text-gold-400/70 mb-8"
+          {/* <div className="section-label text-gold-400/70 mb-8"
             style={{ animation: 'reveal-up 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) both' }}>
             Boutique Law Practice · Melbourne, Victoria
-          </div>
+          </div> */}
 
           {/* Headline — editorial split */}
           <div style={{ animation: 'reveal-up 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) both' }}>
             <h1 className="font-display font-light text-white leading-[1.02]"
               style={{ fontSize: 'clamp(3rem, 6.5vw, 6.5rem)' }}>
-              Clear Legal
+              Structured Legal
             </h1>
             <h1 className="font-display font-light leading-[1.02]"
               style={{
@@ -63,11 +63,11 @@ export function HeroSection() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-              <em>Guidance.</em>
+              <em>Advice.</em>
             </h1>
             <h1 className="font-display font-light text-white/70 leading-[1.02]"
               style={{ fontSize: 'clamp(3rem, 6.5vw, 6.5rem)' }}>
-              Real Outcomes.
+              Disciplined Representation.
             </h1>
           </div>
 
@@ -84,7 +84,7 @@ export function HeroSection() {
             style={{ animation: 'reveal-up 0.9s 0.4s cubic-bezier(0.16,1,0.3,1) both' }}>
             {/* R&N Legal provides clear, practical legal advice and representation across family law, migration, property and dispute matters. */}
 
-            R&N Legal is a boutique practice providing clear, practical legal advice and representation across family law, migration, property and dispute-related matters. We focus on straightforward guidance, strong preparation, and client‑focused outcomes.
+            R&N Legal provides professional legal advice and representation across litigation, family law, migration and property-related matters. We prioritise preparation, procedural compliance and clear communication.
           </p>
 
           {/* CTAs */}
@@ -96,7 +96,7 @@ export function HeroSection() {
             </Link>
             <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-outline">
               <Phone size={15} />
-              {siteConfig.contact.phone1}
+              {siteConfig.contact.phone2}
             </Link>
           </div>
         </div>
