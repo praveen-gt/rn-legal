@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Contact R&N Legal for appointments and legal enquiries in Melbourne. Phone: 0430 593 124.',
+  description: 'Contact R&N Legal for appointments and legal enquiries in Melbourne. Phone: 0470 695 941.',
 }
 
 export default function ContactPage() {
@@ -25,7 +25,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-start gap-3">
             <AlertTriangle size={16} className="text-amber-400 mt-0.5 shrink-0" />
-            <p className="text-amber-300/80 font-body text-sm leading-relaxed">
+            <p className="text-amber-300/90 font-body text-sm leading-relaxed">
               <strong className="text-amber-300">Urgent matters:</strong> If you or someone else is in immediate danger, call{' '}
               <strong>000</strong>. We are not an emergency service. For urgent FVIO matters, contact the Magistrates Court or police family violence unit.
             </p>
@@ -49,7 +49,7 @@ export default function ContactPage() {
                       content: (
                         <div>
                           <a href={`tel:${siteConfig.contact.phone1}`} className="block text-white font-body font-medium hover:text-gold-300 transition-colors">{siteConfig.contact.phone1}</a>
-                          <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/40 font-body text-sm hover:text-gold-300/70 transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
+                          <a href={`tel:${siteConfig.contact.phone2}`} className="block text-white/55 font-body text-sm hover:text-gold-300/70 transition-colors mt-0.5">{siteConfig.contact.phone2}</a>
                         </div>
                       ),
                     },
@@ -59,14 +59,14 @@ export default function ContactPage() {
                     },
                     {
                       icon: MapPin, label: 'Office',
-                      content: <address className="not-italic text-white/65 font-body text-sm leading-relaxed">{siteConfig.contact.address}<br />{siteConfig.contact.suburb}</address>,
+                      content: <address className="not-italic text-white/75 font-body text-sm leading-relaxed">{siteConfig.contact.address}<br />{siteConfig.contact.suburb}</address>,
                     },
                     {
                       icon: Clock, label: 'Hours',
                       content: (
                         <div>
-                          <p className="text-white/65 font-body text-sm">{siteConfig.contact.hours}</p>
-                          <p className="text-white/60 font-body text-xs mt-0.5">{siteConfig.contact.responseTime}</p>
+                          <p className="text-white/75 font-body text-sm">{siteConfig.contact.hours}</p>
+                          <p className="text-white/65 font-body text-xs mt-0.5">{siteConfig.contact.responseTime}</p>
                         </div>
                       ),
                     },
@@ -77,7 +77,7 @@ export default function ContactPage() {
                         <Icon size={14} className="text-gold-400/60" />
                       </div>
                       <div>
-                        <p className="text-white/25 font-body text-2xs tracking-widest uppercase mb-1.5">{label}</p>
+                        <p className="text-white/60 font-body text-2xs tracking-widest uppercase mb-1.5">{label}</p>
                         {content}
                       </div>
                     </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     <MapPin size={16} className="text-navy-950" />
                   </div>
                   <p className="text-white font-display font-semibold text-sm">R&N Legal</p>
-                  <p className="text-white/50 font-body text-xs mt-1">Suite 401, 2 Queen Street</p>
+                  <p className="text-white/65 font-body text-xs mt-1">Suite 401–402, 2 Queen Street</p>
                   <a href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                     target="_blank" rel="noopener noreferrer"
                     className="mt-2 text-gold-400/70 hover:text-gold-300 font-body text-xs underline transition-colors">
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   }}>Your Matter</em>
                 </h2>
                 <div className="w-14 h-px mt-5" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
-                <p className="text-white/40 font-body text-sm leading-relaxed mt-5 max-w-md">
+                <p className="text-white/65 font-body text-sm leading-relaxed mt-5 max-w-md">
                   Complete the form and we'll be in touch within 1 business day. All information is strictly confidential.
                 </p>
               </div>
@@ -134,6 +134,7 @@ export default function ContactPage() {
                 <ContactForm />
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -141,8 +142,8 @@ export default function ContactPage() {
       {/* Email disclaimer */}
       <div className="bg-navy-900 border-t border-white/8 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-white/25 font-body text-xs leading-relaxed text-center max-w-3xl mx-auto">
-            <strong className="text-white/35">Email security notice:</strong> Email is not always secure. For time-critical or sensitive matters, please call us. Do not send original documents unless requested. Contacting us does not create a lawyer–client relationship.
+          <p className="text-white/60 font-body text-xs leading-relaxed text-center max-w-3xl mx-auto">
+            <strong className="text-white/75">Email security notice:</strong> Email is not always secure. For time-critical or sensitive matters, please call us. Do not send original documents unless requested. Contacting us does not create a lawyer–client relationship.
           </p>
         </div>
       </div>

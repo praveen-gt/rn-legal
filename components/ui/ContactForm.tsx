@@ -21,9 +21,9 @@ export function ContactForm() {
   }
 
   const fieldClass = (err: boolean) =>
-    `w-full bg-transparent border-b ${err ? 'border-red-400' : 'border-white/15 focus:border-gold-400'} px-0 py-3.5 font-body text-sm text-white placeholder:text-white/25 focus:outline-none transition-colors duration-300`
+    `w-full bg-transparent border-b ${err ? 'border-red-400' : 'border-white/20 focus:border-gold-400'} px-0 py-3.5 font-body text-sm text-white placeholder:text-white/35 focus:outline-none transition-colors duration-300`
 
-  const labelClass = 'block font-body text-2xs tracking-[0.2em] uppercase text-white/35 mb-2'
+  const labelClass = 'block font-body text-2xs tracking-[0.2em] uppercase text-white/55 mb-2'
 
   if (status === 'success') {
     return (
@@ -33,7 +33,7 @@ export function ContactForm() {
           <CheckCircle2 size={28} className="text-gold-400" />
         </div>
         <h3 className="font-display font-semibold text-white text-2xl mb-3">Enquiry Received</h3>
-        <p className="text-white/45 font-body text-sm leading-relaxed max-w-sm mx-auto mb-6">
+        <p className="text-white/65 font-body text-sm leading-relaxed max-w-sm mx-auto mb-6">
           Thank you. We will be in touch within 1 business day. For urgent matters, please call directly.
         </p>
         <button onClick={() => setStatus('idle')} className="btn-outline !text-xs">
@@ -95,7 +95,7 @@ export function ContactForm() {
       <div>
         <label className={labelClass}>
           Brief Description *
-          <span className="normal-case text-white/50 font-normal ml-2 tracking-normal">
+          <span className="normal-case text-white/55 font-normal ml-2 tracking-normal">
             (What happened + any urgent dates)
           </span>
         </label>
@@ -110,22 +110,22 @@ export function ContactForm() {
           <div className="relative mt-0.5">
             <input {...register('agreeToTerms')} type="checkbox"
               className="peer sr-only" />
-            <div className="w-4 h-4 border border-white/20 peer-checked:border-gold-400 peer-checked:bg-gold-400/10 transition-all duration-200 flex items-center justify-center">
+            <div className="w-4 h-4 border border-white/30 peer-checked:border-gold-400 peer-checked:bg-gold-400/10 transition-all duration-200 flex items-center justify-center">
               <div className="w-2 h-2 bg-gold-400 opacity-0 peer-checked:opacity-100 transition-opacity" style={{ clipPath: 'polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0%,43% 62%)' }} />
             </div>
           </div>
-          <span className="text-white/35 font-body text-xs leading-relaxed hover:text-white/50 transition-colors cursor-pointer">
+          <span className="text-white/60 font-body text-xs leading-relaxed hover:text-white/75 transition-colors cursor-pointer">
             I acknowledge this website provides general information only, that contacting R&N Legal does not create a lawyer–client relationship, and that I have read the{' '}
-            <a href="/disclaimer" className="text-gold-400/70 hover:text-gold-300 underline underline-offset-2">disclaimer</a>.
+            <a href="/disclaimer" className="text-gold-400/80 hover:text-gold-300 underline underline-offset-2">disclaimer</a>.
           </span>
         </label>
         {errors.agreeToTerms && <p className="mt-2 text-red-400 text-xs font-body flex items-center gap-1 ml-8"><AlertCircle size={11} />{errors.agreeToTerms.message}</p>}
       </div>
 
       {/* Privacy note */}
-      <div className="border border-white/8 px-5 py-4">
-        <p className="text-white/25 font-body text-xs leading-relaxed">
-          <strong className="text-white/35">Privacy:</strong>{' '}
+      <div className="border border-white/10 px-5 py-4">
+        <p className="text-white/55 font-body text-xs leading-relaxed">
+          <strong className="text-white/70">Privacy:</strong>{' '}
           Your information will be used only to respond to your enquiry and provide legal services, in accordance with Australian privacy legislation.
         </p>
       </div>
