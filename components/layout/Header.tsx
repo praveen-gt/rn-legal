@@ -164,7 +164,7 @@ export function Header() {
                           </Link>
                         </div>
                         <div className="grid grid-cols-2 gap-1">
-                          {siteConfig.services.map((svc) => (
+                         {siteConfig.navServices.map((svc) => (
                             <Link
                               key={svc.slug}
                               href={`/services#${svc.slug}`}
@@ -176,7 +176,7 @@ export function Header() {
                                   {svc.shortTitle}
                                 </p>
                                 <p className="text-white/60 font-body text-xs leading-relaxed mt-0.5 line-clamp-1">
-                                  {svc.points[0]}
+                                  {svc.hint}
                                 </p>
                               </div>
                             </Link>

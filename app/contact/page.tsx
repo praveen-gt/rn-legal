@@ -17,7 +17,7 @@ export default function ContactPage() {
         title="Get in"
         italic="Touch"
         description="For appointments and enquiries contact us directly. If your matter is urgent — for immediate safety risks — seek emergency assistance first."
-        imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85&auto=format&fit=crop"
+        imageUrl="/images/building-image.jpg"
       />
 
       {/* Urgent alert */}
@@ -88,7 +88,7 @@ export default function ContactPage() {
               {/* Map image */}
               <div className="relative overflow-hidden aspect-video border border-white/10" data-animate data-delay="2">
                 <img
-                  src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600&q=80&auto=format&fit=crop"
+                  src="/images/map-placeholder.jpg"
                   alt="Melbourne CBD"
                   className="w-full h-full object-cover opacity-40 hover:opacity-55 transition-opacity duration-500"
                 />

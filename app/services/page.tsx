@@ -17,7 +17,7 @@
 // }
 
 // const serviceImages: Record<string, string> = {
-//   'family-violence': 'https://images.unsplash.com/photo-1521791055366-0d553872952f?w=900&q=85&auto=format&fit=crop',
+//   'family-violence': '/images/services/family-violence.jpg',
 //   'family-law': 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=85&auto=format&fit=crop',
 //   'wills-estates': 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=85&auto=format&fit=crop',
 //   'conveyancing-property': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=85&auto=format&fit=crop',
@@ -187,7 +187,7 @@
 //       'Contested hearings',
 //       'Risk assessment and evidence preparation',
 //     ],
-//     image: 'https://images.unsplash.com/photo-1521791055366-0d553872952f?w=900&q=85&auto=format&fit=crop',
+//     image: '/images/services/family-violence.jpg',
 //   },
 //   {
 //     slug: 'family-law',
@@ -482,217 +482,12 @@ import {
 import { PageHero } from '@/components/ui/PageHero'
 import { CTASection } from '@/components/sections/CTASection'
 import { siteConfig } from '@/lib/config'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Services',
   description: 'R&N Legal provides legal advice, document preparation and representation across family violence, family law, litigation, immigration, property and more.',
 }
-
-// ─── Each service has a unique SVG visual panel ───────────────────────────────
-// These are bespoke CSS/SVG compositions — no stock photos needed.
-
-function VisualFamilyViolence() {
-  return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #060d1a 0%, #0d1e35 60%, #0a1628 100%)' }}>
-      {/* Concentric arcs — protection/shield motif */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
-        {[220, 170, 120, 70].map((r, i) => (
-          <circle key={r} cx="250" cy="320" r={r}
-            fill="none"
-            stroke={`rgba(196,145,26,${0.06 + i * 0.04})`}
-            strokeWidth="1"
-          />
-        ))}
-        {/* Shield outline */}
-        <path d="M250 120 L340 155 L340 255 Q340 320 250 360 Q160 320 160 255 L160 155 Z"
-          fill="none"
-          stroke="rgba(196,145,26,0.18)"
-          strokeWidth="1.2"
-        />
-        <path d="M250 145 L320 173 L320 258 Q320 310 250 343 Q180 310 180 258 L180 173 Z"
-          fill="rgba(196,145,26,0.04)"
-          stroke="rgba(196,145,26,0.10)"
-          strokeWidth="1"
-        />
-        {/* Centre dot */}
-        <circle cx="250" cy="245" r="4" fill="rgba(219,168,40,0.6)" />
-        <circle cx="250" cy="245" r="12" fill="none" stroke="rgba(219,168,40,0.2)" strokeWidth="1" />
-        {/* Corner grid marks */}
-        {[[60,60],[440,60],[60,540],[440,540]].map(([x,y],i) => (
-          <g key={i}>
-            <line x1={x-8} y1={y} x2={x+8} y2={y} stroke="rgba(196,145,26,0.15)" strokeWidth="0.8"/>
-            <line x1={x} y1={y-8} x2={x} y2={y+8} stroke="rgba(196,145,26,0.15)" strokeWidth="0.8"/>
-          </g>
-        ))}
-      </svg>
-      <ServiceVisualLabel num="01" label="Intervention Orders" />
-    </div>
-  )
-}
-
-function VisualFamilyLaw() {
-  return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(145deg, #0a1020 0%, #0e1e38 50%, #060d1a 100%)' }}>
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
-        {/* Two interlocking circles — family/relationship motif */}
-        <circle cx="200" cy="270" r="110" fill="none" stroke="rgba(196,145,26,0.12)" strokeWidth="1" />
-        <circle cx="300" cy="270" r="110" fill="none" stroke="rgba(196,145,26,0.12)" strokeWidth="1" />
-        {/* Intersection fill */}
-        <clipPath id="c1"><circle cx="200" cy="270" r="110"/></clipPath>
-        <circle cx="300" cy="270" r="110" fill="rgba(196,145,26,0.05)" clipPath="url(#c1)" />
-        {/* Inner rings */}
-        <circle cx="200" cy="270" r="75" fill="none" stroke="rgba(196,145,26,0.07)" strokeWidth="0.8" />
-        <circle cx="300" cy="270" r="75" fill="none" stroke="rgba(196,145,26,0.07)" strokeWidth="0.8" />
-        {/* Dots at centres */}
-        <circle cx="200" cy="270" r="3.5" fill="rgba(219,168,40,0.5)" />
-        <circle cx="300" cy="270" r="3.5" fill="rgba(219,168,40,0.5)" />
-        {/* Connecting line */}
-        <line x1="200" y1="270" x2="300" y2="270" stroke="rgba(219,168,40,0.15)" strokeWidth="0.8" strokeDasharray="4 4"/>
-        {/* Outer decorative rule lines */}
-        <line x1="60" y1="120" x2="440" y2="120" stroke="rgba(196,145,26,0.08)" strokeWidth="0.8"/>
-        <line x1="60" y1="420" x2="440" y2="420" stroke="rgba(196,145,26,0.08)" strokeWidth="0.8"/>
-      </svg>
-      <ServiceVisualLabel num="02" label="Family Law" />
-    </div>
-  )
-}
-
-function VisualLitigation() {
-  return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #07101f 0%, #0b1a2e 55%, #060d1a 100%)' }}>
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
-        {/* Balance scales — litigation motif */}
-        {/* Central vertical beam */}
-        <line x1="250" y1="130" x2="250" y2="430" stroke="rgba(196,145,26,0.20)" strokeWidth="1.2"/>
-        {/* Horizontal bar */}
-        <line x1="120" y1="195" x2="380" y2="195" stroke="rgba(196,145,26,0.20)" strokeWidth="1.2"/>
-        {/* Left pan strings */}
-        <line x1="120" y1="195" x2="100" y2="290" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        <line x1="120" y1="195" x2="160" y2="290" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        {/* Right pan strings */}
-        <line x1="380" y1="195" x2="360" y2="290" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        <line x1="380" y1="195" x2="400" y2="290" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        {/* Left pan */}
-        <ellipse cx="130" cy="295" rx="42" ry="10" fill="none" stroke="rgba(196,145,26,0.18)" strokeWidth="1"/>
-        <ellipse cx="130" cy="295" rx="42" ry="10" fill="rgba(196,145,26,0.04)"/>
-        {/* Right pan */}
-        <ellipse cx="370" cy="295" rx="42" ry="10" fill="none" stroke="rgba(196,145,26,0.18)" strokeWidth="1"/>
-        <ellipse cx="370" cy="295" rx="42" ry="10" fill="rgba(196,145,26,0.04)"/>
-        {/* Base */}
-        <line x1="210" y1="430" x2="290" y2="430" stroke="rgba(196,145,26,0.15)" strokeWidth="1"/>
-        {/* Pivot dot */}
-        <circle cx="250" cy="195" r="5" fill="rgba(219,168,40,0.5)"/>
-        {/* Bg grid */}
-        {[160,220,280,340,400].map(y => (
-          <line key={y} x1="60" y1={y} x2="440" y2={y} stroke="rgba(255,255,255,0.02)" strokeWidth="0.6"/>
-        ))}
-      </svg>
-      <ServiceVisualLabel num="03" label="Litigation" />
-    </div>
-  )
-}
-
-function VisualImmigration() {
-  return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(150deg, #060f1e 0%, #0c1d35 60%, #060d1a 100%)' }}>
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
-        {/* Globe/meridian motif */}
-        <ellipse cx="250" cy="280" rx="150" ry="150" fill="none" stroke="rgba(196,145,26,0.14)" strokeWidth="1"/>
-        {/* Meridians */}
-        {[-100,-50,0,50,100].map((offset, i) => (
-          <ellipse key={i} cx="250" cy="280" rx={Math.abs(offset) || 10} ry="150"
-            fill="none" stroke="rgba(196,145,26,0.07)" strokeWidth="0.8"/>
-        ))}
-        {/* Parallels */}
-        {[-90,-50,0,50,90].map((offset, i) => (
-          <ellipse key={i} cx="250" cy={280 + offset}
-            rx={Math.round(150 * Math.cos(offset * Math.PI / 180))}
-            ry="18"
-            fill="none" stroke="rgba(196,145,26,0.07)" strokeWidth="0.8"/>
-        ))}
-        {/* Compass rose */}
-        <circle cx="250" cy="280" r="8" fill="none" stroke="rgba(219,168,40,0.30)" strokeWidth="1"/>
-        <circle cx="250" cy="280" r="2.5" fill="rgba(219,168,40,0.6)"/>
-        {['N','E','S','W'].map((d, i) => {
-          const angle = i * 90 * Math.PI / 180
-          const x = 250 + Math.sin(angle) * 22
-          const y = 280 - Math.cos(angle) * 22
-          return <circle key={d} cx={x} cy={y} r="1.5" fill="rgba(219,168,40,0.3)"/>
-        })}
-        {/* Outer ring */}
-        <circle cx="250" cy="280" r="168" fill="none" stroke="rgba(196,145,26,0.06)" strokeWidth="0.8" strokeDasharray="6 6"/>
-      </svg>
-      <ServiceVisualLabel num="04" label="Immigration" />
-    </div>
-  )
-}
-
-function VisualProperty() {
-  return (
-    <div className="w-full h-full relative flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(140deg, #070e1c 0%, #0d1c30 55%, #060d1a 100%)' }}>
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 500 600" preserveAspectRatio="xMidYMid slice">
-        {/* Architectural floor plan motif */}
-        {/* Outer boundary */}
-        <rect x="100" y="150" width="300" height="260" fill="none" stroke="rgba(196,145,26,0.18)" strokeWidth="1.2"/>
-        {/* Inner rooms */}
-        <line x1="100" y1="280" x2="270" y2="280" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        <line x1="270" y1="150" x2="270" y2="410" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        <line x1="100" y1="340" x2="270" y2="340" stroke="rgba(196,145,26,0.08)" strokeWidth="0.8"/>
-        {/* Door arcs */}
-        <path d="M270 280 Q290 280 290 300" fill="none" stroke="rgba(219,168,40,0.15)" strokeWidth="0.8"/>
-        <path d="M100 340 Q120 340 120 360" fill="none" stroke="rgba(219,168,40,0.15)" strokeWidth="0.8"/>
-        {/* Room fill hints */}
-        <rect x="101" y="151" width="168" height="128" fill="rgba(196,145,26,0.025)"/>
-        <rect x="271" y="151" width="128" height="258" fill="rgba(196,145,26,0.03)"/>
-        {/* Compass */}
-        <circle cx="390" cy="470" r="22" fill="none" stroke="rgba(196,145,26,0.12)" strokeWidth="0.8"/>
-        <line x1="390" y1="450" x2="390" y2="470" stroke="rgba(219,168,40,0.35)" strokeWidth="1"/>
-        <circle cx="390" cy="470" r="2" fill="rgba(219,168,40,0.5)"/>
-        {/* Scale bar */}
-        <line x1="110" y1="460" x2="200" y2="460" stroke="rgba(196,145,26,0.20)" strokeWidth="1"/>
-        <line x1="110" y1="455" x2="110" y2="465" stroke="rgba(196,145,26,0.20)" strokeWidth="1"/>
-        <line x1="155" y1="455" x2="155" y2="465" stroke="rgba(196,145,26,0.20)" strokeWidth="1"/>
-        <line x1="200" y1="455" x2="200" y2="465" stroke="rgba(196,145,26,0.20)" strokeWidth="1"/>
-      </svg>
-      <ServiceVisualLabel num="05" label="Property Law" />
-    </div>
-  )
-}
-
-// Shared label overlay used by each visual
-function ServiceVisualLabel({ num, label }: { num: string; label: string }) {
-  return (
-    <div className="absolute bottom-7 left-7 z-10">
-      <div style={{
-        background: 'rgba(6,13,26,0.65)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderLeft: '2px solid rgba(196,145,26,0.45)',
-        padding: '10px 16px',
-      }}>
-        <p style={{ fontFamily: '"DM Sans",sans-serif', fontSize: '0.52rem', letterSpacing: '0.30em', textTransform: 'uppercase', color: 'rgba(196,145,26,0.6)', marginBottom: 3 }}>
-          Area {num}
-        </p>
-        <p style={{ fontFamily: '"Cormorant Garamond",Georgia,serif', fontWeight: 300, fontSize: '1.05rem', color: 'rgba(255,255,255,0.80)', lineHeight: 1 }}>
-          {label}
-        </p>
-      </div>
-    </div>
-  )
-}
-
-const visualPanels = [
-  <VisualFamilyViolence key="fv" />,
-  <VisualFamilyLaw key="fl" />,
-  <VisualLitigation key="lit" />,
-  <VisualImmigration key="imm" />,
-  <VisualProperty key="prop" />,
-]
 
 const mainServices = [
   {
@@ -708,6 +503,7 @@ const mainServices = [
       'Contested hearings',
       'Risk assessment and evidence preparation',
     ],
+    image: '/images/services/family-violence-image.jpg',
   },
   {
     slug: 'family-law',
@@ -722,6 +518,7 @@ const mainServices = [
       'Parenting arrangements and parenting orders',
       'Affidavits and court documentation',
     ],
+    image: '/images/services/family-law.jpg',
   },
   {
     slug: 'litigation-disputes',
@@ -736,6 +533,7 @@ const mainServices = [
       'Debt recovery',
       'Court pleadings and submissions',
     ],
+    image: '/images/services/litigation-dispute.jpg',
   },
   {
     slug: 'immigration-law',
@@ -750,6 +548,7 @@ const mainServices = [
       'Merits review matters',
       'Court pathway guidance where applicable',
     ],
+    image: '/images/services/immigration.jpg',
   },
   {
     slug: 'conveyancing-property',
@@ -764,7 +563,8 @@ const mainServices = [
       'Settlement support',
       'Property disputes and caveats',
     ],
-  },
+    image: '/images/services/property-law.jpg',
+  }
 ]
 
 const otherAreas = [
@@ -782,11 +582,11 @@ export default function ServicesPage() {
         title="Legal Services"
         italic="For Every Matter"
         description="Advice, document preparation, negotiation and representation across a full range of practice areas. If unsure which applies — contact us for guidance."
-        imageUrl="https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=1600&q=85&auto=format&fit=crop"
+        imageUrl="/images/services-hero.jpg"
       />
 
       {/* ── Sticky quick-nav ── */}
-      <nav className="sticky top-28 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
+      <nav className="sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto scrollbar-none">
             {mainServices.map((svc) => (
@@ -888,7 +688,13 @@ export default function ServicesPage() {
                     style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }} />
                   {/* The visual itself — fills full height */}
                   <div className="absolute inset-0">
-                    {visualPanels[i]}
+                    {/* {visualPanels[i]} */}
+                    <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={500} height={600}
+                      className="object-cover object-center w-full h-full"
+                    />
                   </div>
                 </div>
 

@@ -216,6 +216,8 @@
 
 // lib/config.ts — Central configuration for R&N Legal website
 
+// lib/config.ts — Central configuration for R&N Legal website
+
 export const siteConfig = {
   name: 'R&N Legal',
   tagline: 'Clear Legal Guidance. Careful Preparation. Real Outcomes.',
@@ -244,10 +246,10 @@ export const siteConfig = {
   ],
 
   trustPoints: [
-    { label: 'Plain-English Advice',      description: 'We explain what the law allows and your realistic options.' },
-    { label: 'Strong Preparation',        description: 'Precision in evidence, chronology and strategic positioning.' },
-    { label: 'Responsive Communication',  description: 'Timely updates and clear expectations throughout.' },
-    { label: 'Cross-Practice Support',    description: 'Family, migration, property and dispute expertise.' },
+    { label: 'Plain-English Advice',     description: 'We explain what the law allows and your realistic options.' },
+    { label: 'Strong Preparation',       description: 'Precision in evidence, chronology and strategic positioning.' },
+    { label: 'Responsive Communication', description: 'Timely updates and clear expectations throughout.' },
+    { label: 'Cross-Practice Support',   description: 'Family, migration, property and dispute expertise.' },
   ],
 
   process: [
@@ -257,18 +259,19 @@ export const siteConfig = {
     { step: '04', title: 'Resolution',           description: 'We negotiate, represent and pursue resolution on your behalf.' },
   ],
 
-  // ─── Services — matches Page 3 of final client content doc ───────────────
-  // 5 primary practice areas + 1 "Other Areas" group.
-  // The header dropdown, services page quick-nav, and mobile accordion
-  // all derive from this single array.
+  // ─────────────────────────────────────────────────────────────────────────
+  // ALL SERVICES — full list of 9 individual practice areas.
+  // Used by: homepage services grid, services page (individual sections),
+  //          contact form dropdown, practiceAreas list.
+  // ─────────────────────────────────────────────────────────────────────────
   services: [
     {
       slug: 'family-violence',
       title: 'Family Violence — Intervention Orders',
-      shortTitle: 'Intervention Orders',
+      shortTitle: 'Family Violence (FVIO)',
       icon: 'Shield',
       description:
-        'We assist applicants and respondents in intervention order proceedings, from the initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
+        'We assist applicants and respondents in intervention order proceedings, from initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
       points: [
         'Applications, responses and variations',
         'Contested hearings',
@@ -281,7 +284,7 @@ export const siteConfig = {
       shortTitle: 'Family Law',
       icon: 'Users',
       description:
-        'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed in accordance with applicable procedural requirements.',
+        'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed.',
       points: [
         'Divorce applications',
         'Parenting arrangements and parenting orders',
@@ -291,10 +294,10 @@ export const siteConfig = {
     {
       slug: 'litigation-disputes',
       title: 'Litigation and Civil Disputes',
-      shortTitle: 'Litigation',
+      shortTitle: 'Litigation & Disputes',
       icon: 'Scale',
       description:
-        'R&N Legal represents clients in civil disputes across Victorian courts and tribunals. We prioritise strategic preparation, clear pleadings and disciplined representation focused on resolution.',
+        'We represent clients in civil disputes across Victorian courts and tribunals, prioritising strategic preparation, clear pleadings and disciplined representation.',
       points: [
         'Contract disputes',
         'Debt recovery',
@@ -304,10 +307,10 @@ export const siteConfig = {
     {
       slug: 'immigration-law',
       title: 'Immigration — Tribunal and Court Pathways',
-      shortTitle: 'Immigration',
+      shortTitle: 'Immigration Law',
       icon: 'Globe',
       description:
-        'We provide structured advice on visa strategy and merits review, assisting clients to understand their options and navigate the Administrative Review Tribunal and court pathways where applicable.',
+        'We provide structured advice on visa strategy and merits review, helping clients navigate the Administrative Review Tribunal and court pathways where applicable.',
       points: [
         'Visa strategy and preparation',
         'Merits review matters',
@@ -317,10 +320,10 @@ export const siteConfig = {
     {
       slug: 'conveyancing-property',
       title: 'Property Law and Conveyancing',
-      shortTitle: 'Property Law',
+      shortTitle: 'Property & Conveyancing',
       icon: 'Home',
       description:
-        'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions and disputes, including caveat matters requiring prompt legal action.',
+        'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions, disputes and caveat matters.',
       points: [
         'Contract review',
         'Settlement support',
@@ -328,19 +331,90 @@ export const siteConfig = {
       ],
     },
     {
-      // "Other Areas" group — links to the dedicated section on the services page
-      slug: 'other-areas',
-      title: 'Other Areas',
-      shortTitle: 'Other Areas',
-      icon: 'Briefcase',
+      slug: 'wills-estates',
+      title: 'Wills & Estate Planning',
+      shortTitle: 'Wills & Estates',
+      icon: 'FileText',
       description:
-        'Additional areas of practice including wills and estate planning, disciplinary and regulatory matters, traffic offences and consumer law disputes.',
+        'We prepare basic wills and provide practical estate planning guidance to help protect your family and assets.',
       points: [
         'Wills and basic estate planning',
-        'Disciplinary and regulatory matters',
-        'Traffic offences',
-        'Consumer law disputes',
+        'Executor guidance and practical steps',
       ],
+    },
+    {
+      slug: 'disciplinary-regulatory',
+      title: 'Disciplinary & Regulatory Matters',
+      shortTitle: 'Disciplinary Matters',
+      icon: 'Briefcase',
+      description:
+        'We assist professionals and individuals facing regulatory inquiries, conduct investigations and disciplinary proceedings.',
+      points: [
+        'Response planning for regulatory matters',
+        'Professional conduct issues and dispute strategy',
+      ],
+    },
+    {
+      slug: 'traffic-offences',
+      title: 'Traffic Offences',
+      shortTitle: 'Traffic Offences',
+      icon: 'Car',
+      description:
+        'We advise and represent clients facing traffic infringements, charges and licence-related consequences before the Magistrates Court.',
+      points: [
+        'Advice for infringement and charge matters',
+        'Court representation and licence consequences',
+      ],
+    },
+    {
+      slug: 'consumer-law',
+      title: 'Consumer Law',
+      shortTitle: 'Consumer Law',
+      icon: 'ShoppingBag',
+      description:
+        'We advise consumers on their rights under the Australian Consumer Law and assist with disputes, refunds and tribunal proceedings.',
+      points: [
+        'Advice on Australian Consumer Law rights',
+        'VCAT and tribunal-ready preparation',
+      ],
+    },
+  ],
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // NAV SERVICES — consolidated 6-item list for the header dropdown and
+  // mobile accordion only. Mirrors the client doc grouping (Page 3):
+  // 5 primary areas + 1 "Other Areas" catch-all linking to #other-areas.
+  // ─────────────────────────────────────────────────────────────────────────
+  navServices: [
+    {
+      slug: 'family-violence',
+      shortTitle: 'Intervention Orders',
+      hint: 'Applications, responses and variations',
+    },
+    {
+      slug: 'family-law',
+      shortTitle: 'Family Law',
+      hint: 'Divorce applications & parenting orders',
+    },
+    {
+      slug: 'litigation-disputes',
+      shortTitle: 'Litigation',
+      hint: 'Contract disputes & debt recovery',
+    },
+    {
+      slug: 'immigration-law',
+      shortTitle: 'Immigration',
+      hint: 'Visa strategy & merits review',
+    },
+    {
+      slug: 'conveyancing-property',
+      shortTitle: 'Property Law',
+      hint: 'Contract review & settlement support',
+    },
+    {
+      slug: 'other-areas',
+      shortTitle: 'Other Areas',
+      hint: 'Wills, traffic, disciplinary & consumer',
     },
   ],
 
@@ -375,4 +449,5 @@ export const siteConfig = {
 }
 
 export type SiteConfig = typeof siteConfig
-export type Service = (typeof siteConfig.services)[number]
+export type Service    = (typeof siteConfig.services)[number]
+export type NavService = (typeof siteConfig.navServices)[number]
