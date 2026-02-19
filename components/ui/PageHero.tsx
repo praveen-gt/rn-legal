@@ -9,7 +9,7 @@ interface PageHeroProps {
 }
 
 export function PageHero({ label, title, italic, description, imageUrl, imageAlt, accent }: PageHeroProps) {
-  const img = imageUrl || 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80&auto=format&fit=crop'
+  const img = imageUrl || '/images/default-hero.jpg'
   return (
     <section className="relative min-h-[55vh] sm:min-h-[62vh] flex items-end overflow-hidden">
       {/* Background image */}
