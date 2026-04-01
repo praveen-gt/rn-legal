@@ -84,7 +84,7 @@ export function HeroSection() {
             style={{ animation: 'reveal-up 0.9s 0.4s cubic-bezier(0.16,1,0.3,1) both' }}>
             {/* R&N Legal provides clear, practical legal advice and representation across family law, migration, property and dispute matters. */}
 
-            R&N Legal provides professional legal advice and representation across litigation, family law, migration and property-related matters. We prioritise preparation, procedural compliance and clear communication.
+            R&N Legal provides professional legal advice and representation across traffic, family law, migration and property-related matters. We prioritise preparation, procedural compliance and clear communication.
           </p>
 
           {/* CTAs */}

@@ -36,9 +36,9 @@ export function CTASection() {
               </em>
             </h2>
             <div className="w-14 h-px mt-7 mb-7" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
-            <p className="text-white/45 font-body leading-relaxed max-w-md">
-              We offer paid consultations and scoped fee arrangements depending on urgency and complexity. Contact us for a clear estimate.
-            </p>
+            <p className="text-white/45 font-body leading-relaxed max-w-md italic"> 
+              “Initial consultation by appointment. Fees and scope discussed clearly at or before engagement.”
+              </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link href="/contact" className="btn-gold">

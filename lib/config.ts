@@ -8,55 +8,80 @@
 //   url: 'https://rnlegal.com.au',
 //   abn: 'ABN: 12 345 678 901',
 
+//   socials: {
+//   instagram: 'https://instagram.com/rnlegal',
+//   facebook: 'https://facebook.com/rnlegal',
+//   tiktok: 'https://tiktok.com/@rnlegal',
+// },
+
 //   contact: {
 //     email: 'info@rnlegal.com.au',
 //     phone1: '0430 593 124',
+//     whatsapp1: "61430593124",
 //     phone2: '0470 695 941',
-//     address: 'Suite 401 Level 4, 2 Queen Street',
+//     whatsapp2: "61470695941",
+//     address: 'Suite 401–402, Level 4, 2 Queen Street',
 //     suburb: 'Melbourne VIC 3000',
-//     fullAddress: 'Suite 401 Level 4, 2 Queen Street, Melbourne VIC 3000',
+//     fullAddress: 'Suite 401–402, Level 4, 2 Queen Street, Melbourne VIC 3000',
 //     hours: 'Monday – Friday, 10:00 am – 5:00 pm',
 //     responseTime: 'We aim to respond within 1 business day.',
 //   },
 
 //   nav: [
-//     { label: 'Home', href: '/' },
-//     { label: 'About', href: '/about' },
-//     { label: 'Services', href: '/services' },
-//     { label: 'Contact', href: '/contact' },
+//     { label: 'Home',       href: '/' },
+//     { label: 'About',      href: '/about' },
+//     { label: 'Services',   href: '/services' },
+//     { label: 'Contact',    href: '/contact' },
 //     { label: 'Disclaimer', href: '/disclaimer' },
 //   ],
 
 //   trustPoints: [
-//     { label: 'Plain-English Advice', description: 'We explain what the law allows and your realistic options.' },
-//     { label: 'Strong Preparation', description: 'Precision in evidence, chronology and strategic positioning.' },
+//     { label: 'Plain-English Advice',     description: 'We explain what the law allows and your realistic options.' },
+//     { label: 'Strong Preparation',       description: 'Precision in evidence, chronology and strategic positioning.' },
 //     { label: 'Responsive Communication', description: 'Timely updates and clear expectations throughout.' },
-//     { label: 'Cross-Practice Support', description: 'Family, migration, property and dispute expertise.' },
+//     { label: 'Cross-Practice Support',   description: 'Family, migration, property and dispute expertise.' },
 //   ],
+
+//   // process: [
+//   //   { step: '01', title: 'Initial Consultation', description: 'We understand your situation, key facts, deadlines and urgency.' },
+//   //   { step: '02', title: 'Strategy & Advice',    description: 'We advise on your options, risks and the most practical legal pathway.' },
+//   //   { step: '03', title: 'Preparation',          description: 'We prepare your evidence, affidavits and documents to the highest standard.' },
+//   //   { step: '04', title: 'Resolution',           description: 'We negotiate, represent and pursue resolution on your behalf.' },
+//   // ],
 
 //   process: [
-//     {
-//       step: '01',
-//       title: 'Initial Consultation',
-//       description: 'We understand your situation, key facts, deadlines and urgency.',
-//     },
-//     {
-//       step: '02',
-//       title: 'Strategy & Advice',
-//       description: 'We advise on your options, risks and the most practical legal pathway.',
-//     },
-//     {
-//       step: '03',
-//       title: 'Preparation',
-//       description: 'We prepare your evidence, affidavits and documents to the highest standard.',
-//     },
-//     {
-//       step: '04',
-//       title: 'Resolution',
-//       description: 'We negotiate, represent and pursue resolution on your behalf.',
-//     },
-//   ],
+//   {
+//     step: '01',
+//     title: 'Initial Assessment',
+//     description: 'We understand your situation, key facts, deadlines and urgency.',
+//   },
+//   {
+//     step: '02',
+//     title: 'Conflict Check',
+//     description: 'We conduct a conflict check to ensure we can act for you without any professional conflicts.',
+//   },
+//   {
+//     step: '03',
+//     title: 'Scope & Fee Discussion',
+//     description: 'We clearly outline the scope of work, likely steps involved and applicable fees.',
+//   },
+//   {
+//     step: '04',
+//     title: 'Strategy & Document Review',
+//     description: 'We develop your legal strategy and carefully review all documents and evidence.',
+//   },
+//   {
+//     step: '05',
+//     title: 'Ongoing Representation',
+//     description: 'We represent you throughout the matter or provide limited-scope advice as required.',
+//   },
+// ],
 
+//   // ─────────────────────────────────────────────────────────────────────────
+//   // ALL SERVICES — full list of 9 individual practice areas.
+//   // Used by: homepage services grid, services page (individual sections),
+//   //          contact form dropdown, practiceAreas list.
+//   // ─────────────────────────────────────────────────────────────────────────
 //   services: [
 //     {
 //       slug: 'family-violence',
@@ -64,80 +89,75 @@
 //       shortTitle: 'Family Violence (FVIO)',
 //       icon: 'Shield',
 //       description:
-//         'We assist with intervention order applications, responses, variations and contested hearings. We also advise on safety planning, evidence collection, and related parenting risk considerations.',
+//         'We assist applicants and respondents in intervention order proceedings, from initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
 //       points: [
-//         'Advice on safety planning, evidence and urgent applications',
-//         'Applications, responses, variations and contested hearings',
-//         'Negotiation of undertakings where appropriate and instructed',
-//         'Related parenting and property risk considerations',
+//         'Applications, responses and variations',
+//         'Contested hearings',
+//         'Risk assessment and evidence preparation',
 //       ],
 //     },
 //     {
 //       slug: 'family-law',
-//       title: 'Family Law — Divorce, Parenting & Orders',
+//       title: 'Family Law — Divorce and Parenting',
 //       shortTitle: 'Family Law',
 //       icon: 'Users',
 //       description:
-//         'We assist families navigate divorce, parenting arrangements, interim and final orders with thorough preparation and honest advice about likely outcomes.',
+//         'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed.',
 //       points: [
-//         'Divorce applications and procedural guidance',
-//         'Parenting arrangements, parenting orders and interim orders',
-//         'Communication protocols, changeover arrangements and risk management',
-//         'Court-ready preparation of affidavits and supporting documents',
-//       ],
-//     },
-//     {
-//       slug: 'wills-estates',
-//       title: 'Wills & Estates',
-//       shortTitle: 'Wills & Estates',
-//       icon: 'FileText',
-//       description:
-//         'We prepare straightforward wills and provide practical estate planning guidance to help you protect your family and assets.',
-//       points: [
-//         'Simple wills and basic estate planning',
-//         'Executor guidance and practical steps after a death',
-//         'Referrals for complex estate litigation where needed',
-//       ],
-//     },
-//     {
-//       slug: 'conveyancing-property',
-//       title: 'Conveyancing & Property Law',
-//       shortTitle: 'Property & Conveyancing',
-//       icon: 'Home',
-//       description:
-//         'We assist buyers, sellers and owners with contract reviews, settlement, title matters and property disputes across Victoria.',
-//       points: [
-//         'Contract review and advice before signing',
-//         'Buying/selling support, settlement coordination and checklists',
-//         'Titles, notices, and property dispute guidance',
-//         'Caveats and urgent property protection steps where appropriate',
-//       ],
-//     },
-//     {
-//       slug: 'immigration-law',
-//       title: 'Immigration Law — Court & Tribunal Pathways',
-//       shortTitle: 'Immigration Law',
-//       icon: 'Globe',
-//       description:
-//         'We advise on visa strategy, refusal and cancellation responses, merits review at the ART, and court pathways through the FCFCOA.',
-//       points: [
-//         'Visa strategy and document preparation',
-//         'Refusal/cancellation response planning and time-critical steps',
-//         'Merits review preparation (ART) and related processes',
-//         'Court pathway guidance (FCFCOA) where applicable',
+//         'Divorce applications',
+//         'Parenting arrangements and parenting orders',
+//         'Affidavits and court documentation',
 //       ],
 //     },
 //     {
 //       slug: 'litigation-disputes',
-//       title: 'Litigation & Disputes',
+//       title: 'Litigation and Civil Disputes',
 //       shortTitle: 'Litigation & Disputes',
 //       icon: 'Scale',
 //       description:
-//         'We assist with debt recovery, contract disputes and civil litigation — from letters of demand through to court representation.',
+//         'We represent clients in civil disputes across Victorian courts and tribunals, prioritising strategic preparation, clear pleadings and disciplined representation.',
 //       points: [
-//         'Debt recovery, contract disputes and negotiations',
-//         'Letters of demand, pre-action steps and settlement offers',
-//         'Court documents and representation where appropriate',
+//         'Contract disputes',
+//         'Debt recovery',
+//         'Court pleadings and submissions',
+//       ],
+//     },
+//     {
+//       slug: 'immigration-law',
+//       title: 'Immigration — Tribunal and Court Pathways',
+//       shortTitle: 'Immigration Law',
+//       icon: 'Globe',
+//       description:
+//         'We provide structured advice on visa strategy and merits review, helping clients navigate the Administrative Review Tribunal and court pathways where applicable.',
+//       points: [
+//         'Visa strategy and preparation',
+//         'Merits review matters',
+//         'Court pathway guidance where applicable',
+//       ],
+//     },
+//     {
+//       slug: 'conveyancing-property',
+//       title: 'Property Law and Conveyancing',
+//       shortTitle: 'Property & Conveyancing',
+//       icon: 'Home',
+//       description:
+//         'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions, disputes and caveat matters.',
+//       points: [
+//         'Contract review',
+//         'Settlement support',
+//         'Property disputes and caveats',
+//       ],
+//     },
+//     {
+//       slug: 'wills-estates',
+//       title: 'Wills & Estate Planning',
+//       shortTitle: 'Wills & Estates',
+//       icon: 'FileText',
+//       description:
+//         'We prepare basic wills and provide practical estate planning guidance to help protect your family and assets.',
+//       points: [
+//         'Wills and basic estate planning',
+//         'Executor guidance and practical steps',
 //       ],
 //     },
 //     {
@@ -148,8 +168,8 @@
 //       description:
 //         'We assist professionals and individuals facing regulatory inquiries, conduct investigations and disciplinary proceedings.',
 //       points: [
-//         'Response planning and document drafting for regulators',
-//         'Professional conduct issues and related dispute strategy',
+//         'Response planning for regulatory matters',
+//         'Professional conduct issues and dispute strategy',
 //       ],
 //     },
 //     {
@@ -161,8 +181,7 @@
 //         'We advise and represent clients facing traffic infringements, charges and licence-related consequences before the Magistrates Court.',
 //       points: [
 //         'Advice for infringement and charge matters',
-//         'Court representation and negotiation where permitted',
-//         'Licence consequences and practical steps',
+//         'Court representation and licence consequences',
 //       ],
 //     },
 //     {
@@ -173,21 +192,58 @@
 //       description:
 //         'We advise consumers on their rights under the Australian Consumer Law and assist with disputes, refunds and tribunal proceedings.',
 //       points: [
-//         'Advice on Australian Consumer Law rights and remedies',
-//         'Negotiation and dispute correspondence with businesses',
-//         'VCAT and tribunal-ready preparation where applicable',
+//         'Advice on Australian Consumer Law rights',
+//         'VCAT and tribunal-ready preparation',
 //       ],
 //     },
 //   ],
 
+//   // ─────────────────────────────────────────────────────────────────────────
+//   // NAV SERVICES — consolidated 6-item list for the header dropdown and
+//   // mobile accordion only. Mirrors the client doc grouping (Page 3):
+//   // 5 primary areas + 1 "Other Areas" catch-all linking to #other-areas.
+//   // ─────────────────────────────────────────────────────────────────────────
+//   navServices: [
+//     {
+//       slug: 'family-violence',
+//       shortTitle: 'Intervention Orders',
+//       hint: 'Applications, responses and variations',
+//     },
+//     {
+//       slug: 'family-law',
+//       shortTitle: 'Family Law',
+//       hint: 'Divorce applications & parenting orders',
+//     },
+//     {
+//       slug: 'litigation-disputes',
+//       shortTitle: 'Litigation',
+//       hint: 'Contract disputes & debt recovery',
+//     },
+//     {
+//       slug: 'immigration-law',
+//       shortTitle: 'Immigration',
+//       hint: 'Visa strategy & merits review',
+//     },
+//     {
+//       slug: 'conveyancing-property',
+//       shortTitle: 'Property Law',
+//       hint: 'Contract review & settlement support',
+//     },
+//     {
+//       slug: 'other-areas',
+//       shortTitle: 'Other Areas',
+//       hint: 'Wills, traffic, disciplinary & consumer',
+//     },
+//   ],
+
 //   practiceAreas: [
-//     'Family Violence (FVIO)',
+//     'Intervention Orders (FVIO)',
 //     'Family Law',
-//     'Wills & Estates',
-//     'Conveyancing & Property Law',
-//     'Immigration Law',
-//     'Litigation & Disputes',
-//     'Disciplinary & Regulatory Matters',
+//     'Litigation & Civil Disputes',
+//     'Immigration',
+//     'Property Law & Conveyancing',
+//     'Wills & Estate Planning',
+//     'Disciplinary & Regulatory',
 //     'Traffic Offences',
 //     'Consumer Law',
 //     'Other / Not Sure',
@@ -204,17 +260,15 @@
 //     tagline: 'Boutique legal practice. Clear advice. Careful preparation.',
 //     links: [
 //       { label: 'Privacy Policy', href: '/disclaimer#privacy' },
-//       { label: 'Disclaimer', href: '/disclaimer' },
-//       { label: 'Contact', href: '/contact' },
+//       { label: 'Disclaimer',     href: '/disclaimer' },
+//       { label: 'Contact',        href: '/contact' },
 //     ],
 //   },
 // }
 
 // export type SiteConfig = typeof siteConfig
-// export type Service = (typeof siteConfig.services)[number]
-
-
-// lib/config.ts — Central configuration for R&N Legal website
+// export type Service    = (typeof siteConfig.services)[number]
+// export type NavService = (typeof siteConfig.navServices)[number]
 
 // lib/config.ts — Central configuration for R&N Legal website
 
@@ -226,10 +280,18 @@ export const siteConfig = {
   url: 'https://rnlegal.com.au',
   abn: 'ABN: 12 345 678 901',
 
+  socials: {
+    instagram: 'https://instagram.com/rnlegal',
+    facebook: 'https://facebook.com/rnlegal',
+    tiktok: 'https://tiktok.com/@rnlegal',
+  },
+
   contact: {
     email: 'info@rnlegal.com.au',
     phone1: '0430 593 124',
+    whatsapp1: '61430593124',
     phone2: '0470 695 941',
+    whatsapp2: '61470695941',
     address: 'Suite 401–402, Level 4, 2 Queen Street',
     suburb: 'Melbourne VIC 3000',
     fullAddress: 'Suite 401–402, Level 4, 2 Queen Street, Melbourne VIC 3000',
@@ -253,10 +315,31 @@ export const siteConfig = {
   ],
 
   process: [
-    { step: '01', title: 'Initial Consultation', description: 'We understand your situation, key facts, deadlines and urgency.' },
-    { step: '02', title: 'Strategy & Advice',    description: 'We advise on your options, risks and the most practical legal pathway.' },
-    { step: '03', title: 'Preparation',          description: 'We prepare your evidence, affidavits and documents to the highest standard.' },
-    { step: '04', title: 'Resolution',           description: 'We negotiate, represent and pursue resolution on your behalf.' },
+    {
+      step: '01',
+      title: 'Initial Assessment',
+      description: 'We understand your situation, key facts, deadlines and urgency.',
+    },
+    {
+      step: '02',
+      title: 'Conflict Check',
+      description: 'We conduct a conflict check to ensure we can act for you without any professional conflicts.',
+    },
+    {
+      step: '03',
+      title: 'Scope & Fee Discussion',
+      description: 'We clearly outline the scope of work, likely steps involved and applicable fees.',
+    },
+    {
+      step: '04',
+      title: 'Strategy & Document Review',
+      description: 'We develop your legal strategy and carefully review all documents and evidence.',
+    },
+    {
+      step: '05',
+      title: 'Ongoing Representation',
+      description: 'We represent you throughout the matter or provide limited-scope advice as required.',
+    },
   ],
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -271,11 +354,16 @@ export const siteConfig = {
       shortTitle: 'Family Violence (FVIO)',
       icon: 'Shield',
       description:
-        'We assist applicants and respondents in intervention order proceedings, from initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
+        'Family violence intervention order matters in Victoria are serious, urgent and often deeply interconnected with family, parenting, housing and criminal consequences. Early legal advice is often critical because the practical effect of an interim or final order can be immediate and far-reaching. R&N Legal assists both applicants seeking protection and respondents responding to allegations or applications, with close attention to chronology, evidence, risk, procedural fairness and the practical consequences of any order sought or made.',
       points: [
-        'Applications, responses and variations',
+        'Applications for family violence intervention orders',
+        'Responding to police or private applications',
+        'Interim order hearings',
+        'Negotiated outcomes where appropriate',
         'Contested hearings',
-        'Risk assessment and evidence preparation',
+        'Variations and revocations',
+        'Advice on allegations, evidence and breach consequences',
+        'Overlap between intervention orders and family law matters',
       ],
     },
     {
@@ -284,11 +372,15 @@ export const siteConfig = {
       shortTitle: 'Family Law',
       icon: 'Users',
       description:
-        'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed.',
+        'Family law matters are rarely only about legal rights. They involve children, living arrangements, finances, communication breakdown and, in many cases, significant emotional pressure. R&N Legal assists clients with divorce, parenting matters, consent orders, interim applications and family law strategy. Our focus is on identifying what arrangement can be supported by evidence, what pathway is proportionate, and what steps best protect the client\'s legal and personal position.',
       points: [
         'Divorce applications',
-        'Parenting arrangements and parenting orders',
-        'Affidavits and court documentation',
+        'Parenting disputes and parenting orders',
+        'Consent orders',
+        'Interim applications',
+        'Affidavit material and supporting evidence',
+        'Family-violence-related parenting issues',
+        'Practical advice on process, risk and next steps',
       ],
     },
     {
@@ -297,11 +389,15 @@ export const siteConfig = {
       shortTitle: 'Litigation & Disputes',
       icon: 'Scale',
       description:
-        'We represent clients in civil disputes across Victorian courts and tribunals, prioritising strategic preparation, clear pleadings and disciplined representation.',
+        'Disputes are rarely won by aggression alone. They are usually resolved through preparation, leverage, evidence, timing and judgment. R&N Legal assists clients with contractual disputes, debt recovery, property-related disputes and general civil litigation strategy. Our approach is grounded in commercial and procedural realism — focused on what is truly in dispute, what evidence exists, and which pathway gives the client the strongest practical advantage.',
       points: [
-        'Contract disputes',
+        'Contractual disputes',
         'Debt recovery',
-        'Court pleadings and submissions',
+        'Pre-litigation correspondence',
+        'Settlement strategy',
+        'Pleadings, evidence and submissions',
+        'Court and tribunal matters',
+        'Practical risk and recoverability advice',
       ],
     },
     {
@@ -310,11 +406,16 @@ export const siteConfig = {
       shortTitle: 'Immigration Law',
       icon: 'Globe',
       description:
-        'We provide structured advice on visa strategy and merits review, helping clients navigate the Administrative Review Tribunal and court pathways where applicable.',
+        'Immigration law is federal in nature, but for clients in Victoria its effects are immediate and local: work rights, family stability, sponsorship, lawful status, tribunal review and court deadlines. R&N Legal provides structured immigration advice for clients who need more than form-filling. Many migration matters turn on timing, status, validity, evidence, or the framing of review submissions — we assist clients to understand where they stand and how the matter should be prepared to be presented properly and persuasively.',
       points: [
-        'Visa strategy and preparation',
-        'Merits review matters',
-        'Court pathway guidance where applicable',
+        'Visa strategy and pathway advice',
+        'Temporary and permanent visa matters',
+        'Visa refusal matters',
+        'Visa cancellation matters',
+        'Administrative review and related preparation',
+        'Bridging and status-related issues',
+        'Complex procedural and evidentiary advice',
+        'Structured submissions and case preparation',
       ],
     },
     {
@@ -323,11 +424,15 @@ export const siteConfig = {
       shortTitle: 'Property & Conveyancing',
       icon: 'Home',
       description:
-        'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions, disputes and caveat matters.',
+        'Property matters often involve significant financial exposure, fixed contractual deadlines and legal issues that become harder to unwind once a transaction is on foot. R&N Legal assists with contract review, conveyancing support, settlement issues, title concerns, caveats and property-related disputes. Our approach combines careful review, procedural attention and practical legal judgment — whether the matter is preventative, transactional or contentious.',
       points: [
-        'Contract review',
-        'Settlement support',
-        'Property disputes and caveats',
+        'Contract review before signing',
+        'Residential conveyancing support',
+        'Settlement advice and issue management',
+        'Title and ownership concerns',
+        'Caveat matters',
+        'Property disputes',
+        'Urgent transaction-related advice',
       ],
     },
     {
@@ -336,10 +441,12 @@ export const siteConfig = {
       shortTitle: 'Wills & Estates',
       icon: 'FileText',
       description:
-        'We prepare basic wills and provide practical estate planning guidance to help protect your family and assets.',
+        'A will should not be treated as a formality. It should reflect a client\'s actual intentions, family circumstances and practical planning needs. Poorly prepared estate documents can create unnecessary cost, uncertainty and tension for families later. R&N Legal assists with wills and basic estate planning so clients can put in place documents that are clear, workable and more likely to reduce future confusion.',
       points: [
-        'Wills and basic estate planning',
-        'Executor guidance and practical steps',
+        'Wills',
+        'Review of existing wills',
+        'Basic estate planning',
+        'Executor and beneficiary planning',
       ],
     },
     {
@@ -348,10 +455,13 @@ export const siteConfig = {
       shortTitle: 'Disciplinary Matters',
       icon: 'Briefcase',
       description:
-        'We assist professionals and individuals facing regulatory inquiries, conduct investigations and disciplinary proceedings.',
+        'Regulatory and disciplinary matters require a careful and measured response from the beginning. These matters often carry consequences beyond the immediate complaint or allegation, including effects on registration, employment, reputation and future practice. R&N Legal assists clients to understand the process, assess the legal and factual issues, and respond in a way that protects both their immediate and longer-term position.',
       points: [
-        'Response planning for regulatory matters',
-        'Professional conduct issues and dispute strategy',
+        'Complaints and investigations',
+        'Regulatory correspondence',
+        'Response strategy',
+        'Professional conduct issues',
+        'Disciplinary proceedings',
       ],
     },
     {
@@ -360,10 +470,14 @@ export const siteConfig = {
       shortTitle: 'Traffic Offences',
       icon: 'Car',
       description:
-        'We advise and represent clients facing traffic infringements, charges and licence-related consequences before the Magistrates Court.',
+        'Traffic matters in Victoria can have consequences for licence status, employment, insurance, finances and, in some cases, criminal exposure. R&N Legal assists clients facing traffic-related proceedings with practical advice and representation. We assess the allegation, the procedural posture of the matter, the available evidence, and the realistic scope for mitigation or contest — treating these matters with the seriousness they deserve.',
       points: [
-        'Advice for infringement and charge matters',
-        'Court representation and licence consequences',
+        'Traffic charges',
+        'Plea and penalty advice',
+        'Magistrates\' Court appearances',
+        'Licence-impacting matters',
+        'Strategic preparation',
+        'Related transport and road law issues',
       ],
     },
     {
@@ -372,18 +486,21 @@ export const siteConfig = {
       shortTitle: 'Consumer Law',
       icon: 'ShoppingBag',
       description:
-        'We advise consumers on their rights under the Australian Consumer Law and assist with disputes, refunds and tribunal proceedings.',
+        'Consumers are often told they have rights, but far less often told how to enforce them effectively. R&N Legal assists clients with refund disputes, service complaints, misleading representations and broader consumer-law issues. Our role is to identify the legal basis of the complaint, assess the most efficient pathway to resolution, and apply the right level of pressure through correspondence, negotiation or tribunal preparation.',
       points: [
-        'Advice on Australian Consumer Law rights',
-        'VCAT and tribunal-ready preparation',
+        'Refund disputes',
+        'Service complaints',
+        'Misleading conduct concerns',
+        'Pre-VCAT correspondence',
+        'Negotiation and resolution strategy',
+        'Tribunal pathway advice',
       ],
     },
   ],
 
   // ─────────────────────────────────────────────────────────────────────────
   // NAV SERVICES — consolidated 6-item list for the header dropdown and
-  // mobile accordion only. Mirrors the client doc grouping (Page 3):
-  // 5 primary areas + 1 "Other Areas" catch-all linking to #other-areas.
+  // mobile accordion only.
   // ─────────────────────────────────────────────────────────────────────────
   navServices: [
     {

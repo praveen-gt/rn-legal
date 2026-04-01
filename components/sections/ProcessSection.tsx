@@ -7,7 +7,7 @@ export function ProcessSection() {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
         <span className="font-display font-light text-navy-900/[0.025]"
           style={{ fontSize: 'clamp(16rem, 40vw, 40rem)', lineHeight: 1 }}>
-          4
+          {siteConfig.process.length}
         </span>
       </div>
 
@@ -22,12 +22,15 @@ export function ProcessSection() {
             </h2>
           </div>
           <p className="text-navy-600/50 font-body text-sm leading-relaxed max-w-xs" data-animate data-delay="2">
-            A structured, four-step approach — from initial consultation through to resolution.
+            A structured approach — from initial assessment through to ongoing representation.
           </p>
         </div>
 
         {/* Steps — horizontal on desktop, vertical on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-200/40">
+        <div
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-navy-200/40"
+        // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-navy-200/40"
+        >
           {siteConfig.process.map((step, i) => (
             <div
               key={step.step}
@@ -61,9 +64,12 @@ export function ProcessSection() {
               </div>
 
               {/* Bottom connector arrow (except last) */}
-              {i < siteConfig.process.length - 1 && (
+              {/* {i < siteConfig.process.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-px -translate-y-1/2 w-px h-8 bg-gold-400/20 z-20" />
-              )}
+              )} */}
+              {i < siteConfig.process.length - 1 && (
+  <div className="hidden xl:block absolute top-1/2 -right-px -translate-y-1/2 w-px h-8 bg-gold-400/20 z-20" />
+)}
             </div>
           ))}
         </div>
