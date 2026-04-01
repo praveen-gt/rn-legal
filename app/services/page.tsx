@@ -1,3 +1,282 @@
+// // import type { Metadata } from 'next'
+// // import Link from 'next/link'
+// // import {
+// //   Shield, Users, FileText, Home, Globe, Scale, Briefcase, Car, ShoppingBag, ArrowRight, Phone
+// // } from 'lucide-react'
+// // import { PageHero } from '@/components/ui/PageHero'
+// // import { CTASection } from '@/components/sections/CTASection'
+// // import { siteConfig } from '@/lib/config'
+// // import Image from 'next/image'
+
+// // export const metadata: Metadata = {
+// //   title: 'Services',
+// //   description: 'R&N Legal provides legal advice, document preparation and representation across family violence, family law, litigation, immigration, property and more.',
+// // }
+
+// // const mainServices = [
+// //   {
+// //     slug: 'family-violence',
+// //     icon: Shield,
+// //     num: '01',
+// //     title: 'Family Violence — Intervention Orders',
+// //     shortTitle: 'Intervention Orders',
+// //     description:
+// //       'We assist applicants and respondents in intervention order proceedings, from the initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
+// //     points: [
+// //       'Applications, responses and variations',
+// //       'Contested hearings',
+// //       'Risk assessment and evidence preparation',
+// //     ],
+// //     image: '/images/services/family-violence-image.jpg',
+// //   },
+// //   {
+// //     slug: 'family-law',
+// //     icon: Users,
+// //     num: '02',
+// //     title: 'Family Law — Divorce and Parenting',
+// //     shortTitle: 'Family Law',
+// //     description:
+// //       'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed in accordance with applicable procedural requirements.',
+// //     points: [
+// //       'Divorce applications',
+// //       'Parenting arrangements and parenting orders',
+// //       'Affidavits and court documentation',
+// //     ],
+// //     image: '/images/services/family-law.jpg',
+// //   },
+// //   {
+// //     slug: 'litigation-disputes',
+// //     icon: Scale,
+// //     num: '03',
+// //     title: 'Litigation and Civil Disputes',
+// //     shortTitle: 'Litigation',
+// //     description:
+// //       'R&N Legal represents clients in civil disputes across Victorian courts and tribunals. We prioritise strategic preparation, clear pleadings and disciplined representation focused on resolution.',
+// //     points: [
+// //       'Contract disputes',
+// //       'Debt recovery',
+// //       'Court pleadings and submissions',
+// //     ],
+// //     image: '/images/services/litigation-dispute.jpg',
+// //   },
+// //   {
+// //     slug: 'immigration-law',
+// //     icon: Globe,
+// //     num: '04',
+// //     title: 'Immigration — Tribunal and Court Pathways',
+// //     shortTitle: 'Immigration',
+// //     description:
+// //       'We provide structured advice on visa strategy and merits review, assisting clients to understand their options and navigate the Administrative Review Tribunal and court pathways where applicable.',
+// //     points: [
+// //       'Visa strategy and preparation',
+// //       'Merits review matters',
+// //       'Court pathway guidance where applicable',
+// //     ],
+// //     image: '/images/services/immigration.jpg',
+// //   },
+// //   {
+// //     slug: 'conveyancing-property',
+// //     icon: Home,
+// //     num: '05',
+// //     title: 'Property Law and Conveyancing',
+// //     shortTitle: 'Property',
+// //     description:
+// //       'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions and disputes, including caveat matters requiring prompt legal action.',
+// //     points: [
+// //       'Contract review',
+// //       'Settlement support',
+// //       'Property disputes and caveats',
+// //     ],
+// //     image: '/images/services/property-law.jpg',
+// //   }
+// // ]
+
+// // const otherAreas = [
+// //   { icon: FileText,    label: 'Wills & Estate Planning',   body: 'Preparation of basic wills and estate planning documentation.' },
+// //   { icon: Briefcase,  label: 'Disciplinary & Regulatory', body: 'Representation in professional disciplinary and regulatory proceedings.' },
+// //   { icon: Car,        label: 'Traffic Offences',           body: 'Defence and advice in traffic and regulatory offence matters.' },
+// //   { icon: ShoppingBag, label: 'Consumer Law',             body: 'Assistance with consumer law disputes and related claims.' },
+// // ]
+
+// // export default function ServicesPage() {
+// //   return (
+// //     <>
+// //       <PageHero
+// //         label="Practice Areas"
+// //         title="Legal Services"
+// //         italic="For Every Matter"
+// //         description="Advice, document preparation, negotiation and representation across a full range of practice areas. If unsure which applies — contact us for guidance."
+// //         imageUrl="/images/services-hero.jpg"
+// //       />
+
+// //       {/* ── Sticky quick-nav ── */}
+// //       <nav className="hidden lg:block sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
+// //         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+// //           <div className="flex gap-0 overflow-x-auto scrollbar-none">
+// //             {mainServices.map((svc) => (
+// //               <Link key={svc.slug} href={`#${svc.slug}`}
+// //                 className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
+// //                 {svc.shortTitle}
+// //               </Link>
+// //             ))}
+// //             <Link href="#other-areas"
+// //               className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
+// //               Other Areas
+// //             </Link>
+// //           </div>
+// //         </div>
+// //       </nav>
+
+// //       {/* ── Intro value props ── */}
+// //       <section className="py-14 bg-cream-50 border-b border-navy-100/60">
+// //         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+// //           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-navy-200/30">
+// //             {[
+// //               { n: '01', t: 'Clear Scope',       b: 'We discuss scope upfront so you know exactly what is included before we proceed.' },
+// //               { n: '02', t: 'Transparent Fees',  b: 'Fees are discussed following initial consultation and depend on complexity and scope.' },
+// //               { n: '03', t: 'Honest Assessment', b: 'Realistic advice on prospects, risks and the likely cost of resolution — no false promises.' },
+// //             ].map(({ n, t, b }) => (
+// //               <div key={n} className="bg-cream-50 px-8 py-8 group hover:bg-navy-950 transition-colors duration-300">
+// //                 <p className="font-display font-light text-navy-900/12 group-hover:text-white/5 text-5xl leading-none mb-4 transition-colors duration-300">{n}</p>
+// //                 <h3 className="font-display font-semibold text-navy-900 group-hover:text-white text-lg mb-2 transition-colors duration-300">{t}</h3>
+// //                 <p className="font-body text-navy-700/60 group-hover:text-white/50 text-sm leading-relaxed transition-colors duration-300">{b}</p>
+// //               </div>
+// //             ))}
+// //           </div>
+// //         </div>
+// //       </section>
+
+// //       {/* ── Main service sections ── */}
+// //       {mainServices.map((svc, i) => {
+// //         const Icon = svc.icon
+// //         const isEven = i % 2 === 0
+
+// //         return (
+// //           <section key={svc.slug} id={svc.slug}
+// //             className={`py-20 lg:py-28 scroll-mt-36 ${isEven ? 'bg-white' : 'bg-cream-50'}`}>
+// //             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+// //               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch ${!isEven ? 'lg:[&>:first-child]:order-2 lg:[&>:last-child]:order-1' : ''}`}>
+
+// //                 {/* Content */}
+// //                 <div className="flex flex-col justify-center" data-animate={isEven ? undefined : 'right'}>
+// //                   <div className="flex items-center gap-4 mb-8">
+// //                     <div className="w-11 h-11 border border-gold-400/25 flex items-center justify-center shrink-0"
+// //                       style={{ background: 'rgba(196,145,26,0.07)' }}>
+// //                       <Icon size={18} className="text-gold-500/80" />
+// //                     </div>
+// //                     <span className="font-display font-light text-navy-900/18 text-3xl leading-none select-none">
+// //                       {svc.num}
+// //                     </span>
+// //                   </div>
+
+// //                   <h2 className="font-display font-semibold text-navy-950 leading-tight mb-4"
+// //                     style={{ fontSize: 'clamp(1.75rem, 3vw, 2.6rem)' }}>
+// //                     {svc.title}
+// //                   </h2>
+// //                   <div className="w-10 h-px mb-7" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+
+// //                   <p className="text-navy-800/75 font-body leading-[1.85] text-[1rem] mb-8 max-w-prose">
+// //                     {svc.description}
+// //                   </p>
+
+// //                   <div className="space-y-3.5 mb-10">
+// //                     {svc.points.map((pt) => (
+// //                       <div key={pt} className="flex items-start gap-3.5 group/pt">
+// //                         <div className="w-5 h-5 border border-gold-400/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/pt:border-gold-400/60 transition-colors duration-200">
+// //                           <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70" />
+// //                         </div>
+// //                         <p className="text-navy-800/80 font-body text-[0.94rem] leading-relaxed">{pt}</p>
+// //                       </div>
+// //                     ))}
+// //                   </div>
+
+// //                   <div className="flex flex-col sm:flex-row gap-3">
+// //                     <Link href="/contact" className="btn-gold">
+// //                       Enquire Now <ArrowRight size={14} />
+// //                     </Link>
+// //                     <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+// //                       <Phone size={13} /> {siteConfig.contact.phone1}
+// //                     </Link>
+// //                   </div>
+// //                 </div>
+
+// //                 {/* ── SVG Visual panel — replaces stock photo ── */}
+// //                 <div className="relative min-h-[380px] lg:min-h-0" data-animate={isEven ? 'right' : 'left'} data-delay="2">
+// //                   {/* Thin gold border frame */}
+// //                   <div className="absolute inset-0 border border-gold-400/10 pointer-events-none z-10" />
+// //                   {/* Top-left corner accent */}
+// //                   <div className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
+// //                     style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }} />
+// //                   {/* Bottom-right corner accent */}
+// //                   <div className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
+// //                     style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }} />
+// //                   {/* The visual itself — fills full height */}
+// //                   <div className="absolute inset-0">
+// //                     {/* {visualPanels[i]} */}
+// //                     <Image
+// //                       src={svc.image}
+// //                       alt={svc.title}
+// //                       width={500} height={600}
+// //                       className="object-cover object-center w-full h-full"
+// //                     />
+// //                   </div>
+// //                 </div>
+
+// //               </div>
+// //             </div>
+// //           </section>
+// //         )
+// //       })}
+
+// //       {/* ── Other Areas ── */}
+// //       <section id="other-areas" className="py-20 lg:py-28 scroll-mt-36 bg-navy-950 relative overflow-hidden">
+// //         <div className="absolute inset-0 pointer-events-none"
+// //           style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(196,145,26,0.07), transparent 65%)' }} />
+// //         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+// //           <div className="mb-14" data-animate>
+// //             <div className="section-label text-gold-400/70 mb-4">Additional Practice Areas</div>
+// //             <h2 className="font-display font-light text-white leading-tight"
+// //               style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+// //               Other Areas
+// //               <em className="font-light" style={{
+// //                 fontStyle: 'italic',
+// //                 background: 'linear-gradient(105deg, #b07f18 0%, #dba828 50%, #c4911a 100%)',
+// //                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+// //                 marginLeft: '0.3em',
+// //               }}>We Cover</em>
+// //             </h2>
+// //             <div className="w-10 h-px mt-6" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+// //           </div>
+
+// //           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+// //             {otherAreas.map(({ icon: Icon, label, body }, i) => (
+// //               <div key={label}
+// //                 className="bg-navy-950 px-8 py-8 group hover:bg-navy-900 transition-colors duration-300 border border-white/5 hover:border-gold-400/15"
+// //                 data-animate data-delay={String(i + 1)}>
+// //                 <div className="w-10 h-10 border border-gold-400/20 flex items-center justify-center mb-5 group-hover:border-gold-400/40 transition-colors duration-300"
+// //                   style={{ background: 'rgba(196,145,26,0.07)' }}>
+// //                   <Icon size={16} className="text-gold-400/70 group-hover:text-gold-400 transition-colors duration-300" />
+// //                 </div>
+// //                 <h3 className="font-display font-semibold text-white text-lg leading-tight mb-3">{label}</h3>
+// //                 <p className="font-body text-white/65 text-sm leading-relaxed">{body}</p>
+// //               </div>
+// //             ))}
+// //           </div>
+
+// //           <div className="mt-10 flex items-start gap-4 border border-gold-400/15 px-7 py-5" data-animate>
+// //             <div className="w-1 h-1 rounded-full bg-gold-400/50 shrink-0 mt-2" />
+// //             <p className="font-body text-white/50 text-sm leading-relaxed">
+// //               <span className="text-gold-400/70 font-medium">Fees</span> — Fees are discussed following initial consultation and depend on the complexity and scope of the matter.
+// //             </p>
+// //           </div>
+// //         </div>
+// //       </section>
+
+// //       <CTASection />
+// //     </>
+// //   )
+// // }
+
 // import type { Metadata } from 'next'
 // import Link from 'next/link'
 // import {
@@ -21,11 +300,16 @@
 //     title: 'Family Violence — Intervention Orders',
 //     shortTitle: 'Intervention Orders',
 //     description:
-//       'We assist applicants and respondents in intervention order proceedings, from the initial application through to contested hearings. Every matter is approached with careful risk assessment and thorough evidence preparation.',
+//       'Family violence intervention order matters in Victoria are serious, urgent and often deeply interconnected with family, parenting, housing and criminal consequences. Early legal advice is often critical because the practical effect of an interim or final order can be immediate and far-reaching. R&N Legal assists both applicants seeking protection and respondents responding to allegations or applications, with close attention to chronology, evidence, risk, procedural fairness and the practical consequences of any order sought or made.',
 //     points: [
-//       'Applications, responses and variations',
+//       'Applications for family violence intervention orders',
+//       'Responding to police or private applications',
+//       'Interim order hearings',
+//       'Negotiated outcomes where appropriate',
 //       'Contested hearings',
-//       'Risk assessment and evidence preparation',
+//       'Variations and revocations',
+//       'Advice on allegations, evidence and breach consequences',
+//       'Overlap between intervention orders and family law matters',
 //     ],
 //     image: '/images/services/family-violence-image.jpg',
 //   },
@@ -36,11 +320,15 @@
 //     title: 'Family Law — Divorce and Parenting',
 //     shortTitle: 'Family Law',
 //     description:
-//       'We guide clients through divorce applications and parenting arrangements with clarity and care, ensuring all court documentation is accurately prepared and filed in accordance with applicable procedural requirements.',
+//       'Family law matters are rarely only about legal rights. They involve children, living arrangements, finances, communication breakdown and, in many cases, significant emotional pressure. R&N Legal assists clients with divorce, parenting matters, consent orders, interim applications and family law strategy. Our focus is on identifying what arrangement can be supported by evidence, what pathway is proportionate, and what steps best protect the client\'s legal and personal position.',
 //     points: [
 //       'Divorce applications',
-//       'Parenting arrangements and parenting orders',
-//       'Affidavits and court documentation',
+//       'Parenting disputes and parenting orders',
+//       'Consent orders',
+//       'Interim applications',
+//       'Affidavit material and supporting evidence',
+//       'Family-violence-related parenting issues',
+//       'Practical advice on process, risk and next steps',
 //     ],
 //     image: '/images/services/family-law.jpg',
 //   },
@@ -51,11 +339,15 @@
 //     title: 'Litigation and Civil Disputes',
 //     shortTitle: 'Litigation',
 //     description:
-//       'R&N Legal represents clients in civil disputes across Victorian courts and tribunals. We prioritise strategic preparation, clear pleadings and disciplined representation focused on resolution.',
+//       'Disputes are rarely won by aggression alone. They are usually resolved through preparation, leverage, evidence, timing and judgment. R&N Legal assists clients with contractual disputes, debt recovery, property-related disputes and general civil litigation strategy. Our approach is grounded in commercial and procedural realism — focused on what is truly in dispute, what evidence exists, and which pathway gives the client the strongest practical advantage.',
 //     points: [
-//       'Contract disputes',
+//       'Contractual disputes',
 //       'Debt recovery',
-//       'Court pleadings and submissions',
+//       'Pre-litigation correspondence',
+//       'Settlement strategy',
+//       'Pleadings, evidence and submissions',
+//       'Court and tribunal matters',
+//       'Practical risk and recoverability advice',
 //     ],
 //     image: '/images/services/litigation-dispute.jpg',
 //   },
@@ -66,11 +358,16 @@
 //     title: 'Immigration — Tribunal and Court Pathways',
 //     shortTitle: 'Immigration',
 //     description:
-//       'We provide structured advice on visa strategy and merits review, assisting clients to understand their options and navigate the Administrative Review Tribunal and court pathways where applicable.',
+//       'Immigration law is federal in nature, but for clients in Victoria its effects are immediate and local: work rights, family stability, sponsorship, lawful status, tribunal review and court deadlines. R&N Legal provides structured immigration advice for clients who need more than form-filling. Many migration matters turn on timing, status, validity, evidence, or the framing of review submissions — we assist clients to understand where they stand and how the matter should be prepared to be presented properly and persuasively.',
 //     points: [
-//       'Visa strategy and preparation',
-//       'Merits review matters',
-//       'Court pathway guidance where applicable',
+//       'Visa strategy and pathway advice',
+//       'Temporary and permanent visa matters',
+//       'Visa refusal matters',
+//       'Visa cancellation matters',
+//       'Administrative review and related preparation',
+//       'Bridging and status-related issues',
+//       'Complex procedural and evidentiary advice',
+//       'Structured submissions and case preparation',
 //     ],
 //     image: '/images/services/immigration.jpg',
 //   },
@@ -81,21 +378,41 @@
 //     title: 'Property Law and Conveyancing',
 //     shortTitle: 'Property',
 //     description:
-//       'From contract review through to settlement, we assist buyers, sellers and landlords with property transactions and disputes, including caveat matters requiring prompt legal action.',
+//       'Property matters often involve significant financial exposure, fixed contractual deadlines and legal issues that become harder to unwind once a transaction is on foot. R&N Legal assists with contract review, conveyancing support, settlement issues, title concerns, caveats and property-related disputes. Our approach combines careful review, procedural attention and practical legal judgment — whether the matter is preventative, transactional or contentious.',
 //     points: [
-//       'Contract review',
-//       'Settlement support',
-//       'Property disputes and caveats',
+//       'Contract review before signing',
+//       'Residential conveyancing support',
+//       'Settlement advice and issue management',
+//       'Title and ownership concerns',
+//       'Caveat matters',
+//       'Property disputes',
+//       'Urgent transaction-related advice',
 //     ],
 //     image: '/images/services/property-law.jpg',
-//   }
+//   },
 // ]
 
 // const otherAreas = [
-//   { icon: FileText,    label: 'Wills & Estate Planning',   body: 'Preparation of basic wills and estate planning documentation.' },
-//   { icon: Briefcase,  label: 'Disciplinary & Regulatory', body: 'Representation in professional disciplinary and regulatory proceedings.' },
-//   { icon: Car,        label: 'Traffic Offences',           body: 'Defence and advice in traffic and regulatory offence matters.' },
-//   { icon: ShoppingBag, label: 'Consumer Law',             body: 'Assistance with consumer law disputes and related claims.' },
+//   {
+//     icon: FileText,
+//     label: 'Wills & Estate Planning',
+//     body: 'A will should reflect your actual intentions, family circumstances and practical planning needs. We assist with wills, review of existing wills, basic estate planning, and executor and beneficiary planning.',
+//   },
+//   {
+//     icon: Briefcase,
+//     label: 'Disciplinary & Regulatory',
+//     body: 'Regulatory and disciplinary matters carry consequences beyond the immediate complaint — including effects on registration, employment and reputation. We assist with response strategy, regulatory correspondence and disciplinary proceedings.',
+//   },
+//   {
+//     icon: Car,
+//     label: 'Traffic Offences',
+//     body: 'Traffic matters in Victoria can affect licence status, employment, insurance and finances. We assist with traffic charges, plea and penalty advice, Magistrates\' Court appearances and licence-impacting matters.',
+//   },
+//   {
+//     icon: ShoppingBag,
+//     label: 'Consumer Law',
+//     body: 'We assist clients with refund disputes, service complaints, misleading conduct concerns and tribunal pathway advice — turning a vague complaint into a legally coherent claim pursued at the right level of pressure.',
+//   },
 // ]
 
 // export default function ServicesPage() {
@@ -126,6 +443,21 @@
 //           </div>
 //         </div>
 //       </nav>
+
+//       {/* ── Services Overview intro ── */}
+//       <section className="py-16 lg:py-20 bg-white border-b border-navy-100/60">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="max-w-4xl">
+//             <div className="section-label text-gold-600/70 mb-5">Our Approach</div>
+//             <p className="font-body text-navy-800/80 leading-[1.9] text-[1.05rem] mb-5">
+//               R&N Legal is a Melbourne-based law practice assisting clients across Victoria in matters involving family law, intervention orders, immigration, litigation, property, consumer disputes, traffic matters and related advisory work. Our approach is practical, carefully prepared and forum-aware. We focus not only on the legal issue itself, but on where the matter is likely to be dealt with, how it should be framed, what evidence is required, and what outcome can realistically be pursued.
+//             </p>
+//             <p className="font-body text-navy-800/65 leading-[1.9] text-[1.05rem]">
+//               Legal problems rarely stay confined to one category. An intervention order matter in the Magistrates' Court may affect parenting arrangements. A property issue may become a civil dispute. A consumer complaint may need to proceed through VCAT. A visa issue may require urgent attention to timing, status and review rights. That is why we do not treat matters as generic files — we assess the legal problem in its proper Victorian and federal context and build the strategy accordingly.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
 
 //       {/* ── Intro value props ── */}
 //       <section className="py-14 bg-cream-50 border-b border-navy-100/60">
@@ -200,19 +532,14 @@
 //                   </div>
 //                 </div>
 
-//                 {/* ── SVG Visual panel — replaces stock photo ── */}
+//                 {/* Image panel */}
 //                 <div className="relative min-h-[380px] lg:min-h-0" data-animate={isEven ? 'right' : 'left'} data-delay="2">
-//                   {/* Thin gold border frame */}
 //                   <div className="absolute inset-0 border border-gold-400/10 pointer-events-none z-10" />
-//                   {/* Top-left corner accent */}
 //                   <div className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
 //                     style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }} />
-//                   {/* Bottom-right corner accent */}
 //                   <div className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
 //                     style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }} />
-//                   {/* The visual itself — fills full height */}
 //                   <div className="absolute inset-0">
-//                     {/* {visualPanels[i]} */}
 //                     <Image
 //                       src={svc.image}
 //                       alt={svc.title}
@@ -272,6 +599,28 @@
 //         </div>
 //       </section>
 
+//       {/* ── Closing statement ── */}
+//       <section className="py-16 lg:py-20 bg-cream-50 border-b border-navy-100/60">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="max-w-4xl">
+//             <p className="font-body text-navy-800/80 leading-[1.9] text-[1.05rem] mb-5">
+//               Whether a matter is urgent, sensitive, document-heavy or strategically complex, the quality of the legal service often turns on what happens early. Identifying the real issues, preserving position, preparing the right material and choosing the right pathway can make a substantial difference to the outcome.
+//             </p>
+//             <p className="font-body text-navy-800/65 leading-[1.9] text-[1.05rem] mb-8">
+//               At R&N Legal, the emphasis is on clarity, careful preparation and direct advice. The objective is not to use more words than necessary, but to provide measured legal assistance that gives the client confidence in the process and the next step.
+//             </p>
+//             <div className="flex flex-col sm:flex-row gap-3">
+//               <Link href="/contact" className="btn-gold">
+//                 Make an Enquiry <ArrowRight size={14} />
+//               </Link>
+//               <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+//                 <Phone size={13} /> {siteConfig.contact.phone1}
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
 //       <CTASection />
 //     </>
 //   )
@@ -280,7 +629,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
-  Shield, Users, FileText, Home, Globe, Scale, Briefcase, Car, ShoppingBag, ArrowRight, Phone
+  Shield, Users, Globe, Scale, Home, ShoppingBag, Car, FileText, Briefcase, ArrowRight, Phone,
 } from 'lucide-react'
 import { PageHero } from '@/components/ui/PageHero'
 import { CTASection } from '@/components/sections/CTASection'
@@ -289,133 +638,17 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'R&N Legal provides legal advice, document preparation and representation across family violence, family law, litigation, immigration, property and more.',
+  description:
+    'R&N Legal provides legal advice, document preparation and representation across family violence, family law, immigration, litigation, property, consumer law, traffic offences, wills and disciplinary matters.',
 }
 
-const mainServices = [
-  {
-    slug: 'family-violence',
-    icon: Shield,
-    num: '01',
-    title: 'Family Violence — Intervention Orders',
-    shortTitle: 'Intervention Orders',
-    description:
-      'Family violence intervention order matters in Victoria are serious, urgent and often deeply interconnected with family, parenting, housing and criminal consequences. Early legal advice is often critical because the practical effect of an interim or final order can be immediate and far-reaching. R&N Legal assists both applicants seeking protection and respondents responding to allegations or applications, with close attention to chronology, evidence, risk, procedural fairness and the practical consequences of any order sought or made.',
-    points: [
-      'Applications for family violence intervention orders',
-      'Responding to police or private applications',
-      'Interim order hearings',
-      'Negotiated outcomes where appropriate',
-      'Contested hearings',
-      'Variations and revocations',
-      'Advice on allegations, evidence and breach consequences',
-      'Overlap between intervention orders and family law matters',
-    ],
-    image: '/images/services/family-violence-image.jpg',
-  },
-  {
-    slug: 'family-law',
-    icon: Users,
-    num: '02',
-    title: 'Family Law — Divorce and Parenting',
-    shortTitle: 'Family Law',
-    description:
-      'Family law matters are rarely only about legal rights. They involve children, living arrangements, finances, communication breakdown and, in many cases, significant emotional pressure. R&N Legal assists clients with divorce, parenting matters, consent orders, interim applications and family law strategy. Our focus is on identifying what arrangement can be supported by evidence, what pathway is proportionate, and what steps best protect the client\'s legal and personal position.',
-    points: [
-      'Divorce applications',
-      'Parenting disputes and parenting orders',
-      'Consent orders',
-      'Interim applications',
-      'Affidavit material and supporting evidence',
-      'Family-violence-related parenting issues',
-      'Practical advice on process, risk and next steps',
-    ],
-    image: '/images/services/family-law.jpg',
-  },
-  {
-    slug: 'litigation-disputes',
-    icon: Scale,
-    num: '03',
-    title: 'Litigation and Civil Disputes',
-    shortTitle: 'Litigation',
-    description:
-      'Disputes are rarely won by aggression alone. They are usually resolved through preparation, leverage, evidence, timing and judgment. R&N Legal assists clients with contractual disputes, debt recovery, property-related disputes and general civil litigation strategy. Our approach is grounded in commercial and procedural realism — focused on what is truly in dispute, what evidence exists, and which pathway gives the client the strongest practical advantage.',
-    points: [
-      'Contractual disputes',
-      'Debt recovery',
-      'Pre-litigation correspondence',
-      'Settlement strategy',
-      'Pleadings, evidence and submissions',
-      'Court and tribunal matters',
-      'Practical risk and recoverability advice',
-    ],
-    image: '/images/services/litigation-dispute.jpg',
-  },
-  {
-    slug: 'immigration-law',
-    icon: Globe,
-    num: '04',
-    title: 'Immigration — Tribunal and Court Pathways',
-    shortTitle: 'Immigration',
-    description:
-      'Immigration law is federal in nature, but for clients in Victoria its effects are immediate and local: work rights, family stability, sponsorship, lawful status, tribunal review and court deadlines. R&N Legal provides structured immigration advice for clients who need more than form-filling. Many migration matters turn on timing, status, validity, evidence, or the framing of review submissions — we assist clients to understand where they stand and how the matter should be prepared to be presented properly and persuasively.',
-    points: [
-      'Visa strategy and pathway advice',
-      'Temporary and permanent visa matters',
-      'Visa refusal matters',
-      'Visa cancellation matters',
-      'Administrative review and related preparation',
-      'Bridging and status-related issues',
-      'Complex procedural and evidentiary advice',
-      'Structured submissions and case preparation',
-    ],
-    image: '/images/services/immigration.jpg',
-  },
-  {
-    slug: 'conveyancing-property',
-    icon: Home,
-    num: '05',
-    title: 'Property Law and Conveyancing',
-    shortTitle: 'Property',
-    description:
-      'Property matters often involve significant financial exposure, fixed contractual deadlines and legal issues that become harder to unwind once a transaction is on foot. R&N Legal assists with contract review, conveyancing support, settlement issues, title concerns, caveats and property-related disputes. Our approach combines careful review, procedural attention and practical legal judgment — whether the matter is preventative, transactional or contentious.',
-    points: [
-      'Contract review before signing',
-      'Residential conveyancing support',
-      'Settlement advice and issue management',
-      'Title and ownership concerns',
-      'Caveat matters',
-      'Property disputes',
-      'Urgent transaction-related advice',
-    ],
-    image: '/images/services/property-law.jpg',
-  },
-]
-
-const otherAreas = [
-  {
-    icon: FileText,
-    label: 'Wills & Estate Planning',
-    body: 'A will should reflect your actual intentions, family circumstances and practical planning needs. We assist with wills, review of existing wills, basic estate planning, and executor and beneficiary planning.',
-  },
-  {
-    icon: Briefcase,
-    label: 'Disciplinary & Regulatory',
-    body: 'Regulatory and disciplinary matters carry consequences beyond the immediate complaint — including effects on registration, employment and reputation. We assist with response strategy, regulatory correspondence and disciplinary proceedings.',
-  },
-  {
-    icon: Car,
-    label: 'Traffic Offences',
-    body: 'Traffic matters in Victoria can affect licence status, employment, insurance and finances. We assist with traffic charges, plea and penalty advice, Magistrates\' Court appearances and licence-impacting matters.',
-  },
-  {
-    icon: ShoppingBag,
-    label: 'Consumer Law',
-    body: 'We assist clients with refund disputes, service complaints, misleading conduct concerns and tribunal pathway advice — turning a vague complaint into a legally coherent claim pursued at the right level of pressure.',
-  },
-]
+const iconMap: Record<string, React.ElementType> = {
+  Shield, Users, Globe, Scale, Home, ShoppingBag, Car, FileText, Briefcase,
+}
 
 export default function ServicesPage() {
+  const services = siteConfig.services
+
   return (
     <>
       <PageHero
@@ -430,36 +663,45 @@ export default function ServicesPage() {
       <nav className="hidden lg:block sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto scrollbar-none">
-            {mainServices.map((svc) => (
-              <Link key={svc.slug} href={`#${svc.slug}`}
-                className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
+            {services.map((svc) => (
+              <Link
+                key={svc.slug}
+                href={`#${svc.slug}`}
+                className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap"
+              >
                 {svc.shortTitle}
               </Link>
             ))}
-            <Link href="#other-areas"
-              className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap">
-              Other Areas
-            </Link>
           </div>
         </div>
       </nav>
 
-      {/* ── Services Overview intro ── */}
+      {/* ── Services Overview ── */}
       <section className="py-16 lg:py-20 bg-white border-b border-navy-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="section-label text-gold-600/70 mb-5">Our Approach</div>
             <p className="font-body text-navy-800/80 leading-[1.9] text-[1.05rem] mb-5">
-              R&N Legal is a Melbourne-based law practice assisting clients across Victoria in matters involving family law, intervention orders, immigration, litigation, property, consumer disputes, traffic matters and related advisory work. Our approach is practical, carefully prepared and forum-aware. We focus not only on the legal issue itself, but on where the matter is likely to be dealt with, how it should be framed, what evidence is required, and what outcome can realistically be pursued.
+              R&N Legal is a Melbourne-based law practice assisting clients across Victoria in matters
+              involving family law, intervention orders, immigration, litigation, property, consumer
+              disputes, traffic matters and related advisory work. Our approach is practical, carefully
+              prepared and forum-aware. We focus not only on the legal issue itself, but on where the
+              matter is likely to be dealt with, how it should be framed, what evidence is required, and
+              what outcome can realistically be pursued.
             </p>
             <p className="font-body text-navy-800/65 leading-[1.9] text-[1.05rem]">
-              Legal problems rarely stay confined to one category. An intervention order matter in the Magistrates' Court may affect parenting arrangements. A property issue may become a civil dispute. A consumer complaint may need to proceed through VCAT. A visa issue may require urgent attention to timing, status and review rights. That is why we do not treat matters as generic files — we assess the legal problem in its proper Victorian and federal context and build the strategy accordingly.
+              Legal problems rarely stay confined to one category. An intervention order matter in the
+              Magistrates' Court may affect parenting arrangements. A property issue may become a civil
+              dispute. A consumer complaint may need to proceed through VCAT. A visa issue may require
+              urgent attention to timing, status and review rights. That is why we do not treat matters
+              as generic files. We assess the legal problem in its proper Victorian and federal context
+              and build the strategy accordingly.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Intro value props ── */}
+      {/* ── Value props strip ── */}
       <section className="py-14 bg-cream-50 border-b border-navy-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-navy-200/30">
@@ -478,22 +720,31 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Main service sections ── */}
-      {mainServices.map((svc, i) => {
-        const Icon = svc.icon
+      {/* ── All 9 service sections ── */}
+      {services.map((svc, i) => {
+        const Icon = iconMap[svc.icon]
         const isEven = i % 2 === 0
+        const paragraphs = svc.paragraphs ?? [svc.description]
 
         return (
-          <section key={svc.slug} id={svc.slug}
-            className={`py-20 lg:py-28 scroll-mt-36 ${isEven ? 'bg-white' : 'bg-cream-50'}`}>
+          <section
+            key={svc.slug}
+            id={svc.slug}
+            className={`py-20 lg:py-28 scroll-mt-36 ${isEven ? 'bg-white' : 'bg-cream-50'}`}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch ${!isEven ? 'lg:[&>:first-child]:order-2 lg:[&>:last-child]:order-1' : ''}`}>
-
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch ${
+                  !isEven ? 'lg:[&>:first-child]:order-2 lg:[&>:last-child]:order-1' : ''
+                }`}
+              >
                 {/* Content */}
                 <div className="flex flex-col justify-center" data-animate={isEven ? undefined : 'right'}>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-11 h-11 border border-gold-400/25 flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(196,145,26,0.07)' }}>
+                    <div
+                      className="w-11 h-11 border border-gold-400/25 flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(196,145,26,0.07)' }}
+                    >
                       <Icon size={18} className="text-gold-500/80" />
                     </div>
                     <span className="font-display font-light text-navy-900/18 text-3xl leading-none select-none">
@@ -501,17 +752,28 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <h2 className="font-display font-semibold text-navy-950 leading-tight mb-4"
-                    style={{ fontSize: 'clamp(1.75rem, 3vw, 2.6rem)' }}>
+                  <h2
+                    className="font-display font-semibold text-navy-950 leading-tight mb-4"
+                    style={{ fontSize: 'clamp(1.75rem, 3vw, 2.6rem)' }}
+                  >
                     {svc.title}
                   </h2>
                   <div className="w-10 h-px mb-7" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
 
-                  <p className="text-navy-800/75 font-body leading-[1.85] text-[1rem] mb-8 max-w-prose">
-                    {svc.description}
-                  </p>
+                  {/* Full multi-paragraph body */}
+                  <div className="space-y-4 mb-8 max-w-prose">
+                    {paragraphs.map((para, pi) => (
+                      <p key={pi} className="text-navy-800/75 font-body leading-[1.85] text-[1rem]">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
 
-                  <div className="space-y-3.5 mb-10">
+                  {/* We assist with bullets */}
+                  <p className="font-body text-xs font-semibold tracking-widest uppercase text-gold-600/70 mb-4">
+                    We assist with
+                  </p>
+                  <div className="space-y-3 mb-10">
                     {svc.points.map((pt) => (
                       <div key={pt} className="flex items-start gap-3.5 group/pt">
                         <div className="w-5 h-5 border border-gold-400/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/pt:border-gold-400/60 transition-colors duration-200">
@@ -533,81 +795,54 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Image panel */}
-                <div className="relative min-h-[380px] lg:min-h-0" data-animate={isEven ? 'right' : 'left'} data-delay="2">
+                <div
+                  className="relative min-h-[380px] lg:min-h-0"
+                  data-animate={isEven ? 'right' : 'left'}
+                  data-delay="2"
+                >
                   <div className="absolute inset-0 border border-gold-400/10 pointer-events-none z-10" />
-                  <div className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
-                    style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }} />
-                  <div className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
-                    style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }} />
+                  <div
+                    className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
+                    style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }}
+                  />
+                  <div
+                    className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
+                    style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }}
+                  />
                   <div className="absolute inset-0">
                     <Image
                       src={svc.image}
                       alt={svc.title}
-                      width={500} height={600}
+                      width={500}
+                      height={600}
                       className="object-cover object-center w-full h-full"
                     />
                   </div>
                 </div>
-
               </div>
             </div>
           </section>
         )
       })}
 
-      {/* ── Other Areas ── */}
-      <section id="other-areas" className="py-20 lg:py-28 scroll-mt-36 bg-navy-950 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(196,145,26,0.07), transparent 65%)' }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14" data-animate>
-            <div className="section-label text-gold-400/70 mb-4">Additional Practice Areas</div>
-            <h2 className="font-display font-light text-white leading-tight"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
-              Other Areas
-              <em className="font-light" style={{
-                fontStyle: 'italic',
-                background: 'linear-gradient(105deg, #b07f18 0%, #dba828 50%, #c4911a 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                marginLeft: '0.3em',
-              }}>We Cover</em>
-            </h2>
-            <div className="w-10 h-px mt-6" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
-            {otherAreas.map(({ icon: Icon, label, body }, i) => (
-              <div key={label}
-                className="bg-navy-950 px-8 py-8 group hover:bg-navy-900 transition-colors duration-300 border border-white/5 hover:border-gold-400/15"
-                data-animate data-delay={String(i + 1)}>
-                <div className="w-10 h-10 border border-gold-400/20 flex items-center justify-center mb-5 group-hover:border-gold-400/40 transition-colors duration-300"
-                  style={{ background: 'rgba(196,145,26,0.07)' }}>
-                  <Icon size={16} className="text-gold-400/70 group-hover:text-gold-400 transition-colors duration-300" />
-                </div>
-                <h3 className="font-display font-semibold text-white text-lg leading-tight mb-3">{label}</h3>
-                <p className="font-body text-white/65 text-sm leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex items-start gap-4 border border-gold-400/15 px-7 py-5" data-animate>
-            <div className="w-1 h-1 rounded-full bg-gold-400/50 shrink-0 mt-2" />
-            <p className="font-body text-white/50 text-sm leading-relaxed">
-              <span className="text-gold-400/70 font-medium">Fees</span> — Fees are discussed following initial consultation and depend on the complexity and scope of the matter.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── Closing statement ── */}
-      <section className="py-16 lg:py-20 bg-cream-50 border-b border-navy-100/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-20 bg-navy-950 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(196,145,26,0.07), transparent 65%)' }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="font-body text-navy-800/80 leading-[1.9] text-[1.05rem] mb-5">
-              Whether a matter is urgent, sensitive, document-heavy or strategically complex, the quality of the legal service often turns on what happens early. Identifying the real issues, preserving position, preparing the right material and choosing the right pathway can make a substantial difference to the outcome.
+            <p className="font-body text-white/75 leading-[1.9] text-[1.05rem] mb-5">
+              Whether a matter is urgent, sensitive, document-heavy or strategically complex, the quality
+              of the legal service often turns on what happens early. Identifying the real issues,
+              preserving position, preparing the right material and choosing the right pathway can make a
+              substantial difference to the outcome.
             </p>
-            <p className="font-body text-navy-800/65 leading-[1.9] text-[1.05rem] mb-8">
-              At R&N Legal, the emphasis is on clarity, careful preparation and direct advice. The objective is not to use more words than necessary, but to provide measured legal assistance that gives the client confidence in the process and the next step.
+            <p className="font-body text-white/55 leading-[1.9] text-[1.05rem] mb-10">
+              At R&N Legal, the emphasis is on clarity, careful preparation and direct advice. The
+              objective is not to use more words than necessary, but to provide measured legal assistance
+              that gives the client confidence in the process and the next step.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="btn-gold">
