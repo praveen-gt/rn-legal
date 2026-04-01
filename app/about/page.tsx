@@ -177,7 +177,7 @@ export default function AboutPage() {
             <div className="relative" data-animate="right" data-delay="2">
               <div className="aspect-[4/5] overflow-hidden">
               <Image 
-                src="/images/director-placeholder.jpg"
+                src="/images/director_image.jpeg"
                 alt="Professional solicitor"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 width={400}
