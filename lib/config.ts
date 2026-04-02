@@ -281,17 +281,17 @@ export const siteConfig = {
   abn: 'ABN: 12 345 678 901',
 
   socials: {
-    instagram: 'https://instagram.com/rnlegal',
-    facebook: 'https://facebook.com/rnlegal',
-    tiktok: 'https://tiktok.com/@rnlegal',
+    instagram: 'https://instagram.com/lawwithamit',
+    facebook: 'https://facebook.com/amit.narwal.9',
+    tiktok: 'https://www.tiktok.com/@lawwithamit',
   },
 
   contact: {
     email: 'info@rnlegal.com.au',
-    phone1: '0430 593 124',
-    whatsapp1: '61430593124',
-    phone2: '0470 695 941',
-    whatsapp2: '61470695941',
+    phone2: '0430 593 124',
+    whatsapp2: '61430593124',
+    phone1: '0470 695 941',
+    whatsapp1: '61470695941',
     address: 'Suite 401–402, Level 4, 2 Queen Street',
     suburb: 'Melbourne VIC 3000',
     fullAddress: 'Suite 401–402, Level 4, 2 Queen Street, Melbourne VIC 3000',
@@ -491,7 +491,7 @@ export const siteConfig = {
         'Negotiation and resolution strategy',
         'Tribunal pathway advice',
       ],
-      image: '/images/services/consumer-law.jpg',
+      image: '/images/services/consumer_law.jpg',
     },
     {
       slug: 'traffic-offences',
@@ -514,7 +514,7 @@ export const siteConfig = {
         'Strategic preparation',
         'Related transport and road law issues',
       ],
-      image: '/images/services/traffic-offences.jpg',
+      image: '/images/services/traffic_offence.jpg',
     },
     {
       slug: 'wills-estates',

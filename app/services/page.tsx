@@ -626,6 +626,241 @@
 //   )
 // }
 
+// import type { Metadata } from 'next'
+// import Link from 'next/link'
+// import {
+//   Shield, Users, Globe, Scale, Home, ShoppingBag, Car, FileText, Briefcase, ArrowRight, Phone,
+// } from 'lucide-react'
+// import { PageHero } from '@/components/ui/PageHero'
+// import { CTASection } from '@/components/sections/CTASection'
+// import { siteConfig } from '@/lib/config'
+// import Image from 'next/image'
+
+// export const metadata: Metadata = {
+//   title: 'Services',
+//   description:
+//     'R&N Legal provides legal advice, document preparation and representation across family violence, family law, immigration, litigation, property, consumer law, traffic offences, wills and disciplinary matters.',
+// }
+
+// const iconMap: Record<string, React.ElementType> = {
+//   Shield, Users, Globe, Scale, Home, ShoppingBag, Car, FileText, Briefcase,
+// }
+
+// export default function ServicesPage() {
+//   const services = siteConfig.services
+
+//   return (
+//     <>
+//       <PageHero
+//         label="Practice Areas"
+//         title="Legal Services"
+//         italic="For Every Matter"
+//         description="Advice, document preparation, negotiation and representation across a full range of practice areas. If unsure which applies — contact us for guidance."
+//         imageUrl="/images/services-hero.jpg"
+//       />
+
+//       {/* ── Sticky quick-nav ── */}
+//       <nav className="hidden lg:block sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="flex gap-0 overflow-x-auto scrollbar-none">
+//             {services.map((svc) => (
+//               <Link
+//                 key={svc.slug}
+//                 href={`#${svc.slug}`}
+//                 className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap"
+//               >
+//                 {svc.shortTitle}
+//               </Link>
+//             ))}
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* ── Services Overview ── */}
+//       <section className="py-16 lg:py-20 bg-white border-b border-navy-100/60">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="max-w-4xl">
+//             <div className="section-label text-gold-600/70 mb-5">Our Approach</div>
+//             <p className="font-body text-navy-800/80 leading-[1.9] text-[1.05rem] mb-5">
+//               R&N Legal is a Melbourne-based law practice assisting clients across Victoria in matters
+//               involving family law, intervention orders, immigration, litigation, property, consumer
+//               disputes, traffic matters and related advisory work. Our approach is practical, carefully
+//               prepared and forum-aware. We focus not only on the legal issue itself, but on where the
+//               matter is likely to be dealt with, how it should be framed, what evidence is required, and
+//               what outcome can realistically be pursued.
+//             </p>
+//             <p className="font-body text-navy-800/65 leading-[1.9] text-[1.05rem]">
+//               Legal problems rarely stay confined to one category. An intervention order matter in the
+//               Magistrates' Court may affect parenting arrangements. A property issue may become a civil
+//               dispute. A consumer complaint may need to proceed through VCAT. A visa issue may require
+//               urgent attention to timing, status and review rights. That is why we do not treat matters
+//               as generic files. We assess the legal problem in its proper Victorian and federal context
+//               and build the strategy accordingly.
+//             </p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ── Value props strip ── */}
+//       <section className="py-14 bg-cream-50 border-b border-navy-100/60">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-navy-200/30">
+//             {[
+//               { n: '01', t: 'Clear Scope',       b: 'We discuss scope upfront so you know exactly what is included before we proceed.' },
+//               { n: '02', t: 'Transparent Fees',  b: 'Fees are discussed following initial consultation and depend on complexity and scope.' },
+//               { n: '03', t: 'Honest Assessment', b: 'Realistic advice on prospects, risks and the likely cost of resolution — no false promises.' },
+//             ].map(({ n, t, b }) => (
+//               <div key={n} className="bg-cream-50 px-8 py-8 group hover:bg-navy-950 transition-colors duration-300">
+//                 <p className="font-display font-light text-navy-900/12 group-hover:text-white/5 text-5xl leading-none mb-4 transition-colors duration-300">{n}</p>
+//                 <h3 className="font-display font-semibold text-navy-900 group-hover:text-white text-lg mb-2 transition-colors duration-300">{t}</h3>
+//                 <p className="font-body text-navy-700/60 group-hover:text-white/50 text-sm leading-relaxed transition-colors duration-300">{b}</p>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ── All 9 service sections ── */}
+//       {services.map((svc, i) => {
+//         const Icon = iconMap[svc.icon]
+//         const isEven = i % 2 === 0
+//         const paragraphs = svc.paragraphs ?? [svc.description]
+
+//         return (
+//           <section
+//             key={svc.slug}
+//             id={svc.slug}
+//             className={`py-20 lg:py-28 scroll-mt-36 ${isEven ? 'bg-white' : 'bg-cream-50'}`}
+//           >
+//             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//               <div
+//                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch ${
+//                   !isEven ? 'lg:[&>:first-child]:order-2 lg:[&>:last-child]:order-1' : ''
+//                 }`}
+//               >
+//                 {/* Content */}
+//                 <div className="flex flex-col justify-center" data-animate={isEven ? undefined : 'right'}>
+//                   <div className="flex items-center gap-4 mb-8">
+//                     <div
+//                       className="w-11 h-11 border border-gold-400/25 flex items-center justify-center shrink-0"
+//                       style={{ background: 'rgba(196,145,26,0.07)' }}
+//                     >
+//                       <Icon size={18} className="text-gold-500/80" />
+//                     </div>
+//                     <span className="font-display font-light text-navy-900/18 text-3xl leading-none select-none">
+//                       {svc.num}
+//                     </span>
+//                   </div>
+
+//                   <h2
+//                     className="font-display font-semibold text-navy-950 leading-tight mb-4"
+//                     style={{ fontSize: 'clamp(1.75rem, 3vw, 2.6rem)' }}
+//                   >
+//                     {svc.title}
+//                   </h2>
+//                   <div className="w-10 h-px mb-7" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+
+//                   {/* Full multi-paragraph body */}
+//                   <div className="space-y-4 mb-8 max-w-prose">
+//                     {paragraphs.map((para, pi) => (
+//                       <p key={pi} className="text-navy-800/75 font-body leading-[1.85] text-[1rem]">
+//                         {para}
+//                       </p>
+//                     ))}
+//                   </div>
+
+//                   {/* We assist with bullets */}
+//                   <p className="font-body text-xs font-semibold tracking-widest uppercase text-gold-600/70 mb-4">
+//                     We assist with
+//                   </p>
+//                   <div className="space-y-3 mb-10">
+//                     {svc.points.map((pt) => (
+//                       <div key={pt} className="flex items-start gap-3.5 group/pt">
+//                         <div className="w-5 h-5 border border-gold-400/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/pt:border-gold-400/60 transition-colors duration-200">
+//                           <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70" />
+//                         </div>
+//                         <p className="text-navy-800/80 font-body text-[0.94rem] leading-relaxed">{pt}</p>
+//                       </div>
+//                     ))}
+//                   </div>
+
+//                   <div className="flex flex-col sm:flex-row gap-3">
+//                     <Link href="/contact" className="btn-gold">
+//                       Enquire Now <ArrowRight size={14} />
+//                     </Link>
+//                     <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+//                       <Phone size={13} /> {siteConfig.contact.phone1}
+//                     </Link>
+//                   </div>
+//                 </div>
+
+//                 {/* Image panel */}
+//                 <div
+//                   className="relative min-h-[380px] lg:min-h-0"
+//                   data-animate={isEven ? 'right' : 'left'}
+//                   data-delay="2"
+//                 >
+//                   <div className="absolute inset-0 border border-gold-400/10 pointer-events-none z-10" />
+//                   <div
+//                     className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
+//                     style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }}
+//                   />
+//                   <div
+//                     className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
+//                     style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }}
+//                   />
+//                   <div className="absolute inset-0">
+//                     <Image
+//                       src={svc.image}
+//                       alt={svc.title}
+//                       width={500}
+//                       height={600}
+//                       className="object-cover object-center w-full h-full"
+//                     />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </section>
+//         )
+//       })}
+
+//       {/* ── Closing statement ── */}
+//       <section className="py-16 lg:py-20 bg-navy-950 relative overflow-hidden">
+//         <div
+//           className="absolute inset-0 pointer-events-none"
+//           style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(196,145,26,0.07), transparent 65%)' }}
+//         />
+//         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="max-w-4xl">
+//             <p className="font-body text-white/75 leading-[1.9] text-[1.05rem] mb-5">
+//               Whether a matter is urgent, sensitive, document-heavy or strategically complex, the quality
+//               of the legal service often turns on what happens early. Identifying the real issues,
+//               preserving position, preparing the right material and choosing the right pathway can make a
+//               substantial difference to the outcome.
+//             </p>
+//             <p className="font-body text-white/55 leading-[1.9] text-[1.05rem] mb-10">
+//               At R&N Legal, the emphasis is on clarity, careful preparation and direct advice. The
+//               objective is not to use more words than necessary, but to provide measured legal assistance
+//               that gives the client confidence in the process and the next step.
+//             </p>
+//             <div className="flex flex-col sm:flex-row gap-3">
+//               <Link href="/contact" className="btn-gold">
+//                 Make an Enquiry <ArrowRight size={14} />
+//               </Link>
+//               <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+//                 <Phone size={13} /> {siteConfig.contact.phone1}
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <CTASection />
+//     </>
+//   )
+// }
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
@@ -646,11 +881,65 @@ const iconMap: Record<string, React.ElementType> = {
   Shield, Users, Globe, Scale, Home, ShoppingBag, Car, FileText, Briefcase,
 }
 
+// Slug of the service the client wants featured/highlighted
+const FEATURED_SLUG = 'traffic-offences'
+
 export default function ServicesPage() {
   const services = siteConfig.services
 
   return (
     <>
+      {/* ── Featured Service announcement bar ── */}
+      <div className="relative bg-navy-950 border-b border-gold-400/15 overflow-hidden">
+        {/* Subtle gold shimmer line across top */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, #c4911a60 30%, #dba82890 50%, #c4911a60 70%, transparent 100%)' }}
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="#traffic-offences"
+            className="group flex items-center justify-between gap-4 py-3 sm:py-3.5"
+          >
+            {/* Left side */}
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+              {/* Gold pill label */}
+              <span
+                className="shrink-0 inline-flex items-center px-2.5 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.15em] uppercase leading-none"
+                style={{
+                  background: 'linear-gradient(105deg, #b07f18 0%, #dba828 55%, #c4911a 100%)',
+                  color: '#0a1628',
+                  clipPath: 'polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%)',
+                }}
+              >
+                Featured
+              </span>
+
+              {/* Divider */}
+              <div className="w-px h-4 bg-white/10 shrink-0 hidden sm:block" />
+
+              {/* Message */}
+              <p className="font-body text-xs sm:text-sm text-white/55 truncate">
+                <span className="text-white/80 font-medium">Traffic Offences</span>
+                <span className="hidden sm:inline text-white/40 mx-2">—</span>
+                <span className="hidden sm:inline">
+                  Licence consequences and court dates move quickly. Early legal advice matters.
+                </span>
+              </p>
+            </div>
+
+            {/* Right side CTA */}
+            <div
+              className="shrink-0 flex items-center gap-1.5 text-[11px] sm:text-xs font-medium tracking-wide transition-all duration-300 group-hover:gap-2.5"
+              style={{ color: '#dba828' }}
+            >
+              <span className="whitespace-nowrap">View Service</span>
+              <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        </div>
+      </div>
+
       <PageHero
         label="Practice Areas"
         title="Legal Services"
@@ -663,18 +952,39 @@ export default function ServicesPage() {
       <nav className="hidden lg:block sticky top-27 z-30 bg-navy-950/95 backdrop-blur-xl border-b border-white/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto scrollbar-none">
-            {services.map((svc) => (
-              <Link
-                key={svc.slug}
-                href={`#${svc.slug}`}
-                className="shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide text-white/45 hover:text-gold-300/90 border-b-2 border-transparent hover:border-gold-400/40 transition-all duration-300 whitespace-nowrap"
-              >
-                {svc.shortTitle}
-              </Link>
-            ))}
+            {services.map((svc) => {
+              const isFeatured = svc.slug === FEATURED_SLUG
+              return (
+                <Link
+                  key={svc.slug}
+                  href={`#${svc.slug}`}
+                  className={`shrink-0 px-4 py-3.5 font-body text-xs font-medium tracking-wide border-b-2 transition-all duration-300 whitespace-nowrap flex items-center gap-1.5 ${
+                    isFeatured
+                      ? 'text-gold-300 border-gold-400/60 hover:text-gold-200 hover:border-gold-400'
+                      : 'text-white/45 border-transparent hover:text-gold-300/90 hover:border-gold-400/40'
+                  }`}
+                >
+                  {svc.shortTitle}
+                  {isFeatured && (
+                    <span
+                      className="inline-block px-1.5 py-0.5 text-[9px] font-semibold tracking-widest uppercase leading-none"
+                      style={{
+                        background: 'linear-gradient(105deg, #b07f18, #dba828)',
+                        color: '#0a1628',
+                        borderRadius: '2px',
+                      }}
+                    >
+                      Featured
+                    </span>
+                  )}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </nav>
+
+
 
       {/* ── Services Overview ── */}
       <section className="py-16 lg:py-20 bg-white border-b border-navy-100/60">
@@ -701,8 +1011,105 @@ export default function ServicesPage() {
         </div>
       </section>
 
+            {/* ── Traffic Offences feature band ── */}
+      <section className="relative bg-navy-950 overflow-hidden">
+        {/* Radial gold glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 85% 50%, rgba(196,145,26,0.13), transparent 55%)' }}
+        />
+        {/* Bottom rule */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, #c4911a55, #dba82870, #c4911a55, transparent)' }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch">
+
+            {/* Left — main message */}
+            <div className="py-10 lg:py-12 lg:pr-16 border-b lg:border-b-0 lg:border-r border-white/6">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="inline-flex items-center px-3 py-1.5 text-[10px] font-bold tracking-[0.16em] uppercase leading-none shrink-0"
+                  style={{
+                    background: 'linear-gradient(105deg, #b07f18 0%, #dba828 55%, #c4911a 100%)',
+                    color: '#0a1628',
+                    clipPath: 'polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)',
+                  }}
+                >
+                  Featured Service
+                </span>
+                <div
+                  className="w-7 h-7 border border-gold-400/30 flex items-center justify-center shrink-0"
+                  style={{ background: 'rgba(196,145,26,0.10)' }}
+                >
+                  <Car size={13} className="text-gold-400/80" />
+                </div>
+              </div>
+
+              <h3
+                className="font-display font-semibold text-white mb-3 leading-tight"
+                style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)' }}
+              >
+                Traffic Offences
+                <em
+                  className="ml-3 font-light not-italic"
+                  style={{
+                    background: 'linear-gradient(105deg, #b07f18 0%, #dba828 50%, #c4911a 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  — Victoria
+                </em>
+              </h3>
+
+              <p className="font-body text-white/55 text-sm sm:text-[0.975rem] leading-relaxed max-w-xl">
+                Traffic matters can affect your licence, employment and finances — often more seriously
+                than expected. Court dates move quickly. We advise and represent clients at every stage,
+                from charge through to Magistrates' Court appearance.
+              </p>
+            </div>
+
+            {/* Right — three quick pillars */}
+            <div className="grid grid-cols-3 lg:grid-cols-1 lg:w-60 divide-x lg:divide-x-0 lg:divide-y divide-white/6">
+              {[
+                { label: 'Licence at risk',    body: 'We assess licence consequences from day one.' },
+                { label: 'Court-ready',        body: "Prepared representation for Magistrates' Court." },
+                { label: 'Early advice counts', body: 'Timing shapes what outcomes remain open.' },
+              ].map(({ label, body }) => (
+                <div key={label} className="px-5 lg:px-7 py-6 lg:py-8">
+                  <div className="w-4 h-px mb-3" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
+                  <p className="font-display font-semibold text-white/90 text-sm leading-snug mb-1.5">{label}</p>
+                  <p className="font-body text-white/40 text-xs leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA strip */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 py-4 border-t border-white/6">
+            <p className="font-body text-white/30 text-xs leading-relaxed max-w-lg">
+              <span className="text-gold-400/60 font-medium">Note —</span> Consequences vary by charge,
+              history and circumstances. Contact us for advice specific to your situation.
+            </p>
+            <Link
+              href="#traffic-offences"
+              className="shrink-0 group inline-flex items-center gap-2 text-xs font-medium tracking-wide"
+              style={{ color: '#dba828' }}
+            >
+              Read more about this service
+              <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Value props strip ── */}
-      <section className="py-14 bg-cream-50 border-b border-navy-100/60">
+      {/* <section className="py-14 bg-cream-50 border-b border-navy-100/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-navy-200/30">
             {[
@@ -718,105 +1125,264 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── All 9 service sections ── */}
       {services.map((svc, i) => {
         const Icon = iconMap[svc.icon]
-        const isEven = i % 2 === 0
+        const isFeatured = svc.slug === FEATURED_SLUG
         const paragraphs = svc.paragraphs ?? [svc.description]
+
+        // Featured (Traffic) gets a dark full-bleed treatment regardless of alternation
+        // All others alternate white / cream as before
+        const isEven = i % 2 === 0
+        const sectionBg = isFeatured ? 'bg-navy-950' : isEven ? 'bg-white' : 'bg-cream-50'
 
         return (
           <section
             key={svc.slug}
             id={svc.slug}
-            className={`py-20 lg:py-28 scroll-mt-36 ${isEven ? 'bg-white' : 'bg-cream-50'}`}
+            className={`relative py-20 lg:py-28 scroll-mt-36 overflow-hidden ${sectionBg}`}
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* ── Featured: radial gold glow + top gold rule ── */}
+            {isFeatured && (
+              <>
+                {/* Ambient gold radial */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      'radial-gradient(ellipse at 70% 50%, rgba(196,145,26,0.10), transparent 60%)',
+                  }}
+                />
+                {/* Top gold rule */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-px"
+                  style={{ background: 'linear-gradient(90deg, transparent, #c4911a55, #dba82880, #c4911a55, transparent)' }}
+                />
+                {/* Bottom gold rule */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-px"
+                  style={{ background: 'linear-gradient(90deg, transparent, #c4911a55, #dba82880, #c4911a55, transparent)' }}
+                />
+              </>
+            )}
+
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch ${
                   !isEven ? 'lg:[&>:first-child]:order-2 lg:[&>:last-child]:order-1' : ''
                 }`}
               >
-                {/* Content */}
+                {/* ── Content column ── */}
                 <div className="flex flex-col justify-center" data-animate={isEven ? undefined : 'right'}>
+
+                  {/* Icon + number row */}
                   <div className="flex items-center gap-4 mb-8">
                     <div
-                      className="w-11 h-11 border border-gold-400/25 flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(196,145,26,0.07)' }}
+                      className={`w-11 h-11 flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                        isFeatured
+                          ? 'border border-gold-400/50'
+                          : 'border border-gold-400/25'
+                      }`}
+                      style={{
+                        background: isFeatured
+                          ? 'rgba(196,145,26,0.15)'
+                          : 'rgba(196,145,26,0.07)',
+                      }}
                     >
-                      <Icon size={18} className="text-gold-500/80" />
+                      <Icon size={18} className={isFeatured ? 'text-gold-400' : 'text-gold-500/80'} />
                     </div>
-                    <span className="font-display font-light text-navy-900/18 text-3xl leading-none select-none">
+                    <span
+                      className={`font-display font-light text-3xl leading-none select-none ${
+                        isFeatured ? 'text-white/10' : 'text-navy-900/18'
+                      }`}
+                    >
                       {svc.num}
                     </span>
+
+                    {/* Featured badge — sits inline after the number */}
+                    {isFeatured && (
+                      <span
+                        className="ml-1 inline-flex items-center px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] uppercase leading-none"
+                        style={{
+                          background: 'linear-gradient(105deg, #b07f18 0%, #dba828 55%, #c4911a 100%)',
+                          color: '#0a1628',
+                          clipPath: 'polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)',
+                        }}
+                      >
+                        Featured Service
+                      </span>
+                    )}
                   </div>
 
+                  {/* Title */}
                   <h2
-                    className="font-display font-semibold text-navy-950 leading-tight mb-4"
+                    className={`font-display font-semibold leading-tight mb-4 ${
+                      isFeatured ? 'text-white' : 'text-navy-950'
+                    }`}
                     style={{ fontSize: 'clamp(1.75rem, 3vw, 2.6rem)' }}
                   >
                     {svc.title}
                   </h2>
-                  <div className="w-10 h-px mb-7" style={{ background: 'linear-gradient(90deg, #c4911a, #dba828)' }} />
 
-                  {/* Full multi-paragraph body */}
+                  {/* Gold rule */}
+                  <div
+                    className="h-px mb-7"
+                    style={{
+                      width: isFeatured ? '3rem' : '2.5rem',
+                      background: 'linear-gradient(90deg, #c4911a, #dba828)',
+                      boxShadow: isFeatured ? '0 0 8px rgba(219,168,40,0.4)' : 'none',
+                    }}
+                  />
+
+                  {/* Body paragraphs */}
                   <div className="space-y-4 mb-8 max-w-prose">
                     {paragraphs.map((para, pi) => (
-                      <p key={pi} className="text-navy-800/75 font-body leading-[1.85] text-[1rem]">
+                      <p
+                        key={pi}
+                        className={`font-body leading-[1.85] text-[1rem] ${
+                          isFeatured ? 'text-white/70' : 'text-navy-800/75'
+                        }`}
+                      >
                         {para}
                       </p>
                     ))}
                   </div>
 
-                  {/* We assist with bullets */}
-                  <p className="font-body text-xs font-semibold tracking-widest uppercase text-gold-600/70 mb-4">
+                  {/* We assist with label */}
+                  <p
+                    className={`font-body text-xs font-semibold tracking-widest uppercase mb-4 ${
+                      isFeatured ? 'text-gold-400/80' : 'text-gold-600/70'
+                    }`}
+                  >
                     We assist with
                   </p>
+
+                  {/* Bullets */}
                   <div className="space-y-3 mb-10">
                     {svc.points.map((pt) => (
                       <div key={pt} className="flex items-start gap-3.5 group/pt">
-                        <div className="w-5 h-5 border border-gold-400/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/pt:border-gold-400/60 transition-colors duration-200">
-                          <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70" />
+                        <div
+                          className={`w-5 h-5 border flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-200 ${
+                            isFeatured
+                              ? 'border-gold-400/50 group-hover/pt:border-gold-400'
+                              : 'border-gold-400/30 group-hover/pt:border-gold-400/60'
+                          }`}
+                        >
+                          <div
+                            className="w-1.5 h-1.5 rounded-full"
+                            style={{
+                              background: isFeatured
+                                ? 'rgba(219,168,40,0.9)'
+                                : 'rgba(196,145,26,0.7)',
+                            }}
+                          />
                         </div>
-                        <p className="text-navy-800/80 font-body text-[0.94rem] leading-relaxed">{pt}</p>
+                        <p
+                          className={`font-body text-[0.94rem] leading-relaxed ${
+                            isFeatured ? 'text-white/80' : 'text-navy-800/80'
+                          }`}
+                        >
+                          {pt}
+                        </p>
                       </div>
                     ))}
                   </div>
 
+                  {/* Featured: urgency note above CTAs */}
+                  {isFeatured && (
+                    <div
+                      className="flex items-start gap-3 mb-6 px-4 py-3.5"
+                      style={{ border: '1px solid rgba(196,145,26,0.25)', background: 'rgba(196,145,26,0.07)' }}
+                    >
+                      <div className="w-1 h-1 rounded-full bg-gold-400/60 shrink-0 mt-[7px]" />
+                      <p className="font-body text-white/55 text-sm leading-relaxed">
+                        <span className="text-gold-400/80 font-medium">Time-sensitive matters —</span>{' '}
+                        Licence consequences and court dates can move quickly. Early advice often makes a
+                        material difference to the outcome.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* CTAs */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link href="/contact" className="btn-gold">
                       Enquire Now <ArrowRight size={14} />
                     </Link>
-                    <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-navy">
+                    <Link
+                      href={`tel:${siteConfig.contact.phone1}`}
+                      className={isFeatured ? 'btn-ghost-gold' : 'btn-navy'}
+                    >
                       <Phone size={13} /> {siteConfig.contact.phone1}
                     </Link>
                   </div>
                 </div>
 
-                {/* Image panel */}
-                <div
+                {/* ── Image panel ── */}
+                {/* <div
                   className="relative min-h-[380px] lg:min-h-0"
                   data-animate={isEven ? 'right' : 'left'}
                   data-delay="2"
-                >
-                  <div className="absolute inset-0 border border-gold-400/10 pointer-events-none z-10" />
+                > */}
+                <div
+  className="relative min-h-[380px] lg:min-h-[500px]"
+  data-animate={isEven ? 'right' : 'left'}
+  data-delay="2"
+>
+                  {/* Frame border */}
+                  <div
+                    className="absolute inset-0 pointer-events-none z-10"
+                    style={{
+                      border: isFeatured
+                        ? '1px solid rgba(196,145,26,0.25)'
+                        : '1px solid rgba(196,145,26,0.10)',
+                    }}
+                  />
+                  {/* Corner accents — top-left */}
                   <div
                     className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none"
-                    style={{ borderTop: '1.5px solid rgba(196,145,26,0.45)', borderLeft: '1.5px solid rgba(196,145,26,0.45)' }}
+                    style={{
+                      borderTop: `1.5px solid rgba(196,145,26,${isFeatured ? '0.7' : '0.45'})`,
+                      borderLeft: `1.5px solid rgba(196,145,26,${isFeatured ? '0.7' : '0.45'})`,
+                    }}
                   />
+                  {/* Corner accents — bottom-right */}
                   <div
                     className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none"
-                    style={{ borderBottom: '1.5px solid rgba(196,145,26,0.45)', borderRight: '1.5px solid rgba(196,145,26,0.45)' }}
+                    style={{
+                      borderBottom: `1.5px solid rgba(196,145,26,${isFeatured ? '0.7' : '0.45'})`,
+                      borderRight: `1.5px solid rgba(196,145,26,${isFeatured ? '0.7' : '0.45'})`,
+                    }}
                   />
+                  {/* Image */}
                   <div className="absolute inset-0">
                     <Image
+  src={svc.image}
+  alt={svc.title}
+  fill
+  sizes="(max-width: 1024px) 100vw, 50vw"
+  className="object-cover object-center"
+  style={isFeatured ? { filter: 'brightness(0.85) contrast(1.05)' } : undefined}
+/>
+                    {/* <Image
                       src={svc.image}
                       alt={svc.title}
                       width={500}
                       height={600}
                       className="object-cover object-center w-full h-full"
-                    />
+                      style={isFeatured ? { filter: 'brightness(0.85) contrast(1.05)' } : undefined}
+                    /> */}
+                    {/* Featured: subtle gold overlay gradient on image */}
+                    {isFeatured && (
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            'linear-gradient(135deg, rgba(196,145,26,0.08) 0%, transparent 60%)',
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,3 +1,5 @@
+// sections/AboutSection.tsx
+
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'

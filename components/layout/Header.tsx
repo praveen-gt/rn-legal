@@ -127,7 +127,6 @@ export function Header() {
               {[
                 { label: "Home", href: "/" },
                 { label: "About", href: "/about" },
-                { label: "Disclaimer", href: "/disclaimer" },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -361,7 +360,6 @@ export function Header() {
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
                 { label: "Contact", href: "/contact" },
-                { label: "Disclaimer", href: "/disclaimer" },
               ].map((item) => (
                 <Link
                   key={item.href}

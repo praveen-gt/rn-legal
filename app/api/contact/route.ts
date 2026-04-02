@@ -1,13 +1,14 @@
-
-
-// app/api/contact/route.ts
+// app/api/contact/route.ts  ← stays .ts, no JSX needed
 
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import sgMail from '@sendgrid/mail'
+import { render } from '@react-email/render'
+import React from 'react'
 import { contactFormSchema } from '@/lib/schemas'
 import { ContactEmailTemplate } from '@/components/emails/ContactEmailTemplate'
+import { ConfirmationEmailTemplate } from '@/components/emails/ConfirmationEmailTemplate'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string)
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,30 +24,26 @@ export async function POST(request: NextRequest) {
 
     const data = parsed.data
 
-    // Send notification email to the firm
-    const { error: sendError } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: ['info@rnlegal.com.au'],
-      // to: ['tewatiapraveen94@gmail.com'],
+    // No JSX needed — React.createElement works in plain .ts files
+    const firmHtml = await render(React.createElement(ContactEmailTemplate, { data }))
+    const confirmHtml = await render(React.createElement(ConfirmationEmailTemplate, { data }))
+
+    // 1️⃣  Notify the firm
+    await sgMail.send({
+      to: 'info@rnlegal.com.au',
+      // to: 'tewatiapraveen94@gmail.com', // ← dev override
+      from: 'info@rnlegal.com.au',
       replyTo: data.email,
       subject: `New Enquiry – ${data.practiceArea} – ${data.fullName}`,
-      react: ContactEmailTemplate({ data }),
+      html: firmHtml,
     })
 
-    if (sendError) {
-      console.error('Resend error:', sendError)
-      return NextResponse.json(
-        { error: 'Failed to send enquiry. Please call us directly.' },
-        { status: 500 }
-      )
-    }
-
-    // Send confirmation email to the enquirer
-    await resend.emails.send({
-      from: 'R&N Legal <noreply@rnlegal.com.au>',
-      to: [data.email],
+    // 2️⃣  Confirm receipt to the enquirer
+    await sgMail.send({
+      to: data.email,
+      from: 'info@rnlegal.com.au',
       subject: 'We have received your enquiry – R&N Legal',
-      react: ContactEmailTemplate({ data }),
+      html: confirmHtml,
     })
 
     return NextResponse.json({

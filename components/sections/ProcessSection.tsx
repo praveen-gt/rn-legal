@@ -1,3 +1,5 @@
+//sections/ProcessSection.tsx
+
 import { siteConfig } from '@/lib/config'
 
 export function ProcessSection() {

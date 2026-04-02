@@ -191,7 +191,7 @@ export default function AboutPage() {
                     "Clear advice, careful preparation and honest communication make the biggest difference."
                   </p>
                   <p className="text-gold-400/60 font-body text-xs tracking-widest uppercase">
-                    — Rajat Kanti Roy, Director
+                    — Amit Narwal, Solicitor
                   </p>
                 </div>
               </div>
