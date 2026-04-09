@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { ContactFormData } from '@/lib/schemas'
 
+
 interface Props {
   data: ContactFormData
 }
@@ -199,7 +200,7 @@ export function ConfirmationEmailTemplate({ data }: Props) {
                     </p>
 
                     <a
-                      href="tel:+61XXXXXXXXX"
+                      href="tel:0430593124"
                       style={{
                         display: 'inline-block',
                         backgroundColor: gold,
