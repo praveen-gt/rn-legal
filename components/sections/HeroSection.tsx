@@ -96,7 +96,7 @@ export function HeroSection() {
             </Link>
             <Link href={`tel:${siteConfig.contact.phone1}`} className="btn-outline">
               <Phone size={15} />
-              {siteConfig.contact.phone2}
+              {siteConfig.contact.phone1}
             </Link>
           </div>
         </div>
